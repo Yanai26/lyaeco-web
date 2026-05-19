@@ -1,18 +1,19 @@
 ﻿<!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="dark">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Obtenez votre devis — LYAECO Web</title>
+<title>Nos offres — LYAECO Web</title>
 <link rel="icon" type="image/png" sizes="32x32" href="images/logo-lyaeco.png">
 <link rel="icon" type="image/png" sizes="16x16" href="images/logo-lyaeco.png">
 <link rel="apple-touch-icon" sizes="180x180" href="images/logo-lyaeco.png">
 <link rel="shortcut icon" href="images/logo-lyaeco.png">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800;900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/global.css">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{font-family:'Inter',sans-serif;background:#f8fbff;color:#0f172a;overflow-x:hidden;}
+body{font-family:'Manrope',sans-serif;background:#0f172a;color:#f8fafc;overflow-x:hidden;}
 
 .abar{
   background:linear-gradient(90deg,#079bb8,#0b6ee8);
@@ -881,56 +882,150 @@ footer{background:#0f172a;color:#fff;padding:56px 48px 28px;}.foot-in{max-width:
 .faq-a-inner{padding:16px 24px 22px;font-size:15px;color:#64748b;line-height:1.75;border-top:1px solid #f1f5f9;}
 @media(max-width:1100px){.choice-grid{grid-template-columns:1fr;}.include-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:768px){.ia-teaser{padding:56px 24px;}.ia-teaser h2{font-size:30px;}.ia-bullets{flex-direction:column;gap:14px;align-items:center;}.include-grid{grid-template-columns:1fr 1fr;}.choice-card{padding:32px 24px;}.hero-inner-center{padding:48px 24px!important;}.faq-q{font-size:15px;padding:18px;}.faq-a-inner{padding:12px 18px 18px;}}
+
+/* ===== DARK MODE ===== */
+[data-theme="dark"] body{background:#0f172a!important;color:#f8fafc!important;font-family:'Manrope',sans-serif!important;}
+[data-theme="dark"] h2{color:#f8fafc;}
+[data-theme="dark"] h3{color:#f1f5f9;}
+[data-theme="dark"] .sub{color:#94a3b8;}
+[data-theme="dark"] .label{background:rgba(30,64,175,.2);border-color:rgba(30,64,175,.4);color:#38bdf8;}
+[data-theme="dark"] .hero{background:radial-gradient(circle at 80% 18%,rgba(30,64,175,.3),transparent 34%),radial-gradient(circle at 12% 75%,rgba(6,182,212,.2),transparent 32%),linear-gradient(135deg,#0f172a 0%,#1e293b 100%);}
+[data-theme="dark"] .hero h1{color:#f8fafc;text-shadow:none;}
+[data-theme="dark"] .hero-p{color:#94a3b8;}
+[data-theme="dark"] .hero-proof{color:#94a3b8;}
+[data-theme="dark"] .h-badge{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.1);color:#38bdf8;}
+[data-theme="dark"] .grad{background:linear-gradient(135deg,#1e40af,#06b6d4);-webkit-background-clip:text;background-clip:text;}
+[data-theme="dark"] nav{background:linear-gradient(to bottom,rgba(15,23,42,.92),rgba(15,23,42,.8))!important;border-color:rgba(255,255,255,.08)!important;box-shadow:0 8px 32px rgba(0,0,0,.3)!important;}
+[data-theme="dark"] nav.shrink{background:rgba(15,23,42,.96)!important;border-color:rgba(255,255,255,.1)!important;}
+[data-theme="dark"] .logo-name{color:#f8fafc!important;}
+[data-theme="dark"] .nav-links a{background:rgba(255,255,255,.04)!important;border-color:rgba(255,255,255,.08)!important;color:#cbd5e1!important;}
+[data-theme="dark"] .nav-links a:hover{background:rgba(30,64,175,.15)!important;color:#f1f5f9!important;border-color:rgba(30,64,175,.25)!important;}
+[data-theme="dark"] .nav-links a.nav-active{background:linear-gradient(135deg,rgba(30,64,175,.2),rgba(6,182,212,.15))!important;border-color:rgba(30,64,175,.4)!important;color:#f8fafc!important;}
+[data-theme="dark"] .nav-btn{background:linear-gradient(135deg,#1e40af,#06b6d4)!important;}
+[data-theme="dark"] .burger{background:rgba(255,255,255,.07)!important;color:#f8fafc;}
+[data-theme="dark"] .card{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.1);}
+[data-theme="dark"] .card h3{color:#f1f5f9;}
+[data-theme="dark"] .card p{color:#94a3b8;}
+[data-theme="dark"] .card-ic{background:rgba(30,64,175,.2);}
+[data-theme="dark"] .blue-bg{background:rgba(255,255,255,.02)!important;border-color:rgba(255,255,255,.06)!important;}
+[data-theme="dark"] .why-card{background:#1e293b;border-color:rgba(255,255,255,.08);}
+[data-theme="dark"] .why-card h3{color:#f1f5f9;}
+[data-theme="dark"] .why-card p{color:#94a3b8;}
+[data-theme="dark"] .why-num{color:#06b6d4;}
+[data-theme="dark"] .pill{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.1);color:#94a3b8;}
+[data-theme="dark"] .pill:hover{background:rgba(30,64,175,.2);border-color:#1e40af;color:#38bdf8;}
+[data-theme="dark"] .excard{background:#1e293b;border-color:rgba(255,255,255,.08);}
+[data-theme="dark"] .ex-bar{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.07);}
+[data-theme="dark"] .ex-title{color:#f1f5f9;}
+[data-theme="dark"] .ex-sub{color:#94a3b8;}
+[data-theme="dark"] .real-nav{background:rgba(255,255,255,.08);color:#f8fafc;}
+[data-theme="dark"] .pcard{background:#1e293b;border-color:rgba(255,255,255,.1);}
+[data-theme="dark"] .pcard.pop{border-color:#1e40af!important;box-shadow:0 24px 64px rgba(30,64,175,.25)!important;}
+[data-theme="dark"] .pname{color:#f1f5f9;}
+[data-theme="dark"] .pdesc2{color:#94a3b8;}
+[data-theme="dark"] .pamount{color:#f8fafc;}
+[data-theme="dark"] .pamount-mention{color:#64748b;}
+[data-theme="dark"] .plist li{color:#94a3b8;border-color:rgba(255,255,255,.06);}
+[data-theme="dark"] .quote-box{background:#1e293b;border-color:rgba(255,255,255,.08);}
+[data-theme="dark"] .qdot{background:rgba(30,64,175,.3);color:#38bdf8;}
+[data-theme="dark"] .qstep h3{color:#f1f5f9;}
+[data-theme="dark"] .qstep p{color:#94a3b8;}
+[data-theme="dark"] .cform-wrap{background:#1e293b;border-color:rgba(255,255,255,.08);}
+[data-theme="dark"] .finput{background:rgba(255,255,255,.06)!important;border-color:rgba(255,255,255,.12)!important;color:#f8fafc!important;font-family:'Manrope',sans-serif!important;}
+[data-theme="dark"] .finput:focus{border-color:#1e40af!important;background:rgba(255,255,255,.09)!important;box-shadow:0 0 0 4px rgba(30,64,175,.15)!important;}
+[data-theme="dark"] .finput option{background:#1e293b;color:#f8fafc;}
+[data-theme="dark"] .radio-card{background:rgba(255,255,255,.04)!important;border-color:rgba(255,255,255,.1)!important;}
+[data-theme="dark"] .radio-card strong{color:#f1f5f9;}
+[data-theme="dark"] .radio-card span{color:#94a3b8;}
+[data-theme="dark"] .tcard{background:#1e293b;border-color:rgba(255,255,255,.08);}
+[data-theme="dark"] .tname{color:#f1f5f9;}
+[data-theme="dark"] .ttext{color:#94a3b8;}
+[data-theme="dark"] .process-steps{background:#0a1628!important;border-color:rgba(255,255,255,.06)!important;}
+[data-theme="dark"] .process-badge{background:rgba(30,64,175,.2);border-color:rgba(30,64,175,.4);color:#38bdf8;}
+[data-theme="dark"] .process-header h2{color:#f8fafc;}
+[data-theme="dark"] .process-header p{color:#94a3b8;}
+[data-theme="dark"] .step-card{background:#1e293b;border-color:rgba(255,255,255,.08);}
+[data-theme="dark"] .step-card h3{color:#f1f5f9;}
+[data-theme="dark"] .step-card p{color:#94a3b8;}
+[data-theme="dark"] .trust-score{background:#1e293b;border-color:rgba(255,255,255,.08);}
+[data-theme="dark"] .trust-note{color:#f8fafc;}
+[data-theme="dark"] .trust-based{color:#94a3b8;}
+[data-theme="dark"] .trust-card{background:#1e293b;border-color:rgba(255,255,255,.08);}
+[data-theme="dark"] .trust-name{color:#f1f5f9;}
+[data-theme="dark"] .trust-job{color:#94a3b8;}
+[data-theme="dark"] .trust-text{color:#94a3b8;}
+[data-theme="dark"] .choice-card{background:#1e293b!important;border-color:rgba(255,255,255,.1)!important;}
+[data-theme="dark"] .choice-card h3{color:#f1f5f9;}
+[data-theme="dark"] .choice-card>p{color:#94a3b8;}
+[data-theme="dark"] .choice-list li{color:#94a3b8;}
+[data-theme="dark"] .incl-card{background:rgba(255,255,255,.05)!important;border-color:rgba(255,255,255,.08)!important;}
+[data-theme="dark"] .incl-text strong{color:#f1f5f9;}
+[data-theme="dark"] .faq-item{background:#1e293b!important;border-color:rgba(255,255,255,.08)!important;}
+[data-theme="dark"] .faq-q{color:#f1f5f9;font-family:'Manrope',sans-serif;}
+[data-theme="dark"] .faq-q:hover{color:#38bdf8;}
+[data-theme="dark"] .faq-sym{color:#64748b;}
+[data-theme="dark"] .faq-a-inner{color:#94a3b8;border-color:rgba(255,255,255,.06);}
+[data-theme="dark"] table tr{background:transparent!important;}
+[data-theme="dark"] table tr:nth-child(even){background:rgba(255,255,255,.03)!important;}
+[data-theme="dark"] table td{color:#94a3b8;}
+[data-theme="dark"] [style*="background:#f8fafc"]{background:rgba(255,255,255,.02)!important;}
+[data-theme="dark"] [style*="background:#fefce8"]{background:rgba(30,41,59,.8)!important;border-color:rgba(253,224,71,.15)!important;}
+[data-theme="dark"] [style*="color:#713f12"]{color:#fde68a!important;}
+[data-theme="dark"] .badge{background:rgba(15,23,42,.92);border-color:rgba(255,255,255,.1);}
+[data-theme="dark"] .badge-v{color:#38bdf8;}
+[data-theme="dark"] .badge-l{color:#94a3b8;}
+[data-theme="dark"] .ptitle{color:#f1f5f9;}
+[data-theme="dark"] .pdesc{color:#94a3b8;}
+[data-theme="dark"] footer{font-family:'Manrope',sans-serif;}
+[data-theme="dark"] .foot-col a,[data-theme="dark"] .foot-col button,[data-theme="dark"] .foot-col span{font-family:'Manrope',sans-serif;}
 </style>
 </head>
 <body>
 
-<!-- ABAR -->
 <div class="abar" id="abar">
-  <div class="abar-track">
-    <span class="abar-text">🔥 Offre lancement — votre site professionnel à partir de 350€</span>
-    <a class="abar-btn" href="devis.html">CRÉER UN DEVIS →</a>
-    <span class="abar-ou">ou</span>
-    <a class="abar-phone" href="tel:0781712324">📞 07 81 71 23 24</a>
-    <span class="abar-text">🔥 Offre lancement — votre site professionnel à partir de 350€</span>
-    <a class="abar-btn" href="devis.html">CRÉER UN DEVIS →</a>
-    <span class="abar-ou">ou</span>
-    <a class="abar-phone" href="tel:0781712324">📞 07 81 71 23 24</a>
-    <span class="abar-text">🔥 Offre lancement — votre site professionnel à partir de 350€</span>
-    <a class="abar-btn" href="devis.html">CRÉER UN DEVIS →</a>
-    <span class="abar-ou">ou</span>
-    <a class="abar-phone" href="tel:0781712324">📞 07 81 71 23 24</a>
-    <span class="abar-text">🔥 Offre lancement — votre site professionnel à partir de 350€</span>
-    <a class="abar-btn" href="devis.html">CRÉER UN DEVIS →</a>
-    <span class="abar-ou">ou</span>
-    <a class="abar-phone" href="tel:0781712324">📞 07 81 71 23 24</a>
-    <span class="abar-text">🔥 Offre lancement — votre site professionnel à partir de 350€</span>
-    <a class="abar-btn" href="devis.html">CRÉER UN DEVIS →</a>
-    <span class="abar-ou">ou</span>
+  <div class="abar-static">
+    <span class="abar-text">✨ Votre site professionnel, livré clé en main · dès 380€</span>
+    <a class="abar-btn" href="devis-ia.html">CRÉER MON DEVIS →</a>
+    <span class="abar-sep">ou</span>
     <a class="abar-phone" href="tel:0781712324">📞 07 81 71 23 24</a>
   </div>
 </div>
 
-<!-- NAV -->
-<nav id="mainnav">
-  <a class="logo" href="index.html"><img src="images/logo-lyaeco.png" alt="LYAECO Web - Création de sites pour artisans et commerçants" class="logo-img"/><span class="logo-name">Lyaeco<em>Web</em></span></a>
-  <ul class="nav-links" id="nav">
-    <li><a href="services.html" onclick="cm()">Services</a></li>
-    <li><a href="pourquoi-avoir-un-site.html" onclick="cm()">Pourquoi un site ?</a></li>
-    <li><a href="realisations.html" onclick="cm()">Réalisations</a></li>
-    <li><a href="qui-sommes-nous.html" onclick="cm()">Qui sommes-nous</a></li>
-    <li><a href="devis.html" class="nav-active" onclick="cm()">Devis</a></li>
-    <li><a href="contact.html" onclick="cm()">Contact</a></li>
+<nav class="h-nav" id="mainnav">
+  <a class="nav-logo" href="index.html">
+    <img src="images/logo-lyaeco.png" alt="LYAECO Web" class="nav-logo-img"/>
+    <span class="nav-logo-name">Lyaeco<em>Web</em></span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="services.html">Services</a></li>
+    <li><a href="pourquoi-avoir-un-site.html">Pourquoi un site ?</a></li>
+    <li><a href="realisations.html">Réalisations</a></li>
+    <li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li>
+    <li><a href="nos-offres.html" class="nav-active">Nos offres</a></li>
+    <li><a href="devis-ia.html" class="nav-cta">Devis IA</a></li>
   </ul>
-  <a href="devis.html" class="nav-btn">Créer mon devis</a>
-  <button class="burger" id="burger" onclick="tm()" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+  <div class="nav-right">
+    <button class="burger" id="burgerBtn" aria-label="Menu">☰</button>
+  </div>
 </nav>
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-header">
+    <a class="nav-logo" href="index.html"><img src="images/logo-lyaeco.png" class="nav-logo-img"/><span class="nav-logo-name">Lyaeco<em>Web</em></span></a>
+    <button class="mobile-close" id="mobileClose">×</button>
+  </div>
+  <a href="services.html">Services</a>
+  <a href="pourquoi-avoir-un-site.html">Pourquoi un site ?</a>
+  <a href="realisations.html">Réalisations</a>
+  <a href="qui-sommes-nous.html">Qui sommes-nous ?</a>
+  <a href="nos-offres.html">Nos offres</a>
+  <a href="devis-ia.html" class="mobile-cta">Devis IA →</a>
+</div>
 
 <!-- HERO -->
 <div class="hero" style="min-height:60vh;">
   <div class="hero-bg-dot"></div><div class="hero-glow-tr"></div><div class="hero-glow-bl"></div>
   <div class="hero-inner-center" id="hl" style="opacity:0;transform:translateY(28px);transition:all .8s ease;">
-    <div class="h-badge">💼 Devis personnalisé</div>
+    <div class="h-badge">💼 Nos offres</div>
     <h1>Obtenez votre devis<br/>en quelques minutes.</h1>
     <p class="hero-p">Choisissez parmi nos 3 formules prêtes ou créez votre devis sur mesure avec notre assistant intelligent.</p>
     <div class="hero-btns" style="justify-content:center;">
@@ -1337,22 +1432,20 @@ footer{background:#0f172a;color:#fff;padding:56px 48px 28px;}.foot-in{max-width:
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer>
   <div class="foot-in">
     <div>
-      <div class="foot-logo"><img src="images/logo-lyaeco.png" alt="LYAECO Web - Création de sites pour artisans et commerçants" style="width:40px;height:40px;border-radius:10px;vertical-align:middle;margin-right:10px;">Lyaeco<em>Web</em></div>
-      <p class="foot-desc">Création de sites internet professionnels pour artisans et commerçants. Sites vitrines, réservation et achat intégré.</p>
+      <div class="foot-logo"><img src="images/logo-lyaeco.png" alt="LYAECO Web" class="foot-logo-img">Lyaeco<em>Web</em></div>
+      <p class="foot-desc">Création de sites internet professionnels pour artisans et commerçants. Sites vitrines, réservation et boutique en ligne.</p>
     </div>
     <div class="foot-col">
       <h4>Navigation</h4>
       <ul>
         <li><a href="services.html">Services</a></li>
         <li><a href="pourquoi-avoir-un-site.html">Pourquoi un site ?</a></li>
-        <li><a href="qui-sommes-nous.html">Qui sommes-nous</a></li>
-        <li><a href="devis.html#tarifs">Tarifs</a></li>
-        <li><a href="devis.html">Devis</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="realisations.html">Réalisations</a></li>
+        <li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li>
+        <li><a href="devis-ia.html">Devis IA</a></li>
       </ul>
     </div>
     <div class="foot-col">
@@ -1360,7 +1453,8 @@ footer{background:#0f172a;color:#fff;padding:56px 48px 28px;}.foot-in{max-width:
       <ul>
         <li><a href="tel:0781712324">📞 07 81 71 23 24</a></li>
         <li><a href="mailto:contact@lyaeco.com">✉️ contact@lyaeco.com</a></li>
-        <li><span>📍 19 rue Séjourné, Créteil</span></li>
+        <li><span>📍 19 rue Séjourné, 94000 Créteil</span></li>
+        <li><span>SIRET : 952 921 658 00011</span></li>
       </ul>
     </div>
     <div class="foot-col">
@@ -1374,7 +1468,7 @@ footer{background:#0f172a;color:#fff;padding:56px 48px 28px;}.foot-in{max-width:
   </div>
   <div class="foot-bot">
     <p>© 2026 LYAECO Web — Tous droits réservés</p>
-    <p>Fait avec ❤️ à Paris</p>
+    <p>Fait avec ❤️ à Créteil, France</p>
   </div>
 </footer>
 
@@ -1476,6 +1570,7 @@ window.addEventListener('scroll',function(){
 </a>
 
 
+<script src="js/home.js" defer></script>
 <link rel="stylesheet" href="css/chatbot-lyaeco.css">
 <script src="js/chatbot-lyaeco.js" defer></script>
 </body>
