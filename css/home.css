@@ -1056,7 +1056,24 @@ footer {
   .bento-grid { grid-template-columns: repeat(2, 1fr); }
   .bento-big { grid-column: span 1; grid-row: span 1; }
   .bento-big .bento-title { font-size: 16px; }
-  .packs-grid { grid-template-columns: 1fr; max-width: 460px; margin-left: auto; margin-right: auto; }
+  .packs-grid {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 20px 16px 30px;
+    max-width: 100%;
+    margin: 30px -16px 0;
+  }
+  .packs-grid::-webkit-scrollbar { display: none; }
+  .pack-card {
+    flex: 0 0 85%;
+    scroll-snap-align: center;
+    min-width: 280px;
+  }
   .pack-card.featured { transform: none; }
   .metiers-grid { grid-template-columns: repeat(2, 1fr); }
   .metiers-bottom { grid-template-columns: repeat(2, 1fr); }
