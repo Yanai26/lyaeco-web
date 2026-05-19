@@ -500,7 +500,7 @@
   }
 
   function buildWidget() {
-    var img = 'images/assistant-ia.png.png';
+    var img = 'images/assistant-ia-v3.png';
     var inner =
       '<div class="lyaeco-hdr">' +
         '<div class="lyaeco-hdr-info">' +
@@ -561,7 +561,7 @@
   }
 
   function buildFullpage(container) {
-    var img = 'images/assistant-ia.png.png';
+    var img = 'images/assistant-ia-v3.png';
     container.innerHTML =
       '<div class="lyaeco-hdr">' +
         '<div class="lyaeco-hdr-info">' +
