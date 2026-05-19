@@ -15,12 +15,12 @@
 /* Bento explicit grid placement */
 .bento-vitrine    { grid-column: 1; grid-row: 1; }
 .bento-reservation{ grid-column: 2; grid-row: 1; }
-.bento-boutique   { grid-column: 1; grid-row: 2; }
-.bento-audit      { grid-column: 2; grid-row: 2; }
-.bento-agent      { grid-column: 3 / 5; grid-row: 1 / 3; min-height: 280px; }
+.bento-boutique   { grid-column: 3; grid-row: 1; }
+.bento-audit      { grid-column: 4; grid-row: 1; }
+.bento-agent      { grid-column: 1 / 4; grid-row: 2; min-height: 220px; }
+.bento-whatsapp   { grid-column: 4; grid-row: 2; }
 .bento-realisations { grid-column: 1 / 3; grid-row: 3; min-height: 220px; }
-.bento-clomain    { grid-column: 3; grid-row: 3; }
-.bento-whatsapp   { grid-column: 4; grid-row: 3; }
+.bento-clomain    { grid-column: 3 / 5; grid-row: 3; }
 @media (max-width: 1024px) {
   .bento-vitrine, .bento-reservation, .bento-boutique, .bento-audit,
   .bento-agent, .bento-realisations, .bento-clomain, .bento-whatsapp {
@@ -28,6 +28,11 @@
   }
   .bento-agent { min-height: 200px; }
   .bento-realisations { min-height: 160px; }
+  .bento-realisations,
+  .bento-clomain,
+  .bento-whatsapp {
+    display: none !important;
+  }
 }
 /* Pack cards stagger on scroll */
 .pack-card { --i: 0; transition-delay: calc(var(--i) * 0.12s); }
@@ -164,14 +169,6 @@
         <div class="bento-desc">Prise de rendez-vous ou de commandes en ligne</div>
       </a>
 
-      <div class="bento-tile bento-agent reveal" data-delay="160" onclick="openChatModal()" role="button" tabindex="0" style="cursor:pointer;">
-        <span class="bento-icon">🤖</span>
-        <span class="bento-tag new">NOUVEAU</span>
-        <div class="bento-title">Agent IA Devis</div>
-        <div class="bento-desc">Votre devis personnalisé en 2 min. Notre IA analyse vos besoins et propose le bon pack selon votre activité.</div>
-        <img src="images/assistant-ia-v3.png" alt="" class="bento-avatar" width="64" loading="lazy"/>
-      </div>
-
       <a href="services.html#boutique" class="bento-tile bento-boutique reveal" data-delay="80">
         <span class="bento-icon">🛒</span>
         <span class="bento-tag">À partir de 1500€</span>
@@ -185,7 +182,21 @@
         <div class="bento-desc">Échange téléphonique offert, sans engagement</div>
       </div>
 
-      <a href="realisations.html" class="bento-tile bento-realisations reveal" data-delay="200">
+      <div class="bento-tile bento-agent reveal" data-delay="160" onclick="openChatModal()" role="button" tabindex="0" style="cursor:pointer;">
+        <span class="bento-icon">🤖</span>
+        <span class="bento-tag new">NOUVEAU</span>
+        <div class="bento-title">Agent IA Devis</div>
+        <div class="bento-desc">Votre devis personnalisé en 2 min. Notre IA analyse vos besoins et propose le bon pack selon votre activité.</div>
+        <img src="images/assistant-ia-v3.png" alt="" class="bento-avatar" width="64" loading="lazy"/>
+      </div>
+
+      <a href="https://wa.me/33781712324" class="bento-tile bento-whatsapp reveal" data-delay="200" target="_blank" rel="noopener">
+        <span class="bento-icon">💬</span>
+        <div class="bento-title">Support WhatsApp</div>
+        <div class="bento-desc">Un seul interlocuteur, dispo sur WhatsApp</div>
+      </a>
+
+      <a href="realisations.html" class="bento-tile bento-realisations reveal" data-delay="240">
         <div class="bento-title">🖼️ Nos réalisations</div>
         <div class="bento-desc" style="margin-bottom:12px;">Découvrez les sites créés pour nos clients artisans</div>
         <div class="bento-mockups">
@@ -196,17 +207,11 @@
         </div>
       </a>
 
-      <div class="bento-tile bento-clomain reveal" data-delay="240">
+      <div class="bento-tile bento-clomain reveal" data-delay="280">
         <span class="bento-icon">✨</span>
         <div class="bento-title">Clé en main</div>
         <div class="bento-desc">Vous recevez un site prêt à l'emploi et facile à partager à vos clients.</div>
       </div>
-
-      <a href="https://wa.me/33781712324" class="bento-tile bento-whatsapp reveal" data-delay="280" target="_blank" rel="noopener">
-        <span class="bento-icon">💬</span>
-        <div class="bento-title">Support WhatsApp</div>
-        <div class="bento-desc">Un seul interlocuteur, dispo sur WhatsApp</div>
-      </a>
 
     </div>
   </div>
