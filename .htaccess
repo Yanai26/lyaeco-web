@@ -1,0 +1,7 @@
+ErrorDocument 404 /404.html
+
+# ─── Blocage des fichiers sensibles ──────────────────────────────────────────
+<FilesMatch "^\.env|^\.env\.|\.log$|tarifs\.json$">
+    Order deny,allow
+    Deny from all
+</FilesMatch>

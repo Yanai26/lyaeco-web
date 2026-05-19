@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pack Réservation — Réservation en ligne pour artisans | LYAECO</title>
+  <meta name="description" content="Acceptez des réservations 24h/24 avec le Pack Réservation LYAECO. Module de réservation intégré, paiement Stripe, livré en 10 jours — dès 600€." />
+  <link rel="stylesheet" href="css/pack-pages.css" />
+</head>
+<body data-base-price="600" data-pack-name="Pack Réservation">
+
+<!-- ── NAV ── -->
+<nav class="pp-nav">
+  <a href="index.html" class="pp-nav-logo">
+    <img src="images/logo-lyaeco.png" alt="LYAECO" />
+    <span>LYA<em>ECO</em></span>
+  </a>
+  <ul class="pp-nav-links">
+    <li><a href="index.html#packs">Nos packs</a></li>
+    <li><a href="index.html#metiers">Pour qui ?</a></li>
+    <li><a href="devis.html" class="pp-nav-cta">Devis IA gratuit</a></li>
+  </ul>
+  <div class="pp-nav-right">
+    <button class="pp-burger" onclick="this.closest('nav').querySelector('.pp-nav-links').style.display='flex'">☰</button>
+  </div>
+</nav>
+
+<!-- ── BREADCRUMB ── -->
+<div class="pp-breadcrumb">
+  <a href="index.html">Accueil</a> › <a href="index.html#packs">Packs</a> › Pack Réservation
+</div>
+
+<!-- ── HERO ── -->
+<section class="pp-hero">
+  <div class="pp-hero-inner">
+    <span class="pp-hero-tag">Pack M2</span>
+    <h1>Pack Réservation</h1>
+    <div class="pp-hero-price">600€</div>
+    <p class="pp-hero-price-note">Paiement unique · Hébergement &amp; email pro inclus</p>
+    <p class="pp-hero-sub">
+      Vos clients réservent directement depuis votre site, 24h/24. Fini les appels manqués et les agendas à gérer manuellement — votre calendrier se remplit tout seul.
+    </p>
+    <div class="pp-hero-btns">
+      <button class="btn-pp-primary" onclick="openModalA()">Recevoir mon devis chiffré</button>
+      <button class="btn-pp-sec" onclick="openModalB()">Être rappelé gratuitement</button>
+    </div>
+  </div>
+</section>
+
+<!-- ── CE QUI EST INCLUS ── -->
+<section class="pp-section pp-section-alt">
+  <div class="pp-section-inner">
+    <span class="pp-section-label">Inclus dans le pack</span>
+    <h2>Tout ce qu'il faut pour accepter des réservations</h2>
+    <p class="sub">Hébergement, email professionnel et paiement en ligne — tout est inclus dans les 600€.</p>
+    <div class="pp-features">
+      <div class="pp-feature">
+        <div class="pp-feature-check">✓</div>
+        <div class="pp-feature-body">
+          <div class="pp-feature-title">Tout le contenu du Pack Vitrine</div>
+          <div class="pp-feature-desc">5 pages, formulaire de contact, blog, FAQ, domaine, SSL, SEO, responsive…</div>
+        </div>
+      </div>
+      <div class="pp-feature">
+        <div class="pp-feature-check">✓</div>
+        <div class="pp-feature-body">
+          <div class="pp-feature-title">Module de réservation en ligne</div>
+          <div class="pp-feature-desc">Vos clients choisissent leur créneau et réservent en quelques clics, 24h/24.</div>
+        </div>
+      </div>
+      <div class="pp-feature">
+        <div class="pp-feature-check">✓</div>
+        <div class="pp-feature-body">
+          <div class="pp-feature-title">Hébergement 1 an inclus</div>
+          <div class="pp-feature-desc">Serveur haute disponibilité sans frais supplémentaires la première année.</div>
+        </div>
+      </div>
+      <div class="pp-feature">
+        <div class="pp-feature-check">✓</div>
+        <div class="pp-feature-body">
+          <div class="pp-feature-title">Email professionnel inclus</div>
+          <div class="pp-feature-desc">contact@votresite.fr — crédibilité assurée pour tous vos échanges clients.</div>
+        </div>
+      </div>
+      <div class="pp-feature">
+        <div class="pp-feature-check">✓</div>
+        <div class="pp-feature-body">
+          <div class="pp-feature-title">Paiement Stripe + PayPal</div>
+          <div class="pp-feature-desc">Encaissez les acomptes ou paiements complets en ligne en toute sécurité.</div>
+        </div>
+      </div>
+      <div class="pp-feature">
+        <div class="pp-feature-check">✓</div>
+        <div class="pp-feature-body">
+          <div class="pp-feature-title">Gestion du calendrier de disponibilités</div>
+          <div class="pp-feature-desc">Bloquez vos fermetures et jours indisponibles depuis votre panneau d'admin.</div>
+        </div>
+      </div>
+      <div class="pp-feature">
+        <div class="pp-feature-check">✓</div>
+        <div class="pp-feature-body">
+          <div class="pp-feature-title">Confirmation automatique par email</div>
+          <div class="pp-feature-desc">Vos clients reçoivent un récapitulatif instantané à chaque réservation.</div>
+        </div>
+      </div>
+      <div class="pp-feature">
+        <div class="pp-feature-check">✓</div>
+        <div class="pp-feature-body">
+          <div class="pp-feature-title">Rappel automatique 24h avant</div>
+          <div class="pp-feature-desc">Réduit les no-shows et les annulations de dernière minute.</div>
+        </div>
+      </div>
+      <div class="pp-feature">
+        <div class="pp-feature-check">✓</div>
+        <div class="pp-feature-body">
+          <div class="pp-feature-title">Panneau d'administration intuitif</div>
+          <div class="pp-feature-desc">Consultez et gérez toutes vos réservations en un coup d'œil.</div>
+        </div>
+      </div>
+      <div class="pp-feature">
+        <div class="pp-feature-check">✓</div>
+        <div class="pp-feature-body">
+          <div class="pp-feature-title">Optimisation SEO locale</div>
+          <div class="pp-feature-desc">Apparaissez sur Google Maps et dans les recherches de votre zone géographique.</div>
+        </div>
+      </div>
+      <div class="pp-feature">
+        <div class="pp-feature-check">✓</div>
+        <div class="pp-feature-body">
+          <div class="pp-feature-title">Responsive mobile &amp; tablette</div>
+          <div class="pp-feature-desc">Réservation possible depuis n'importe quel appareil, fluide et rapide.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── OPTIONS ── -->
+<section class="pp-section">
+  <div class="pp-section-inner">
+    <span class="pp-section-label">Options à la carte</span>
+    <h2>Personnalisez votre pack</h2>
+    <p class="sub">Cochez les options dont vous avez besoin — le total se met à jour en temps réel.</p>
+
+    <div class="pp-options">
+
+      <div class="pp-option" data-price="40">
+        <div class="pp-option-check"></div>
+        <div class="pp-option-info">
+          <div class="pp-option-name">Logo personnalisé</div>
+          <div class="pp-feature-desc">Création de zéro par notre designer.</div>
+        </div>
+        <div class="pp-option-price">+40€</div>
+      </div>
+
+      <div class="pp-option" data-price="15">
+        <div class="pp-option-check"></div>
+        <div class="pp-option-info">
+          <div class="pp-option-name">Google Maps intégré</div>
+          <div class="pp-feature-desc">Carte interactive avec votre localisation.</div>
+        </div>
+        <div class="pp-option-price">+15€</div>
+      </div>
+
+      <div class="pp-option" data-price="15">
+        <div class="pp-option-check"></div>
+        <div class="pp-option-info">
+          <div class="pp-option-name">Refonte fiche Google Business</div>
+          <div class="pp-feature-desc">Optimisation complète de votre fiche Google (photos, horaires, catégories).</div>
+        </div>
+        <div class="pp-option-price">+15€</div>
+      </div>
+
+      <div class="pp-option" data-price="10">
+        <div class="pp-option-check"></div>
+        <div class="pp-option-info">
+          <div class="pp-option-name">Page supplémentaire</div>
+          <div class="pp-feature-desc">Chaque page additionnelle (galerie, équipe, partenaires…).</div>
+        </div>
+        <div class="pp-option-qty">
+          <span style="font-size:12px;color:var(--text-secondary)">×</span>
+          <input type="number" min="1" max="20" value="1" onclick="event.stopPropagation()" />
+        </div>
+        <div class="pp-option-price">+10€/page</div>
+      </div>
+
+      <div class="pp-option" data-price="5">
+        <div class="pp-option-check"></div>
+        <div class="pp-option-info">
+          <div class="pp-option-name">Langue supplémentaire</div>
+          <div class="pp-feature-desc">Ajout d'une langue (EN, ES, DE…) ou d'une devise.</div>
+        </div>
+        <div class="pp-option-qty">
+          <span style="font-size:12px;color:var(--text-secondary)">×</span>
+          <input type="number" min="1" max="5" value="1" onclick="event.stopPropagation()" />
+        </div>
+        <div class="pp-option-price">+5€/langue</div>
+      </div>
+
+      <div class="pp-option" data-price="40">
+        <div class="pp-option-check"></div>
+        <div class="pp-option-info">
+          <div class="pp-option-name">Chat en direct (WhatsApp / widget)</div>
+          <div class="pp-feature-desc">Bouton flottant et widget de messagerie instantanée.</div>
+        </div>
+        <div class="pp-option-price">+40€</div>
+      </div>
+
+      <div class="pp-option" data-price="10">
+        <div class="pp-option-check"></div>
+        <div class="pp-option-info">
+          <div class="pp-option-name">Synchronisation Google Calendar</div>
+          <div class="pp-feature-desc">Les réservations apparaissent automatiquement dans votre agenda Google.</div>
+        </div>
+        <div class="pp-option-price">+10€</div>
+      </div>
+
+      <div class="pp-option" data-price="50">
+        <div class="pp-option-check"></div>
+        <div class="pp-option-info">
+          <div class="pp-option-name">Maintenance mensuelle</div>
+          <div class="pp-feature-desc">Mises à jour sécurité, sauvegardes et support technique.</div>
+        </div>
+        <div class="pp-option-price">+50€/mois</div>
+      </div>
+
+    </div>
+
+    <div class="pp-total-bar">
+      <div>
+        <div class="pp-total-label">Total estimé</div>
+        <div class="pp-total-note">Hors maintenance mensuelle (si cochée)</div>
+      </div>
+      <div id="pp-total-amount" style="font-size:36px;font-weight:900;color:#fff;letter-spacing:-2px;">600€</div>
+    </div>
+
+    <div style="margin-top:20px;text-align:center;">
+      <button class="btn-pp-primary" onclick="openModalA()">Recevoir mon devis chiffré →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ── POURQUOI ── -->
+<section class="pp-section pp-section-alt">
+  <div class="pp-section-inner">
+    <span class="pp-section-label">Pourquoi ce pack ?</span>
+    <h2>Ce que vous gagnez vraiment</h2>
+    <div class="pp-why">
+      <div class="pp-why-card">
+        <div class="pp-why-icon">⏰</div>
+        <div class="pp-why-title">Zéro appel manqué</div>
+        <div class="pp-why-desc">Vos clients réservent à toute heure, même quand vous êtes en intervention, en train de travailler ou le week-end.</div>
+      </div>
+      <div class="pp-why-card">
+        <div class="pp-why-icon">💰</div>
+        <div class="pp-why-title">Rentabilisé en quelques semaines</div>
+        <div class="pp-why-desc">Un seul client supplémentaire par semaine couvre le coût du site en moins de 3 mois. Le reste, c'est du pur bénéfice.</div>
+      </div>
+      <div class="pp-why-card">
+        <div class="pp-why-icon">🔄</div>
+        <div class="pp-why-title">Synchronisation en temps réel</div>
+        <div class="pp-why-desc">Votre agenda se met à jour automatiquement à chaque réservation — fini les doubles réservations et les confusions.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── DÉLAIS ── -->
+<section class="pp-section">
+  <div class="pp-section-inner">
+    <span class="pp-section-label">Délais de livraison</span>
+    <h2>10 jours de la commande à la mise en ligne</h2>
+    <p class="sub">Un processus rodé, 3 étapes claires.</p>
+    <div class="pp-delays">
+      <div class="pp-delay">
+        <div class="pp-delay-icon">📋</div>
+        <div>
+          <div class="pp-delay-title">Jour 1-3 · Briefing et paramétrage</div>
+          <div class="pp-delay-desc">Questionnaire complet, configuration du module de réservation, définition des créneaux et du système de paiement.</div>
+        </div>
+      </div>
+      <div class="pp-delay">
+        <div class="pp-delay-icon">🎨</div>
+        <div>
+          <div class="pp-delay-title">Jour 4-8 · Création et développement</div>
+          <div class="pp-delay-desc">Design sur mesure, intégration du module de réservation, connexion Stripe/PayPal et tests de paiement.</div>
+        </div>
+      </div>
+      <div class="pp-delay">
+        <div class="pp-delay-icon">🚀</div>
+        <div>
+          <div class="pp-delay-title">Jour 9-10 · Livraison et formation</div>
+          <div class="pp-delay-desc">Mise en ligne, tests complets du tunnel de réservation, et formation à la gestion de votre agenda en ligne.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA FINAL ── -->
+<section class="pp-cta">
+  <div class="pp-cta-inner">
+    <h2>Prêt à automatiser vos réservations ?</h2>
+    <p>Recevez votre devis personnalisé en 24h ou faites-vous rappeler. Sans engagement.</p>
+    <div class="pp-cta-btns">
+      <button class="btn-white" onclick="openModalA()">Recevoir mon devis chiffré</button>
+      <button class="btn-ghost" onclick="openModalB()">Être rappelé gratuitement</button>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="pp-footer">
+  <div class="pp-foot-in">
+    <div>
+      <div class="pp-foot-logo"><img src="images/logo-lyaeco.png" alt="" />LYA<em>ECO</em></div>
+      <p class="pp-foot-desc">Agence web spécialisée artisans &amp; commerçants.<br/>Sites professionnels livrés clé en main.</p>
+    </div>
+    <div class="pp-foot-col">
+      <h4>Packs</h4>
+      <ul>
+        <li><a href="pack-vitrine.html">Pack Vitrine — 380€</a></li>
+        <li><a href="pack-reservation.html">Pack Réservation — 600€</a></li>
+        <li><a href="pack-boutique.html">Pack Boutique — 1 500€</a></li>
+      </ul>
+    </div>
+    <div class="pp-foot-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="devis.html">Devis IA gratuit</a></li>
+        <li><span>contact@lyaeco.com</span></li>
+        <li><span>SIRET 952 921 658 00011</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="pp-foot-bot">
+    <p>© 2025 LYAECO — Tous droits réservés</p>
+    <p>Mentions légales · CGV</p>
+  </div>
+</footer>
+
+<!-- ── MODAL A — Devis chiffré ── -->
+<div id="modalA" class="pp-modal-overlay">
+  <div class="pp-modal">
+    <button class="pp-modal-close" onclick="closeModalA()">×</button>
+    <h3>Votre devis Pack Réservation</h3>
+    <p class="pp-modal-sub">Récapitulatif des options sélectionnées. Remplissez le formulaire et recevez votre devis sous 24h.</p>
+
+    <div class="pp-recap-box">
+      <div class="pp-recap-pack">
+        <span class="pp-recap-pack-name">Pack Réservation</span>
+        <span class="pp-recap-pack-price" id="recap-pack-price">600€</span>
+      </div>
+      <div id="recap-opts"></div>
+      <div class="pp-recap-total">
+        <span class="pp-recap-total-label">Total estimé</span>
+        <span class="pp-recap-total-amount" id="recap-total">600€</span>
+      </div>
+    </div>
+
+    <form id="formA">
+      <div class="pp-form-group">
+        <label class="pp-form-label">Prénom et nom *</label>
+        <input type="text" name="nom" class="pp-form-input" placeholder="Jean Dupont" required />
+      </div>
+      <div class="pp-form-group">
+        <label class="pp-form-label">Email *</label>
+        <input type="email" name="email" class="pp-form-input" placeholder="jean@monentreprise.fr" required />
+      </div>
+      <div class="pp-form-group">
+        <label class="pp-form-label">Téléphone</label>
+        <input type="tel" name="telephone" class="pp-form-input" placeholder="06 XX XX XX XX" />
+      </div>
+      <div class="pp-form-group">
+        <label class="pp-form-label">Votre activité</label>
+        <input type="text" name="activite" class="pp-form-input" placeholder="Coiffeur, coach, plombier…" />
+      </div>
+      <div class="pp-form-group">
+        <label class="pp-form-label">Message (optionnel)</label>
+        <textarea name="message" class="pp-form-textarea" placeholder="Précisions, questions, délais souhaités…"></textarea>
+      </div>
+      <button type="submit" class="btn-pp-primary" style="width:100%;justify-content:center;">Envoyer mon devis</button>
+      <p class="pp-form-note">Réponse sous 24h · Aucun engagement · Sans spam</p>
+    </form>
+
+    <div id="formA-ok" class="pp-form-ok" style="display:none;">
+      <div class="pp-form-ok-icon">✅</div>
+      <h4>Devis envoyé !</h4>
+      <p>Nous vous répondrons sous 24h avec votre devis personnalisé.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── MODAL B — Rappel ── -->
+<div id="modalB" class="pp-modal-overlay">
+  <div class="pp-modal">
+    <button class="pp-modal-close" onclick="closeModalB()">×</button>
+    <h3>Être rappelé gratuitement</h3>
+    <p class="pp-modal-sub">Laissez-nous votre numéro et on vous rappelle dans les 2h pendant les heures ouvrées.</p>
+    <form id="formB">
+      <div class="pp-form-group">
+        <label class="pp-form-label">Prénom et nom *</label>
+        <input type="text" name="nom" class="pp-form-input" placeholder="Jean Dupont" required />
+      </div>
+      <div class="pp-form-group">
+        <label class="pp-form-label">Téléphone *</label>
+        <input type="tel" name="telephone" class="pp-form-input" placeholder="06 XX XX XX XX" required />
+      </div>
+      <div class="pp-form-group">
+        <label class="pp-form-label">Créneau préféré</label>
+        <select name="creneau" class="pp-form-select">
+          <option value="">Peu importe</option>
+          <option value="matin">Matin (9h-12h)</option>
+          <option value="apres-midi">Après-midi (14h-18h)</option>
+          <option value="soir">En soirée (18h-20h)</option>
+        </select>
+      </div>
+      <div class="pp-form-group">
+        <label class="pp-form-label">Votre activité</label>
+        <input type="text" name="activite" class="pp-form-input" placeholder="Coiffeur, coach, plombier…" />
+      </div>
+      <button type="submit" class="btn-pp-primary" style="width:100%;justify-content:center;">Être rappelé</button>
+      <p class="pp-form-note">Rappel sous 2h · Gratuit · Sans engagement</p>
+    </form>
+    <div id="formB-ok" class="pp-form-ok" style="display:none;">
+      <div class="pp-form-ok-icon">📞</div>
+      <h4>Demande enregistrée !</h4>
+      <p>Nous vous rappelons dans les 2 heures.</p>
+    </div>
+  </div>
+</div>
+
+<script src="js/pack-pages.js"></script>
+</body>
+</html>

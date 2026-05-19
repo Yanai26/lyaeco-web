@@ -1,0 +1,64 @@
+{
+  "_source": "Source de vérité tarifaire LYAECO — synchroniser dans chat-api.php, chatbot-lyaeco.js et devis.html",
+
+  "packs": {
+    "M1": {
+      "label": "Pack Vitrine",
+      "prix": 380,
+      "desc": "Présentation de votre activité + formulaire de contact"
+    },
+    "M2": {
+      "label": "Pack Réservation",
+      "prix": 600,
+      "desc": "Site vitrine + module réservation en ligne"
+    },
+    "M3": {
+      "label": "Pack Boutique",
+      "prix": 1500,
+      "desc": "Boutique e-commerce complète avec paiement sécurisé"
+    }
+  },
+
+  "options": [
+    { "id": "chat_live",        "label": "Chat en direct (WhatsApp/widget)",         "prix": 40,  "packs": ["M1","M2","M3"] },
+    { "id": "google_calendar",  "label": "Prise RDV (sync Google Calendar)",          "prix": 10,  "packs": ["M2"],          "note": "Inclus dans M3" },
+    { "id": "langue",           "label": "Langue ou devise supplémentaire",           "prix": 5,   "packs": ["M1","M2","M3"], "unite": "par unité" },
+    { "id": "google_maps",      "label": "Google Maps intégré",                       "prix": 15,  "packs": ["M1","M2","M3"] },
+    { "id": "logo",             "label": "Logo personnalisé (création de zéro)",      "prix": 40,  "packs": ["M1","M2","M3"] },
+    { "id": "page_supp",        "label": "Page supplémentaire",                       "prix": 10,  "packs": ["M1","M2","M3"], "unite": "par page" },
+    { "id": "hebergement",      "label": "Hébergement 1 an",                          "prix": 10,  "packs": ["M1"],           "note": "Inclus dans M2 et M3", "unite": "par an" },
+    { "id": "email_pro",        "label": "Email professionnel",                       "prix": 10,  "packs": ["M1"],           "note": "Inclus dans M2 et M3", "unite": "par an" },
+    { "id": "google_fiche",     "label": "Refonte fiche Google Business Profile",     "prix": 15,  "packs": ["M1","M2","M3"] },
+    { "id": "maintenance",      "label": "Maintenance mensuelle (technique)",         "prix": 50,  "packs": ["M1","M2","M3"], "unite": "par mois" }
+  ],
+
+  "inclus": {
+    "tous": [
+      "Formulaire de contact simple",
+      "Blog / Actualités",
+      "FAQ dynamique",
+      "Nom de domaine (.fr/.com)",
+      "Certificat SSL",
+      "Sauvegardes automatiques",
+      "Affichage automatique avis Google + Trustpilot + Facebook"
+    ],
+    "M2_M3": [
+      "Hébergement 1 an",
+      "Email professionnel",
+      "Module réservation en ligne",
+      "Paiement Stripe + PayPal"
+    ],
+    "M3_only": [
+      "Prise RDV Google Calendar",
+      "Boutique e-commerce complète"
+    ]
+  },
+
+  "regles_pack": {
+    "M3": "Vente de produits / paiement en ligne → Pack Boutique obligatoire",
+    "M2": "Réservation en ligne → Pack Réservation minimum",
+    "M1": "Sinon → Pack Vitrine"
+  },
+
+  "note_maintenance": "Maintenance TECHNIQUE UNIQUEMENT : mises à jour de sécurité, sauvegardes, support en cas de problème. N'inclut PAS la gestion de contenu (ajout d'articles, modifications de pages, nouveaux produits) qui sera facturée séparément."
+}

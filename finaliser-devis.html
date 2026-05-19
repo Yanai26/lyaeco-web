@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Finaliser mon devis — LYAECO Web</title>
+<link rel="icon" type="image/png" href="images/logo-lyaeco.png">
+<meta http-equiv="refresh" content="0; url=devis-ia.html"/>
+</head>
+<body>
+<p>Redirection vers le devis...</p>
+<script>
+const p = new URLSearchParams(window.location.search).get('pack');
+window.location.href = 'devis-ia.html' + (p ? '?pack=' + p : '');
+</script>
+</body>
+</html>

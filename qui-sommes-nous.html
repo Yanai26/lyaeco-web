@@ -1,0 +1,684 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Qui sommes-nous — LYAECO Web</title>
+<link rel="icon" type="image/png" sizes="32x32" href="images/logo-lyaeco.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/logo-lyaeco.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/logo-lyaeco.png">
+<link rel="shortcut icon" href="images/logo-lyaeco.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:#f8fbff;color:#0f172a;overflow-x:hidden;}
+
+.abar{
+  background:linear-gradient(90deg,#079bb8,#0b6ee8);
+  color:#fff;
+  height:52px;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  box-shadow:0 8px 28px rgba(2,132,199,.18);
+}
+
+.abar-track{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  white-space:nowrap;
+  animation:abarScroll 15s linear infinite;
+}
+
+@keyframes abarScroll{
+  from{transform:translateX(0);}
+  to{transform:translateX(-20%);}
+}
+
+.abar-text{
+  font-size:14px;
+  font-weight:900;
+  padding-left:60px;
+}
+
+.abar-btn{
+  color:#0b6ee8;
+  text-decoration:none;
+  background:#fff;
+  padding:8px 18px;
+  border-radius:100px;
+  font-size:12px;
+  font-weight:900;
+  box-shadow:0 8px 20px rgba(255,255,255,.18);
+}
+
+.abar-phone{
+  color:#fff;
+  text-decoration:none;
+  background:rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.35);
+  padding:8px 18px;
+  border-radius:100px;
+  font-size:13px;
+  font-weight:900;
+}
+
+.abar-ou{
+  font-size:13px;
+  font-weight:800;
+  color:rgba(255,255,255,.75);
+}
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+
+  background:
+  linear-gradient(
+    to bottom,
+    rgba(255,255,255,.72),
+    rgba(255,255,255,.55)
+  );
+
+  backdrop-filter:blur(22px);
+  -webkit-backdrop-filter:blur(22px);
+
+  border-bottom:1px solid rgba(255,255,255,.35);
+
+  box-shadow:
+  0 8px 32px rgba(15,23,42,.06);
+
+  height:88px;
+  padding:0 48px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  transition:
+  all .35s ease;
+}
+
+nav.shrink{
+
+  height:72px;
+  padding:0 38px;
+
+  background:
+  linear-gradient(
+    to bottom,
+    rgba(255,255,255,.58),
+    rgba(255,255,255,.42)
+  );
+
+  backdrop-filter:blur(26px);
+  -webkit-backdrop-filter:blur(26px);
+
+  border-bottom:1px solid rgba(255,255,255,.45);
+
+  box-shadow:
+  0 12px 38px rgba(15,23,42,.10);
+}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-img{width:46px;height:46px;object-fit:contain;border-radius:12px;}
+@media(max-width:768px){.logo-img{width:38px;height:38px;}}
+.logo-name{font-size:22px;font-weight:900;color:#0f172a;letter-spacing:-.7px;}.logo-name em{font-style:normal;color:#0ea5e9;}
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  list-style:none;
+}
+
+.nav-links a{
+
+  position:relative;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:14px 22px;
+
+  border-radius:14px;
+
+  text-decoration:none;
+
+  font-size:16px;
+  font-weight:800;
+
+  color:#334155;
+
+  background:
+  rgba(255,255,255,.55);
+
+  border:
+  1px solid rgba(255,255,255,.7);
+
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+
+  box-shadow:
+  0 6px 18px rgba(15,23,42,.04);
+
+  transition:
+  transform .22s ease,
+  background .22s ease,
+  color .22s ease,
+  box-shadow .22s ease,
+  border-color .22s ease;
+}
+
+.nav-links a:hover{
+
+  color:#0f172a;
+
+  background:
+  linear-gradient(
+    135deg,
+    rgba(37,99,235,.12),
+    rgba(14,165,233,.10)
+  );
+
+  border-color:
+  rgba(37,99,235,.18);
+
+  transform:
+  translateY(-2px);
+
+  box-shadow:
+  0 14px 30px rgba(37,99,235,.12);
+}
+
+.nav-links a::after{
+
+  content:'';
+
+  position:absolute;
+
+  left:14px;
+  right:14px;
+  bottom:8px;
+
+  height:2px;
+
+  border-radius:10px;
+
+  background:
+  linear-gradient(90deg,#2563eb,#0ea5e9);
+
+  transform:scaleX(0);
+
+  transform-origin:center;
+
+  transition:transform .25s ease;
+}
+
+.nav-links a:hover::after{
+  transform:scaleX(1);
+}
+.nav-links a.nav-active{background:linear-gradient(135deg,rgba(37,99,235,.14),rgba(14,165,233,.10));border-color:rgba(37,99,235,.22);color:#1d4ed8;}.nav-links a.nav-active::after{transform:scaleX(1);}
+.nav-btn{background:linear-gradient(135deg,#2563eb,#0ea5e9);color:#fff;padding:13px 26px;border-radius:12px;font-size:15px;font-weight:800;border:none;cursor:pointer;text-decoration:none;box-shadow:0 8px 20px rgba(37,99,235,.3);transition:.25s;}.nav-btn:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(37,99,235,.4);}
+.burger{
+  display:none;
+  width:42px;
+  height:42px;
+  border:none;
+  border-radius:14px;
+  background:rgba(255,255,255,.7);
+  box-shadow:0 8px 24px rgba(15,23,42,.08);
+  font-size:24px;
+  cursor:pointer;
+}
+
+.hero{
+  background:
+    radial-gradient(circle at 80% 18%, rgba(14,165,233,.20), transparent 34%),
+    radial-gradient(circle at 12% 75%, rgba(37,99,235,.14), transparent 32%),
+    linear-gradient(135deg,#f8fbff 0%,#eef7ff 45%,#ffffff 100%);
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  min-height:60vh;
+}
+.hero-bg-dot{position:absolute;inset:0;background-image:radial-gradient(rgba(37,99,235,.07) 1px,transparent 1px);background-size:28px 28px;pointer-events:none;}
+.hero-glow-tr{position:absolute;top:-130px;right:-120px;width:620px;height:620px;background:radial-gradient(circle,rgba(6,182,212,.18),transparent 70%);filter:blur(6px);}
+.hero-glow-bl{position:absolute;bottom:-120px;left:-90px;width:460px;height:460px;background:radial-gradient(circle,rgba(37,99,235,.10),transparent 70%);}
+.hero-inner-center{max-width:860px;margin:0 auto;padding:80px 48px;width:100%;text-align:center;position:relative;z-index:1;}
+.h-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:rgba(255,255,255,.72);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.7);
+  color:#0284c7;
+  font-size:13px;
+  font-weight:900;
+  padding:9px 18px;
+  border-radius:100px;
+  margin-bottom:28px;
+  box-shadow:0 14px 38px rgba(14,165,233,.14);
+}
+.hero h1{
+  font-size:60px;
+  font-weight:900;
+  line-height:1.05;
+  letter-spacing:-3px;
+  color:#0f172a;
+  margin-bottom:22px;
+  text-shadow:0 12px 38px rgba(15,23,42,.08);
+}
+.grad{background:linear-gradient(135deg,#2563eb,#0ea5e9);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;}
+.hero-p{font-size:18px;color:#64748b;line-height:1.75;max-width:700px;margin:0 auto 34px;text-align:center;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-bottom:22px;}.btn-blue{
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(135deg,#2563eb,#0ea5e9);
+  color:#fff;
+  padding:16px 31px;
+  border-radius:16px;
+  font-size:15px;
+  font-weight:900;
+  border:none;
+  cursor:pointer;
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+
+  box-shadow:
+  0 10px 30px rgba(37,99,235,.28);
+
+  transition:
+  transform .28s ease,
+  box-shadow .28s ease,
+  filter .28s ease;
+}
+
+.btn-blue::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:-120%;
+  width:70%;
+  height:100%;
+  background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,.45),
+    transparent
+  );
+
+  transition:left .7s ease;
+}
+
+.btn-blue:hover{
+  transform:
+  translateY(-4px)
+  scale(1.03);
+
+  box-shadow:
+  0 18px 42px rgba(37,99,235,.42);
+
+  filter:brightness(1.05);
+}
+
+.btn-blue:hover::before{
+  left:140%;
+}
+
+.btn-blue:active{
+  transform:scale(.98);
+}
+.hero-proof{font-size:13px;color:#94a3b8;display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:center;}.hero-proof .ck{color:#10b981;font-weight:900;}
+
+.sec{padding:96px 48px;}.sec-in{max-width:1200px;margin:0 auto;}.label{display:inline-block;background:#eff6ff;border:1px solid #bfdbfe;color:#2563eb;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:800;padding:5px 15px;border-radius:100px;margin-bottom:14px;}h2{font-size:44px;font-weight:900;letter-spacing:-1.5px;color:#0f172a;margin-bottom:12px;line-height:1.15;}.sub{font-size:17px;color:#64748b;max-width:600px;line-height:1.7;}.tc{text-align:center;}.tc .sub{margin:0 auto;}
+.blue-bg{background:linear-gradient(135deg,#f8fbff,#eef7ff);border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;}
+
+/* Histoire */
+.hist-article{max-width:780px;margin:52px auto 0;}
+.hist-lead{font-size:20px;font-weight:700;color:#0f172a;line-height:1.65;margin-bottom:28px;border-left:4px solid #0ea5e9;padding-left:22px;}
+.hist-p{font-size:16px;color:#475569;line-height:1.85;margin-bottom:20px;}
+.hist-highlight{display:inline-block;background:linear-gradient(135deg,#eff6ff,#e0f2fe);border:1px solid #bae6fd;border-radius:16px;padding:22px 28px;margin:12px 0 28px;font-size:15px;font-weight:700;color:#0284c7;line-height:1.65;}
+
+/* Valeurs */
+.val-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px;}
+.val-card{background:#fff;border:1px solid #e2e8f0;border-radius:22px;padding:32px 28px;box-shadow:0 16px 44px rgba(15,23,42,.04);transition:.25s;}
+.val-card:hover{transform:translateY(-5px);box-shadow:0 26px 60px rgba(15,23,42,.09);}
+.val-icon{font-size:36px;margin-bottom:14px;}
+.val-card h3{font-size:18px;font-weight:800;color:#0f172a;margin-bottom:10px;}
+.val-card p{font-size:14px;color:#64748b;line-height:1.75;}
+
+/* Stats */
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:52px;}
+.stat-card{background:#fff;border:1px solid #e2e8f0;border-radius:22px;padding:30px;text-align:center;box-shadow:0 16px 44px rgba(15,23,42,.04);transition:.25s;}
+.stat-card:hover{transform:translateY(-5px);box-shadow:0 26px 60px rgba(15,23,42,.09);}
+.stat-num{font-size:48px;font-weight:900;color:#0ea5e9;margin-bottom:10px;letter-spacing:-2px;line-height:1;}
+.stat-card p{font-size:14px;color:#64748b;line-height:1.65;}
+
+/* Pourquoi choisir */
+.check-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:52px;max-width:860px;margin-left:auto;margin-right:auto;}
+.check-item{display:flex;align-items:flex-start;gap:14px;background:#fff;border:1px solid #e2e8f0;border-radius:18px;padding:22px 24px;box-shadow:0 8px 24px rgba(15,23,42,.04);transition:.25s;}
+.check-item:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(15,23,42,.08);}
+.check-icon{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#2563eb,#0ea5e9);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+.check-text{font-size:15px;font-weight:700;color:#0f172a;line-height:1.5;padding-top:6px;}
+
+.cta-sec{background:linear-gradient(135deg,#1d4ed8,#0891b2);position:relative;overflow:hidden;}.cta-sec::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1px);background-size:24px 24px;}.cta-in{max-width:760px;margin:0 auto;text-align:center;padding:82px 48px;position:relative;z-index:1;}.cta-in h2{font-size:48px;font-weight:900;color:#fff;letter-spacing:-1.5px;margin-bottom:14px;}.cta-in p{font-size:18px;color:rgba(255,255,255,.84);margin-bottom:34px;}.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}.btn-w{background:#fff;color:#2563eb;padding:16px 30px;border-radius:16px;font-size:15px;font-weight:900;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.14);transition:.25s;}.btn-w:hover{transform:translateY(-3px);}.btn-wo{background:transparent;color:#fff;padding:15px 26px;border-radius:16px;font-size:15px;font-weight:800;border:2px solid rgba(255,255,255,.42);text-decoration:none;}
+footer{background:#0f172a;color:#fff;padding:56px 48px 28px;}.foot-in{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:44px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.07);}.foot-logo{font-size:19px;font-weight:900;color:#fff;margin-bottom:10px;letter-spacing:-.5px;}.foot-logo em{font-style:normal;color:#22d3ee;}.foot-desc{font-size:13px;color:#64748b;line-height:1.7;max-width:250px;}.foot-col h4{font-size:11px;font-weight:900;color:#64748b;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;}.foot-col ul{list-style:none;}.foot-col li{margin-bottom:9px;}.foot-col a,.foot-col button,.foot-col span{color:#64748b;font-size:13px;text-decoration:none;background:none;border:none;cursor:pointer;transition:.2s;padding:0;font-family:'Inter',sans-serif;}.foot-col a:hover,.foot-col button:hover{color:#fff;}.foot-bot{max-width:1200px;margin:26px auto 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}.foot-bot p{font-size:12px;color:#475569;}
+
+.cta-glow-wrap{position:relative;display:inline-flex;}.cta-glow{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:180px;height:70px;background:radial-gradient(circle,rgba(37,99,235,.45),rgba(14,165,233,.18),transparent 72%);filter:blur(18px);z-index:0;animation:ctaPulse 3s ease-in-out infinite;}.cta-glow-btn{position:relative;z-index:2;}@keyframes ctaPulse{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.85;}50%{transform:translate(-50%,-50%) scale(1.12);opacity:1;}}
+
+.hide-scroll{opacity:0;transform:translateY(26px) scale(.98);filter:blur(4px);transition:opacity .7s ease,transform .7s ease,filter .7s ease;}
+.show-scroll{opacity:1;transform:translateY(0) scale(1);filter:blur(0);}
+
+.wa-float{position:fixed;right:24px;bottom:24px;z-index:999;display:flex;align-items:center;gap:10px;background:linear-gradient(135deg,#25d366,#1ebe5d);color:#fff;text-decoration:none;padding:14px 18px;border-radius:100px;font-weight:800;font-size:14px;box-shadow:0 18px 42px rgba(37,211,102,.35);transition:transform .25s ease,box-shadow .25s ease;}.wa-float:hover{transform:translateY(-4px) scale(1.04);box-shadow:0 24px 52px rgba(37,211,102,.45);}.wa-icon{width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center;font-size:22px;}.wa-text{white-space:nowrap;}.wa-ping{position:absolute;inset:0;border-radius:100px;background:rgba(37,211,102,.35);animation:waPing 2s infinite;z-index:-1;}@keyframes waPing{0%{transform:scale(1);opacity:.7;}70%{transform:scale(1.18);opacity:0;}100%{opacity:0;}}
+
+@media(max-width:1100px){.val-grid{grid-template-columns:1fr 1fr;}.stats-grid{grid-template-columns:repeat(2,1fr);}.foot-in{grid-template-columns:1fr 1fr;}}
+@media(max-width:768px){
+  nav{padding:0 20px;}.nav-links,.nav-btn{display:none;}.burger{display:block;}
+  .nav-links.open{display:flex;flex-direction:column;position:fixed;top:88px;left:16px;right:16px;background:#ffffff!important;backdrop-filter:blur(30px)!important;-webkit-backdrop-filter:blur(30px)!important;padding:20px!important;z-index:200;gap:10px!important;border:1px solid #e2e8f0!important;border-radius:24px;box-shadow:0 20px 60px rgba(15,23,42,.25)!important;animation:mobileMenu .28s ease;}
+  .nav-links.open a{background:#f8fafc!important;color:#0f172a!important;border:1px solid #e2e8f0!important;border-radius:14px!important;padding:16px 20px!important;font-weight:800!important;font-size:15px!important;transition:all .25s ease!important;transform:translateX(-20px);opacity:0;animation:navItemSlide .35s ease forwards;}
+  .nav-links.open li:nth-child(1) a{animation-delay:.05s;}
+  .nav-links.open li:nth-child(2) a{animation-delay:.10s;}
+  .nav-links.open li:nth-child(3) a{animation-delay:.15s;}
+  .nav-links.open li:nth-child(4) a{animation-delay:.20s;}
+  .nav-links.open li:nth-child(5) a{animation-delay:.25s;}
+  .nav-links.open li:nth-child(6) a{animation-delay:.30s;}
+  @keyframes navItemSlide{to{transform:translateX(0);opacity:1;}}
+  .nav-links.open a:hover,.nav-links.open a:active{background:linear-gradient(135deg,#2563eb,#0ea5e9)!important;color:#fff!important;border-color:transparent!important;transform:translateX(4px)!important;}
+  @keyframes mobileMenu{from{opacity:0;transform:translateY(-12px) scale(.96);}to{opacity:1;transform:translateY(0) scale(1);}}
+  .sec{padding:64px 24px;}.hero-inner-center{padding:48px 24px!important;}.hero h1{font-size:36px;letter-spacing:-1.5px;}.hero-p{font-size:16px;}
+  h2{font-size:34px;}.val-grid{grid-template-columns:1fr;}.stats-grid{grid-template-columns:1fr 1fr;}.stat-num{font-size:38px;}
+  .check-grid{grid-template-columns:1fr;}
+  .cta-in{padding:58px 20px;}.cta-in h2{font-size:34px;}
+  footer{padding:40px 20px 24px;}.foot-in{grid-template-columns:1fr;}.foot-bot{flex-direction:column;text-align:center;}
+  .wa-float{right:16px;bottom:16px;padding:12px 16px;}.wa-text{display:none;}
+  .hide-scroll{filter:none!important;}.show-scroll{filter:none!important;}
+}
+</style>
+</head>
+<body>
+
+<div class="abar" id="abar">
+  <div class="abar-track">
+    <span class="abar-text">🔥 Offre lancement — votre site professionnel à partir de 350€</span>
+    <a class="abar-btn" href="devis.html">CRÉER UN DEVIS →</a>
+    <span class="abar-ou">ou</span>
+    <a class="abar-phone" href="tel:0781712324">📞 07 81 71 23 24</a>
+    <span class="abar-text">🔥 Offre lancement — votre site professionnel à partir de 350€</span>
+    <a class="abar-btn" href="devis.html">CRÉER UN DEVIS →</a>
+    <span class="abar-ou">ou</span>
+    <a class="abar-phone" href="tel:0781712324">📞 07 81 71 23 24</a>
+    <span class="abar-text">🔥 Offre lancement — votre site professionnel à partir de 350€</span>
+    <a class="abar-btn" href="devis.html">CRÉER UN DEVIS →</a>
+    <span class="abar-ou">ou</span>
+    <a class="abar-phone" href="tel:0781712324">📞 07 81 71 23 24</a>
+    <span class="abar-text">🔥 Offre lancement — votre site professionnel à partir de 350€</span>
+    <a class="abar-btn" href="devis.html">CRÉER UN DEVIS →</a>
+    <span class="abar-ou">ou</span>
+    <a class="abar-phone" href="tel:0781712324">📞 07 81 71 23 24</a>
+    <span class="abar-text">🔥 Offre lancement — votre site professionnel à partir de 350€</span>
+    <a class="abar-btn" href="devis.html">CRÉER UN DEVIS →</a>
+    <span class="abar-ou">ou</span>
+    <a class="abar-phone" href="tel:0781712324">📞 07 81 71 23 24</a>
+  </div>
+</div>
+
+<nav id="mainnav">
+  <a class="logo" href="index.html"><img src="images/logo-lyaeco.png" alt="LYAECO Web - Création de sites pour artisans et commerçants" class="logo-img"/><span class="logo-name">Lyaeco<em>Web</em></span></a>
+  <ul class="nav-links" id="nav">
+    <li><a href="services.html" onclick="cm()">Services</a></li>
+    <li><a href="pourquoi-avoir-un-site.html" onclick="cm()">Pourquoi un site ?</a></li>
+    <li><a href="realisations.html" onclick="cm()">Réalisations</a></li>
+    <li><a href="qui-sommes-nous.html" onclick="cm()" class="nav-active">Qui sommes-nous</a></li>
+    <li><a href="devis.html" onclick="cm()">Devis</a></li>
+    <li><a href="contact.html" onclick="cm()">Contact</a></li>
+  </ul>
+  <a href="devis.html" class="nav-btn">Créer mon devis</a>
+  <button class="burger" id="burger" onclick="tm()" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg-dot"></div>
+  <div class="hero-glow-tr"></div>
+  <div class="hero-glow-bl"></div>
+  <div class="hero-inner-center" id="hl" style="opacity:0;transform:translateY(28px);transition:all .8s ease;">
+    <span class="h-badge">👋 Qui sommes-nous</span>
+    <h1>L'histoire<br/>de <span class="grad">LYAECO.</span></h1>
+    <p class="hero-p">Une agence créée par passion, pour les artisans et commerçants qui méritent une vraie présence professionnelle en ligne.</p>
+    <div class="hero-btns">
+      <div class="cta-glow-wrap">
+        <a href="#histoire" class="btn-blue cta-glow-btn">Découvrir notre histoire →</a>
+        <div class="cta-glow"></div>
+      </div>
+    </div>
+    <div class="hero-proof">
+      <span class="ck">✓</span> SASU française
+      <span style="color:#e2e8f0">•</span>
+      <span class="ck">✓</span> Basée à Créteil
+      <span style="color:#e2e8f0">•</span>
+      <span class="ck">✓</span> Fondée en 2023
+    </div>
+  </div>
+</div>
+
+<!-- NOTRE HISTOIRE -->
+<section class="sec blue-bg" id="histoire">
+  <div class="sec-in">
+    <div class="tc">
+      <span class="label">Notre histoire</span>
+      <h2>Pourquoi LYAECO<br/>a été créée.</h2>
+      <p class="sub">Pas un template, pas une agence parmi d'autres — une vraie conviction derrière chaque site que nous livrons.</p>
+    </div>
+    <div class="hist-article">
+      <p class="hist-lead">LYAECO est née d'une conviction simple : trop d'artisans et de commerçants travaillent dur, mais restent invisibles sur internet.</p>
+      <p class="hist-p">Yanai, fondateur de LYAECO, a grandi dans un quartier de commerçants. Il a vu des boulangers, des coiffeurs, des plombiers fermer leurs portes — non pas par manque de talent, mais par manque de visibilité en ligne. Des professionnels excellents dans leur métier, introuvables sur Google.</p>
+      <p class="hist-p">Après plusieurs années dans le développement web, Yanai décide en 2023 de créer LYAECO — une structure légère, spécialisée, 100 % dédiée aux petits commerces et artisans. Une agence qui parle le même langage que ses clients : concret, direct, sans jargon.</p>
+      <div class="hist-highlight">💡 Le nom LYAECO vient de <strong>« Lya »</strong> — un prénom qui porte une signification personnelle forte — et <strong>« eco »</strong>, pour économie locale. Un hommage aux commerçants de quartier qui font vivre nos villes.</div>
+      <p class="hist-p">Chez LYAECO, nous ne vendons pas des templates. Nous construisons chaque site à la main, avec soin, en prenant le temps de comprendre votre activité, vos clients et votre secteur avant d'écrire la première ligne de code.</p>
+      <p class="hist-p">Chaque projet commence par une discussion. Nous apprenons à connaître votre commerce, votre clientèle, ce qui vous distingue. Ce que vous voulez dire à vos futurs clients. Puis nous traduisons tout cela en un site qui vous ressemble vraiment.</p>
+      <p class="hist-p">Aujourd'hui, LYAECO accompagne des artisans et commerçants partout en France pour leur donner une présence en ligne professionnelle — à un tarif juste, avec un accompagnement humain de A à Z.</p>
+    </div>
+  </div>
+</section>
+
+<!-- NOS VALEURS -->
+<section class="sec" id="valeurs">
+  <div class="sec-in">
+    <div class="tc">
+      <span class="label">Nos valeurs</span>
+      <h2>Ce qui guide<br/>chaque projet.</h2>
+      <p class="sub">Trois principes simples qui définissent comment nous travaillons — avec vous et pour vous.</p>
+    </div>
+    <div class="val-grid">
+      <div class="val-card">
+        <div class="val-icon">💙</div>
+        <h3>Proximité</h3>
+        <p>Nous nous impliquons vraiment dans votre projet. Nous apprenons à connaître votre activité, vos clients et vos objectifs avant d'écrire la première ligne de code. Vous avez un interlocuteur unique, disponible sur WhatsApp.</p>
+      </div>
+      <div class="val-card">
+        <div class="val-icon">⭐</div>
+        <h3>Qualité artisanale</h3>
+        <p>Chaque site est construit sur mesure, testé sur tous les appareils, optimisé pour Google. Aucun template, aucun copier-coller. Le résultat que vous recevez est le fruit d'un travail soigné, ligne par ligne.</p>
+      </div>
+      <div class="val-card">
+        <div class="val-icon">🔒</div>
+        <h3>Transparence totale</h3>
+        <p>Prix affichés, délais tenus, communication directe. Vous savez exactement ce que vous payez, quand votre site sera livré, et comment contacter votre développeur à chaque étape du projet.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EN QUELQUES CHIFFRES -->
+<section class="sec blue-bg" id="chiffres">
+  <div class="sec-in">
+    <div class="tc">
+      <span class="label">En quelques chiffres</span>
+      <h2>LYAECO<br/>en bref.</h2>
+      <p class="sub">Des chiffres simples pour vous donner une idée de qui nous sommes et de comment nous travaillons.</p>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-num">2023</div>
+        <p>Année de création de LYAECO, une structure jeune et agile au service des commerçants</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">100%</div>
+        <p>Des sites construits sur mesure, sans template, pour un résultat qui vous ressemble vraiment</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">5–10j</div>
+        <p>Délai moyen de livraison d'un site complet, du brief à la mise en ligne sur votre domaine</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">+4 ⭐</div>
+        <p>Note moyenne de satisfaction client — on vous tient informé à chaque étape, sans surprise</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POURQUOI NOUS CHOISIR -->
+<section class="sec" id="pourquoi">
+  <div class="sec-in">
+    <div class="tc">
+      <span class="label">Pourquoi nous choisir</span>
+      <h2>Ce que LYAECO<br/>vous apporte.</h2>
+      <p class="sub">Six raisons concrètes de faire confiance à LYAECO pour votre présence en ligne.</p>
+    </div>
+    <div class="check-grid">
+      <div class="check-item">
+        <span class="check-icon">✓</span>
+        <span class="check-text">Sites 100 % sur mesure, sans template ni copier-coller</span>
+      </div>
+      <div class="check-item">
+        <span class="check-icon">✓</span>
+        <span class="check-text">Spécialisés artisans &amp; commerçants, on connaît votre secteur</span>
+      </div>
+      <div class="check-item">
+        <span class="check-icon">✓</span>
+        <span class="check-text">SEO local optimisé dès le départ pour apparaître sur Google</span>
+      </div>
+      <div class="check-item">
+        <span class="check-icon">✓</span>
+        <span class="check-text">Livraison rapide, entre 5 et 10 jours selon la complexité</span>
+      </div>
+      <div class="check-item">
+        <span class="check-icon">✓</span>
+        <span class="check-text">Accompagnement WhatsApp personnalisé tout au long du projet</span>
+      </div>
+      <div class="check-item">
+        <span class="check-icon">✓</span>
+        <span class="check-text">Prix transparents dès le départ, sans frais cachés</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<div class="cta-sec">
+  <div class="cta-in">
+    <h2>Et si on parlait<br/>de votre projet ?</h2>
+    <p>Prenez contact avec nous — c'est gratuit, sans engagement, et on répond sous 24h.</p>
+    <div class="cta-btns">
+      <a href="devis.html" class="btn-w">Créer mon devis →</a>
+      <a href="tel:0781712324" class="btn-wo">📞 07 81 71 23 24</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="foot-in">
+    <div>
+      <div class="foot-logo"><img src="images/logo-lyaeco.png" alt="LYAECO Web - Création de sites pour artisans et commerçants" style="width:40px;height:40px;border-radius:10px;vertical-align:middle;margin-right:10px;">Lyaeco<em>Web</em></div>
+      <p class="foot-desc">Création de sites internet professionnels pour artisans et commerçants. Sites vitrines, réservation et achat intégré.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="pourquoi-avoir-un-site.html">Pourquoi un site ?</a></li>
+        <li><a href="qui-sommes-nous.html">Qui sommes-nous</a></li>
+        <li><a href="devis.html#tarifs">Tarifs</a></li>
+        <li><a href="devis.html">Devis</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:0781712324">📞 07 81 71 23 24</a></li>
+        <li><a href="mailto:contact@lyaeco.com">✉️ contact@lyaeco.com</a></li>
+        <li><span>📍 19 rue Séjourné, Créteil</span></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h4>Légal</h4>
+      <ul>
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+        <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
+        <li><a href="cgv.html">CGV</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <p>© 2026 LYAECO Web — Tous droits réservés</p>
+    <p>Fait avec ❤️ à Paris</p>
+  </div>
+</footer>
+
+<script>
+function tm(){
+  const nav=document.getElementById('nav');
+  const burger=document.getElementById('burger');
+  nav.classList.toggle('open');
+  if(nav.classList.contains('open')){burger.innerHTML='×';}else{burger.innerHTML='☰';}
+}
+function cm(){document.getElementById('nav').classList.remove('open');}
+
+window.addEventListener('load',function(){
+  setTimeout(function(){
+    var l=document.getElementById('hl');
+    if(l){l.style.opacity='1';l.style.transform='translateY(0)';}
+  },120);
+});
+
+var obs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){e.target.classList.add('show-scroll');}
+  });
+},{threshold:0.12});
+
+document.querySelectorAll('.val-card,.stat-card,.check-item').forEach(function(el,i){
+  el.classList.add('hide-scroll');
+  el.style.transitionDelay=(i*0.05)+'s';
+  obs.observe(el);
+});
+
+window.addEventListener('scroll',function(){
+  const nav=document.getElementById('mainnav');
+  if(window.scrollY>40){nav.classList.add('shrink');}else{nav.classList.remove('shrink');}
+});
+</script>
+
+<a href="https://wa.me/33781712324" class="wa-float" target="_blank" aria-label="Nous contacter sur WhatsApp">
+  <span class="wa-ping"></span>
+  <span class="wa-icon">💬</span>
+  <span class="wa-text">WhatsApp</span>
+</a>
+
+
+<link rel="stylesheet" href="css/chatbot-lyaeco.css">
+<script src="js/chatbot-lyaeco.js" defer></script>
+</body>
+</html>

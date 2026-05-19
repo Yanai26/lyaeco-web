@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>LYAECO Web – Création de sites internet pour artisans et commerçants</title>
+<meta name="description" content="Agence web française pour artisans et commerçants. Sites vitrines, réservation et e-commerce clé en main. Livraison 7-10 jours. À partir de 380€."/>
+<link rel="icon" type="image/png" href="images/logo-lyaeco.png">
+<link rel="apple-touch-icon" href="images/logo-lyaeco.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800;900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/home.css"/>
+<style>
+/* Bento explicit grid placement */
+.bento-vitrine    { grid-column: 1; grid-row: 1; }
+.bento-reservation{ grid-column: 2; grid-row: 1; }
+.bento-boutique   { grid-column: 1; grid-row: 2; }
+.bento-audit      { grid-column: 2; grid-row: 2; }
+.bento-agent      { grid-column: 3 / 5; grid-row: 1 / 3; min-height: 280px; }
+.bento-realisations { grid-column: 1 / 3; grid-row: 3; min-height: 220px; }
+.bento-clomain    { grid-column: 3; grid-row: 3; }
+.bento-whatsapp   { grid-column: 4; grid-row: 3; }
+@media (max-width: 1024px) {
+  .bento-vitrine, .bento-reservation, .bento-boutique, .bento-audit,
+  .bento-agent, .bento-realisations, .bento-clomain, .bento-whatsapp {
+    grid-column: auto; grid-row: auto;
+  }
+  .bento-agent { min-height: 200px; }
+  .bento-realisations { min-height: 160px; }
+}
+/* Pack cards stagger on scroll */
+.pack-card { --i: 0; transition-delay: calc(var(--i) * 0.12s); }
+
+/* Avis step layout */
+.avis-step-1 { flex-direction: row; align-items: center; gap: 20px; flex-wrap: wrap; justify-content: center; }
+</style>
+</head>
+<body>
+
+<!-- ===== ANNOUNCEMENT BAR ===== -->
+<div class="abar" id="abar">
+  <div class="abar-static">
+    <span class="abar-text">✨ Votre site professionnel, livré clé en main · dès 380€</span>
+    <a class="abar-btn" href="devis-ia.html">CRÉER MON DEVIS →</a>
+    <span class="abar-sep">ou</span>
+    <a class="abar-phone" href="tel:0781712324">📞 07 81 71 23 24</a>
+  </div>
+</div>
+
+<!-- ===== NAV ===== -->
+<nav class="h-nav" id="mainNav">
+  <a class="nav-logo" href="index.html">
+    <img src="images/logo-lyaeco.png" alt="LYAECO Web" class="nav-logo-img" width="42" height="42"/>
+    <span class="nav-logo-name">Lyaeco<em>Web</em></span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="services.html">Services</a></li>
+    <li><a href="pourquoi-avoir-un-site.html">Pourquoi un site ?</a></li>
+    <li><a href="realisations.html">Réalisations</a></li>
+    <li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li>
+    <li><a href="devis-ia.html" class="nav-cta">Devis IA</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="devis-ia.html" class="btn-primary" style="padding:10px 20px;font-size:14px;">Créer mon devis →</a>
+    <button class="burger" id="burgerBtn" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Menu navigation">
+  <div class="mobile-menu-header">
+    <a class="nav-logo" href="index.html">
+      <img src="images/logo-lyaeco.png" alt="LYAECO" class="nav-logo-img" width="38" height="38"/>
+      <span class="nav-logo-name">Lyaeco<em>Web</em></span>
+    </a>
+    <button class="mobile-close" id="mobileClose" aria-label="Fermer le menu">×</button>
+  </div>
+  <a href="services.html">Services</a>
+  <a href="pourquoi-avoir-un-site.html">Pourquoi un site ?</a>
+  <a href="realisations.html">Réalisations</a>
+  <a href="qui-sommes-nous.html">Qui sommes-nous ?</a>
+  <a href="devis-ia.html" class="mobile-cta">Créer mon devis →</a>
+</div>
+
+<!-- ===== SECTION 1 — HERO ===== -->
+<section class="hero" id="hero">
+  <div class="hero-aurora"></div>
+  <div class="hero-dots"></div>
+  <div class="hero-inner">
+    <div class="hero-left reveal">
+      <div class="hero-badge">🚀 Création de sites · 2026</div>
+      <h1 class="hero-title">
+        Plus de visibilité.<br/>
+        Plus de confiance.<br/>
+        <span class="grad-text">Plus de clients.</span>
+      </h1>
+      <p class="hero-sub">Pour les artisans et commerçants : un site internet professionnel, livré clé en main.</p>
+      <div class="hero-btns">
+        <a href="devis-ia.html" class="btn-primary" style="font-size:16px;padding:17px 32px;">Créer mon devis →</a>
+        <a href="tel:0781712324" class="btn-secondary">Audit gratuit ☎</a>
+      </div>
+      <div class="hero-trust">
+        <div class="hero-trust-item"><span class="ck">✓</span> Sans abonnement</div>
+        <div class="hero-trust-item"><span class="ck">✓</span> Livraison 7-10 jours</div>
+        <div class="hero-trust-item"><span class="ck">✓</span> Made in France 🇫🇷</div>
+      </div>
+    </div>
+    <div class="hero-right reveal" data-delay="200">
+      <div class="hero-visual">
+        <div class="hero-phone-mockup">
+          <div class="phone-notch"></div>
+          <div class="phone-screen-inner">
+            <div class="ps-header">
+              <span class="ps-logo">🥖 Boulangerie</span>
+              <span class="ps-menu-dots">⋮</span>
+            </div>
+            <div class="ps-hero-block">
+              <div class="ps-hero-title">Boulangerie<br/>Artisanale</div>
+              <div class="ps-hero-sub">Commandez en ligne ↗</div>
+            </div>
+            <div class="ps-cards">
+              <div class="ps-card"><span class="ps-card-icon">🥐</span><span class="ps-card-text">Viennoiseries</span></div>
+              <div class="ps-card"><span class="ps-card-icon">🍞</span><span class="ps-card-text">Pains artisanaux</span></div>
+              <div class="ps-card"><span class="ps-card-icon">🎂</span><span class="ps-card-text">Sur commande</span></div>
+            </div>
+            <div class="ps-cta">Passer une commande →</div>
+          </div>
+        </div>
+        <div class="hero-avatar-wrap">
+          <img src="images/assistant-ia-v3.png" alt="Assistant LYAECO" class="hero-avatar" width="180" loading="eager"/>
+        </div>
+      </div>
+      <div class="hero-mini-badges">
+        <span class="hero-mini-badge">🔒 Sans abonnement</span>
+        <span class="hero-mini-badge">⚡ 7-10 jours</span>
+        <span class="hero-mini-badge">🇫🇷 Made in France</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 2 — BENTO GRID ===== -->
+<section class="section bento-section" id="services">
+  <div class="section-inner">
+    <div class="tc reveal">
+      <span class="section-label">Nos services</span>
+      <h2 class="section-title">Tout pour réussir en ligne,<br/>en un seul endroit</h2>
+      <p class="section-sub">Un site professionnel, des outils IA, un support humain.</p>
+    </div>
+    <div class="bento-grid">
+
+      <a href="services.html#vitrine" class="bento-tile bento-vitrine reveal" data-delay="0">
+        <span class="bento-icon">🌐</span>
+        <span class="bento-tag">À partir de 380€</span>
+        <div class="bento-title">Site Vitrine</div>
+        <div class="bento-desc">Présence en ligne professionnelle, idéal pour les artisans</div>
+      </a>
+
+      <a href="services.html#reservation" class="bento-tile bento-reservation reveal" data-delay="80">
+        <span class="bento-icon">📅</span>
+        <span class="bento-tag">À partir de 600€</span>
+        <div class="bento-title">Site Réservation</div>
+        <div class="bento-desc">Prise de rendez-vous ou de commandes en ligne</div>
+      </a>
+
+      <div class="bento-tile bento-agent reveal" data-delay="160" onclick="openChatModal()" role="button" tabindex="0" style="cursor:pointer;">
+        <span class="bento-icon">🤖</span>
+        <span class="bento-tag new">NOUVEAU</span>
+        <div class="bento-title">Agent IA Devis</div>
+        <div class="bento-desc">Votre devis personnalisé en 2 min. Notre IA analyse vos besoins et propose le bon pack selon votre activité.</div>
+        <img src="images/assistant-ia-v3.png" alt="" class="bento-avatar" width="64" loading="lazy"/>
+      </div>
+
+      <a href="services.html#boutique" class="bento-tile bento-boutique reveal" data-delay="80">
+        <span class="bento-icon">🛒</span>
+        <span class="bento-tag">À partir de 1500€</span>
+        <div class="bento-title">Site Boutique</div>
+        <div class="bento-desc">Vente en ligne avec paiement sécurisé</div>
+      </a>
+
+      <div class="bento-tile bento-audit reveal" data-delay="120" onclick="openAuditPopup()" role="button" tabindex="0" style="cursor:pointer;">
+        <span class="bento-icon">📞</span>
+        <div class="bento-title">Audit gratuit</div>
+        <div class="bento-desc">Échange téléphonique offert, sans engagement</div>
+      </div>
+
+      <a href="realisations.html" class="bento-tile bento-realisations reveal" data-delay="200">
+        <div class="bento-title">🖼️ Nos réalisations</div>
+        <div class="bento-desc" style="margin-bottom:12px;">Découvrez les sites créés pour nos clients artisans</div>
+        <div class="bento-mockups">
+          <img src="images/mockups-finaux/final-boulanger.jpg" alt="Site boulanger" loading="lazy"/>
+          <img src="images/mockups-finaux/final-coiffeur.jpg" alt="Site coiffeur" loading="lazy"/>
+          <img src="images/mockups-finaux/final-restaurant.jpg" alt="Site restaurant" loading="lazy"/>
+          <img src="images/mockups-finaux/final-serrurier.jpg" alt="Site serrurier" loading="lazy"/>
+        </div>
+      </a>
+
+      <div class="bento-tile bento-clomain reveal" data-delay="240">
+        <span class="bento-icon">✨</span>
+        <div class="bento-title">Clé en main</div>
+        <div class="bento-desc">Vous recevez un site prêt à l'emploi et facile à partager à vos clients.</div>
+      </div>
+
+      <a href="https://wa.me/33781712324" class="bento-tile bento-whatsapp reveal" data-delay="280" target="_blank" rel="noopener">
+        <span class="bento-icon">💬</span>
+        <div class="bento-title">Support WhatsApp</div>
+        <div class="bento-desc">Un seul interlocuteur, dispo sur WhatsApp</div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 3 — LES 3 PACKS ===== -->
+<section class="section packs-section" id="tarifs">
+  <div class="section-inner">
+    <div class="tc reveal">
+      <span class="section-label">Nos offres</span>
+      <h2 class="section-title">Trois formules adaptées<br/>à votre activité</h2>
+      <p class="section-sub">Choisissez le pack qui correspond à vos besoins. Évolutif à tout moment.</p>
+    </div>
+    <div class="packs-grid">
+
+      <!-- Pack Vitrine -->
+      <div class="pack-card reveal" style="--i:0;" data-delay="0">
+        <span class="pack-tag">Pour démarrer</span>
+        <div class="pack-name">Pack Vitrine</div>
+        <div class="pack-desc">Site internet professionnel</div>
+        <div class="pack-price"><sup>€</sup>380</div>
+        <div class="pack-ht">HT — paiement à la livraison</div>
+        <ul class="pack-list">
+          <li>1 page d'accueil élégante</li>
+          <li>Design moderne et responsive (mobile + desktop)</li>
+          <li>Formulaire de contact</li>
+          <li>Référencement SEO de base intégré</li>
+          <li>Certificat SSL (HTTPS) inclus</li>
+          <li>Hébergement 1ère année inclus</li>
+          <li>Récupération automatique des avis Google / Trustpilot</li>
+          <li>Formation à la modification du contenu offerte</li>
+          <li>1 révision incluse avant validation</li>
+          <li>Livraison sous 7 jours</li>
+        </ul>
+        <a href="pack-vitrine.html" class="pack-btn">Choisir ce pack</a>
+      </div>
+
+      <!-- Pack Réservation — FEATURED -->
+      <div class="pack-card featured reveal" style="--i:1;" data-delay="120">
+        <div class="pack-badge-top">★ RECOMMANDÉ</div>
+        <div class="pack-name">Pack Réservation</div>
+        <div class="pack-desc">Site internet + Système de réservation</div>
+        <div class="pack-price"><sup>€</sup>600</div>
+        <div class="pack-ht">HT — paiement à la livraison</div>
+        <ul class="pack-list">
+          <li>Tout le Pack Vitrine</li>
+          <li>Système de réservation / commandes en ligne</li>
+          <li>Calendrier synchronisable</li>
+          <li>Espace client pour gestion des réservations</li>
+          <li>Confirmation automatique par email au client</li>
+          <li>Horaires / jours de disponibilité personnalisables</li>
+          <li>Notifications email automatiques</li>
+          <li>Page services détaillée</li>
+          <li>Optimisation conversion (CTA et parcours optimisés)</li>
+          <li>2 révisions incluses avant validation</li>
+          <li>Livraison sous 10 jours</li>
+        </ul>
+        <a href="pack-reservation.html" class="pack-btn featured-btn">Choisir ce pack</a>
+      </div>
+
+      <!-- Pack Boutique -->
+      <div class="pack-card reveal" style="--i:2;" data-delay="240">
+        <span class="pack-tag">E-commerce complet</span>
+        <div class="pack-name">Pack Boutique</div>
+        <div class="pack-desc">Site internet + Vente en ligne</div>
+        <div class="pack-price"><sup>€</sup>1500</div>
+        <div class="pack-ht">HT — paiement à la livraison</div>
+        <ul class="pack-list">
+          <li>Tout le Pack Réservation</li>
+          <li>Catalogue produits illimité</li>
+          <li>Paiement sécurisé Stripe</li>
+          <li>Intégration moyens de paiement multiples (CB, Apple Pay…)</li>
+          <li>Gestion stock + commandes</li>
+          <li>Gestion des promotions et codes promo</li>
+          <li>Tracking commandes et notifications email</li>
+          <li>Espace client</li>
+          <li>3 révisions incluses avant validation</li>
+          <li>Formation complète à la gestion e-commerce</li>
+          <li>Délai défini ensemble</li>
+        </ul>
+        <a href="pack-boutique.html" class="pack-btn">Choisir ce pack</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 4 — POUR QUI ? ===== -->
+<section class="section pourqui-section" id="metiers">
+  <div class="section-inner">
+    <div class="tc reveal">
+      <span class="section-label">Pour qui ?</span>
+      <h2 class="section-title">⭐ Un site pensé<br/>pour votre activité</h2>
+      <p class="section-sub">Boulanger, coiffeur, restaurateur, serrurier ou fleuriste — chaque site est conçu selon votre métier.</p>
+    </div>
+    <div class="metiers-grid">
+      <div class="metier-card reveal" data-delay="0">
+        <span class="metier-label">🥐 Boulanger</span>
+        <img src="images/mockups-finaux/final-boulanger.jpg" alt="Site boulangerie" loading="lazy" class="img-pos-right"/>
+        <div class="metier-overlay">
+          <div class="metier-title">🥐 Boulanger</div>
+          <div class="metier-desc">Vendez vos commandes en ligne, mettez en avant vos spécialités.</div>
+        </div>
+      </div>
+      <div class="metier-card reveal" data-delay="80">
+        <span class="metier-label">✂️ Coiffeur</span>
+        <img src="images/mockups-finaux/final-coiffeur.jpg" alt="Site coiffeur" loading="lazy"/>
+        <div class="metier-overlay">
+          <div class="metier-title">✂️ Coiffeur</div>
+          <div class="metier-desc">Réservation en ligne, présentation de vos prestations et équipe.</div>
+        </div>
+      </div>
+      <div class="metier-card reveal" data-delay="160">
+        <span class="metier-label">🍽️ Restaurant</span>
+        <img src="images/mockups-finaux/final-restaurant.jpg" alt="Site restaurant" loading="lazy" class="img-pos-right"/>
+        <div class="metier-overlay">
+          <div class="metier-title">🍽️ Restaurant</div>
+          <div class="metier-desc">Menu en ligne, réservation de table, photos de plats.</div>
+        </div>
+      </div>
+    </div>
+    <div class="metiers-bottom">
+      <div class="metier-card reveal" data-delay="0">
+        <span class="metier-label">🔧 Serrurier</span>
+        <img src="images/mockups-finaux/final-serrurier.jpg" alt="Site serrurier" loading="lazy"/>
+        <div class="metier-overlay">
+          <div class="metier-title">🔧 Serrurier</div>
+          <div class="metier-desc">Urgence 24/7, services détaillés, contact direct.</div>
+        </div>
+      </div>
+      <div class="metier-card reveal" data-delay="120">
+        <span class="metier-label">🌷 Fleuriste</span>
+        <img src="images/mockups-finaux/final-fleuriste.jpg" alt="Site fleuriste" loading="lazy"/>
+        <div class="metier-overlay">
+          <div class="metier-title">🌷 Fleuriste</div>
+          <div class="metier-desc">Catalogue de bouquets, livraison, commandes en ligne.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 5 — AVIS GOOGLE ===== -->
+<section class="section avis-section" id="avis">
+  <div class="section-inner">
+    <div class="tc reveal">
+      <span class="section-label">Avis clients</span>
+      <h2 class="section-title">Vos clients vous notent.<br/><span class="grad-text">Vos avis directement sur votre site.</span></h2>
+      <p class="section-sub">Récupérés automatiquement depuis Google, Trustpilot et Facebook.</p>
+    </div>
+    <div class="avis-split">
+      <div class="reveal" data-delay="0">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th class="bad">❌ Sans avis sur site</th>
+              <th class="good">✅ Avec avis sur site</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="bad">Visiteurs hésitants</td><td class="good">Visiteurs rassurés</td></tr>
+            <tr><td class="bad">Conversion faible</td><td class="good">Conversion +30%</td></tr>
+            <tr><td class="bad">Fiabilité incertaine</td><td class="good">Fiabilité immédiate</td></tr>
+            <tr><td class="bad">Perte de clients</td><td class="good">Plus de clients</td></tr>
+          </tbody>
+        </table>
+        <div class="avis-note">✨ Service inclus gratuitement dans tous nos packs</div>
+      </div>
+      <div class="reveal" data-delay="200">
+        <div class="avis-anim" id="avisAnim">
+          <!-- Step 1: Fiche Google -->
+          <div class="avis-step active">
+            <div class="google-card">
+              <div class="google-card-header">
+                <span class="google-logo">G</span>
+                <div>
+                  <div style="font-size:13px;font-weight:800;color:var(--text-primary);">Boulangerie Martin</div>
+                  <span class="google-stars">★★★★★</span>
+                </div>
+              </div>
+              <div class="google-avis-item">
+                <div class="google-avis-name">Marie D. — ★★★★★</div>
+                <div class="google-avis-text">"Excellent service, croissants parfaits !"</div>
+              </div>
+              <div class="google-avis-item">
+                <div class="google-avis-name">Pierre L. — ★★★★★</div>
+                <div class="google-avis-text">"La meilleure baguette du quartier."</div>
+              </div>
+              <div class="google-avis-item">
+                <div class="google-avis-name">Sophie M. — ★★★★★</div>
+                <div class="google-avis-text">"Je commande chaque semaine !"</div>
+              </div>
+            </div>
+          </div>
+          <!-- Step 2: Flèche -->
+          <div class="avis-step">
+            <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;justify-content:center;">
+              <div class="google-card" style="width:200px;opacity:.6;">
+                <div class="google-card-header"><span class="google-logo">G</span><span class="google-stars">★★★★★</span></div>
+                <div class="google-avis-item"><div class="google-avis-text">"Excellent service !"</div></div>
+              </div>
+              <span class="avis-arrow">→</span>
+              <div class="site-avis-preview" style="opacity:.6;">
+                <div class="site-avis-title">Avis clients</div>
+                <div class="site-avis-item"><div class="site-avis-avatar"></div><div class="site-avis-body">Excellent service !</div></div>
+              </div>
+            </div>
+          </div>
+          <!-- Step 3: Site avec avis -->
+          <div class="avis-step">
+            <div class="site-avis-preview" style="width:280px;padding:20px;">
+              <div class="site-avis-title">⭐ Avis clients — 4.9/5</div>
+              <div class="site-avis-item">
+                <div class="site-avis-avatar"></div>
+                <div><div style="font-size:11px;font-weight:800;color:var(--text-primary);margin-bottom:2px;">Marie D.</div><div class="site-avis-body">"Excellent service, croissants parfaits !"</div></div>
+              </div>
+              <div class="site-avis-item">
+                <div class="site-avis-avatar"></div>
+                <div><div style="font-size:11px;font-weight:800;color:var(--text-primary);margin-bottom:2px;">Pierre L.</div><div class="site-avis-body">"La meilleure baguette du quartier."</div></div>
+              </div>
+              <div class="site-avis-item">
+                <div class="site-avis-avatar"></div>
+                <div><div style="font-size:11px;font-weight:800;color:var(--text-primary);margin-bottom:2px;">Sophie M.</div><div class="site-avis-body">"Je commande chaque semaine !"</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 6 — AGENT IA ===== -->
+<section class="section ia-section" id="ia">
+  <div class="section-inner">
+    <div class="tc reveal">
+      <span class="section-label">Intelligence artificielle</span>
+      <h2 class="section-title">L'IA qui comprend vos besoins<br/>et vous propose le bon pack</h2>
+      <p class="section-sub">Notre assistant analyse votre activité, vous pose les bonnes questions et génère un devis personnalisé en quelques minutes.</p>
+    </div>
+    <div class="ia-split">
+      <div class="reveal" data-delay="0">
+        <ul class="ia-benefits">
+          <li><span class="ia-benefit-icon">💬</span><div><strong>Conversation naturelle</strong>, pas de formulaire compliqué. Décrivez juste votre activité.</div></li>
+          <li><span class="ia-benefit-icon">🎯</span><div><strong>Recommandation personnalisée</strong> selon votre métier et vos besoins spécifiques.</div></li>
+          <li><span class="ia-benefit-icon">⚡</span><div><strong>Devis détaillé en moins de 2 minutes</strong>. Immédiat, sans attente.</div></li>
+        </ul>
+        <a href="devis-ia.html" class="btn-primary" style="font-size:16px;padding:17px 32px;">Créer mon devis avec l'IA →</a>
+      </div>
+      <div class="reveal" data-delay="200">
+        <div class="ia-phone">
+          <div class="ia-phone-notch"></div>
+          <div class="ia-chat-screen">
+            <div class="chat-header">
+              <img src="images/assistant-ia-v3.png" alt="Assistant IA" class="chat-header-avatar" width="28" loading="lazy"/>
+              <div>
+                <div class="chat-header-name">Assistant LYAECO</div>
+                <div class="chat-header-status">● En ligne</div>
+              </div>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+              <div class="typing-dots" id="typingDots"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div>
+              <div class="chat-msg bot" id="cm0">Bonjour ! 👋 Quel est votre métier ?</div>
+              <div class="chat-msg user" id="cm1">Je suis boulanger</div>
+              <div class="chat-msg bot" id="cm2">Parfait ! Voulez-vous proposer des commandes en ligne ?</div>
+              <div class="chat-msg user" id="cm3">Oui, absolument !</div>
+              <div class="chat-msg bot" id="cm4">Je recommande le Pack Réservation à 600€ ✓</div>
+              <div class="chat-msg recap" id="cm5">📋 Total estimé : <strong>600€ HT</strong><br/>Pack Réservation — livraison 10j</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 7 — FAQ ===== -->
+<section class="section faq-section" id="faq">
+  <div class="section-inner">
+    <div class="tc reveal">
+      <span class="section-label">FAQ</span>
+      <h2 class="section-title">Vos questions, nos réponses</h2>
+      <p class="section-sub">Les questions les plus fréquentes avant de se lancer.</p>
+    </div>
+    <div class="faq-list reveal" data-delay="100">
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>⏱️ Combien de temps pour avoir mon site ?</span>
+          <span class="faq-chevron">▼</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Cela dépend du pack choisi :</p>
+            <ul>
+              <li><strong>Pack Vitrine</strong> : environ <strong>1 semaine</strong> après validation de vos contenus</li>
+              <li><strong>Pack Réservation</strong> : environ <strong>10 jours</strong> (le module de réservation demande un paramétrage spécifique)</li>
+              <li><strong>Pack Boutique</strong> : délai défini ensemble selon le nombre de produits, modes de paiement et options spécifiques</li>
+            </ul>
+            <p style="margin-top:10px;">Plus vous nous transmettez vos contenus rapidement (textes, photos, logo), plus la mise en ligne est rapide.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>💰 Y a-t-il des frais cachés ou un abonnement ?</span>
+          <span class="faq-chevron">▼</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Non, aucun. Vous payez votre site <strong>une seule fois</strong>, le tarif annoncé est le tarif final.</p>
+            <p style="margin-top:8px;">Le seul élément récurrent éventuel est l'<strong>hébergement</strong> (10€/an pour le Pack Vitrine, inclus dans les packs Réservation et Boutique). La <strong>maintenance technique mensuelle</strong> (50€/mois) est totalement <strong>optionnelle</strong> — vous pouvez la choisir ou pas.</p>
+            <p style="margin-top:8px;">Aucun abonnement obligatoire, aucune surprise.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>🎨 Vais-je voir une maquette avant de payer ?</span>
+          <span class="faq-chevron">▼</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Notre approche est différente : nous créons directement votre site en suivant le brief établi ensemble (devis détaillé, échange par téléphone ou WhatsApp).</p>
+            <p style="margin-top:8px;"><strong>Vous ne payez qu'une fois le site terminé et validé par vous.</strong> Si quelque chose ne vous convient pas, nous l'ajustons avant de finaliser. C'est notre engagement.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>📞 Que se passe-t-il si j'ai un problème après la livraison ?</span>
+          <span class="faq-chevron">▼</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Vous nous contactez par <strong>email</strong> (contact@lyaeco.com) ou <strong>WhatsApp</strong> (07 81 71 23 24), et nous intervenons rapidement.</p>
+            <p style="margin-top:8px;">Les bugs techniques liés à notre intervention sont <strong>corrigés gratuitement</strong>. Pour les évolutions ou modifications après la mise en ligne, vous pouvez soit nous les demander, soit les faire vous-même (voir question suivante).</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>🔄 Puis-je modifier mon site moi-même ensuite ?</span>
+          <span class="faq-chevron">▼</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Oui, absolument. À la livraison, <strong>nous prenons le temps de vous former</strong> sur les modifications courantes :</p>
+            <ul>
+              <li>Mise à jour des textes</li>
+              <li>Ajout / changement de photos</li>
+              <li>Modification des horaires, tarifs, contenus</li>
+              <li>Publication d'articles ou actualités</li>
+            </ul>
+            <p style="margin-top:8px;">Vous gardez le contrôle de votre site sans dépendre de nous pour les changements du quotidien.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>🇫🇷 Êtes-vous une vraie agence française ?</span>
+          <span class="faq-chevron">▼</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Oui, <strong>100% française et identifiable</strong>. LYAECO est une SASU enregistrée en France :</p>
+            <ul>
+              <li><strong>SIRET officiel</strong> : 952 921 658 00011</li>
+              <li><strong>Siège social</strong> : 19 rue Séjourné, 94000 Créteil</li>
+              <li><strong>Numéro direct</strong> : 07 81 71 23 24</li>
+              <li><strong>Email professionnel</strong> : contact@lyaeco.com</li>
+            </ul>
+            <p style="margin-top:8px;">Aucune sous-traitance offshore. Vous parlez directement à votre interlocuteur du début à la fin du projet.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 8 — CTA FINAL ===== -->
+<section class="cta-section" id="cta">
+  <div class="cta-bg"></div>
+  <div class="cta-blobs">
+    <div class="cta-blob cta-blob-1"></div>
+    <div class="cta-blob cta-blob-2"></div>
+    <div class="cta-blob cta-blob-3"></div>
+  </div>
+  <div class="cta-inner">
+    <div class="cta-glass reveal">
+      <span class="cta-rocket">🚀</span>
+      <h2 class="cta-title">Prêt à booster<br/>votre activité ?</h2>
+      <p class="cta-sub">Découvrez nos services ou créez votre devis personnalisé en 2 minutes.</p>
+      <div class="cta-btns">
+        <a href="devis-ia.html" class="cta-btn-main">Créer mon devis</a>
+        <a href="services.html" class="cta-btn-sec">Voir nos offres</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CHAT MODAL OVERLAY ===== -->
+<div id="chatOverlay" class="chat-overlay" onclick="closeChatModal()"></div>
+
+<!-- ===== POPUP AUDIT ===== -->
+<div id="auditPopup" class="popup-overlay" role="dialog" aria-modal="true" aria-label="Audit gratuit">
+  <div class="popup-box glass-popup" onclick="event.stopPropagation()">
+    <button class="popup-close" onclick="closeAuditPopup()" aria-label="Fermer">×</button>
+    <div style="font-size:48px;margin-bottom:16px;">📞</div>
+    <h3 class="popup-title">Audit téléphonique gratuit</h3>
+    <p class="popup-sub">Appelez-nous directement :</p>
+    <a href="tel:0781712324" class="popup-phone">07 81 71 23 24</a>
+    <p class="popup-note">Sans engagement · Du lundi au samedi, 9h–19h</p>
+    <a href="tel:0781712324" class="btn-primary popup-cta">Appeler maintenant</a>
+    <button onclick="closeAuditPopup()" class="popup-cancel">Fermer</button>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="foot-in">
+    <div>
+      <div class="foot-logo">
+        <img src="images/logo-lyaeco.png" alt="LYAECO Web" class="foot-logo-img" width="36" height="36" loading="lazy"/>
+        Lyaeco<em>Web</em>
+      </div>
+      <p class="foot-desc">Création de sites internet professionnels pour artisans et commerçants. Sites vitrines, réservation et e-commerce clé en main.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="pourquoi-avoir-un-site.html">Pourquoi un site ?</a></li>
+        <li><a href="realisations.html">Réalisations</a></li>
+        <li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li>
+        <li><a href="devis-ia.html">Devis IA</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:0781712324">📞 07 81 71 23 24</a></li>
+        <li><a href="mailto:contact@lyaeco.com">✉️ contact@lyaeco.com</a></li>
+        <li><span>📍 19 rue Séjourné, 94000 Créteil</span></li>
+        <li><span>SIRET : 952 921 658 00011</span></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h4>Légal</h4>
+      <ul>
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+        <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
+        <li><a href="cgv.html">CGV</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <p>© 2026 LYAECO Web — Tous droits réservés</p>
+    <p>Fait avec ❤️ à Créteil, France</p>
+  </div>
+</footer>
+
+<!-- ===== WHATSAPP FLOATING ===== -->
+<a href="https://wa.me/33781712324" class="wa-float" target="_blank" rel="noopener" aria-label="Nous contacter sur WhatsApp">
+  <span class="wa-ping"></span>
+  <span class="wa-icon">💬</span>
+  <span class="wa-text">WhatsApp</span>
+</a>
+
+<!-- ===== CHATBOT (existant, inchangé) ===== -->
+<link rel="stylesheet" href="css/chatbot-lyaeco.css"/>
+<script src="js/chatbot-lyaeco.js" defer></script>
+
+<!-- ===== JS ===== -->
+<script src="js/home.js"></script>
+</body>
+</html>

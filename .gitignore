@@ -1,0 +1,23 @@
+# Environnement & secrets
+.env
+.env.local
+.env.*.local
+
+# Dépendances npm
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Système
+.DS_Store
+Thumbs.db
+
+# Éditeurs & outils locaux
+.vscode/
+.idea/
+.claude/
+
+# Logs serveur
+logs/
