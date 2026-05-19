@@ -1,196 +1,122 @@
-﻿<!DOCTYPE html>
-<html lang="fr">
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Contact — LYAECO Web</title>
 <link rel="icon" type="image/png" sizes="32x32" href="images/logo-lyaeco.png">
-<link rel="icon" type="image/png" sizes="16x16" href="images/logo-lyaeco.png">
-<link rel="apple-touch-icon" sizes="180x180" href="images/logo-lyaeco.png">
 <link rel="shortcut icon" href="images/logo-lyaeco.png">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/global.css">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{font-family:'Inter',sans-serif;background:#f8fbff;color:#0f172a;overflow-x:hidden;}
+.section-alt { background: var(--bg-secondary); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 
-.abar{background:linear-gradient(90deg,#079bb8,#0b6ee8);color:#fff;height:52px;position:relative;overflow:hidden;display:flex;align-items:center;box-shadow:0 8px 28px rgba(2,132,199,.18);}
-.abar-track{display:flex;align-items:center;gap:18px;white-space:nowrap;animation:abarScroll 15s linear infinite;}
-@keyframes abarScroll{from{transform:translateX(0);}to{transform:translateX(-20%);}}
-.abar-text{font-size:14px;font-weight:900;padding-left:60px;}
-.abar-btn{color:#0b6ee8;text-decoration:none;background:#fff;padding:8px 18px;border-radius:100px;font-size:12px;font-weight:900;box-shadow:0 8px 20px rgba(255,255,255,.18);}
-.abar-phone{color:#fff;text-decoration:none;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);padding:8px 18px;border-radius:100px;font-size:13px;font-weight:900;}
-.abar-ou{font-size:13px;font-weight:800;color:rgba(255,255,255,.75);}
+.contact-grid { display: grid; grid-template-columns: 35fr 65fr; gap: 36px; margin-top: 52px; align-items: start; }
+.contact-info { display: flex; flex-direction: column; gap: 16px; }
+.cinfo-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 20px; padding: 24px; display: flex; gap: 16px; align-items: flex-start; transition: .25s; }
+.cinfo-card:hover { transform: translateY(-3px); box-shadow: 0 18px 44px rgba(0,0,0,.2); border-color: rgba(59,130,246,.25); }
+.cinfo-ic { font-size: 28px; flex-shrink: 0; line-height: 1; }
+.cinfo-title { font-size: 11px; font-weight: 900; color: var(--text-secondary); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 5px; }
+.cinfo-main { font-size: 18px; font-weight: 900; color: var(--text-primary); text-decoration: none; display: block; margin-bottom: 4px; line-height: 1.3; transition: color .2s; }
+.cinfo-main:hover { color: var(--accent-cyan); }
+.cinfo-sub { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+.cinfo-btn { display: inline-flex; align-items: center; gap: 6px; background: linear-gradient(135deg,#25d366,#1ebe5d); color: #fff; padding: 10px 18px; border-radius: 12px; font-size: 13px; font-weight: 800; text-decoration: none; margin-top: 10px; transition: .2s; }
+.cinfo-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37,211,102,.3); }
 
-nav{position:sticky;top:0;z-index:100;background:linear-gradient(to bottom,rgba(255,255,255,.72),rgba(255,255,255,.55));backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border-bottom:1px solid rgba(255,255,255,.35);box-shadow:0 8px 32px rgba(15,23,42,.06);height:88px;padding:0 48px;display:flex;align-items:center;justify-content:space-between;transition:all .35s ease;}
-nav.shrink{height:72px;padding:0 38px;background:linear-gradient(to bottom,rgba(255,255,255,.58),rgba(255,255,255,.42));backdrop-filter:blur(26px);-webkit-backdrop-filter:blur(26px);border-bottom:1px solid rgba(255,255,255,.45);box-shadow:0 12px 38px rgba(15,23,42,.10);}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
-.logo-img{width:46px;height:46px;object-fit:contain;border-radius:12px;}
-@media(max-width:768px){.logo-img{width:38px;height:38px;}}
-.logo-name{font-size:22px;font-weight:900;color:#0f172a;letter-spacing:-.7px;}.logo-name em{font-style:normal;color:#0ea5e9;}
-.nav-links{display:flex;align-items:center;gap:12px;list-style:none;}
-.nav-links a{position:relative;display:flex;align-items:center;justify-content:center;padding:14px 22px;border-radius:14px;text-decoration:none;font-size:16px;font-weight:800;color:#334155;background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.7);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 6px 18px rgba(15,23,42,.04);transition:transform .22s ease,background .22s ease,color .22s ease,box-shadow .22s ease,border-color .22s ease;}
-.nav-links a:hover{color:#0f172a;background:linear-gradient(135deg,rgba(37,99,235,.12),rgba(14,165,233,.10));border-color:rgba(37,99,235,.18);transform:translateY(-2px);box-shadow:0 14px 30px rgba(37,99,235,.12);}
-.nav-links a::after{content:'';position:absolute;left:14px;right:14px;bottom:8px;height:2px;border-radius:10px;background:linear-gradient(90deg,#2563eb,#0ea5e9);transform:scaleX(0);transform-origin:center;transition:transform .25s ease;}
-.nav-links a:hover::after{transform:scaleX(1);}
-.nav-links a.nav-active{background:linear-gradient(135deg,rgba(37,99,235,.12),rgba(14,165,233,.10));border-color:rgba(37,99,235,.25);color:#0f172a;}
-.nav-links a.nav-active::after{transform:scaleX(1);}
-.nav-btn{background:linear-gradient(135deg,#2563eb,#0ea5e9);color:#fff;padding:13px 26px;border-radius:12px;font-size:15px;font-weight:800;border:none;cursor:pointer;text-decoration:none;box-shadow:0 8px 20px rgba(37,99,235,.3);transition:.25s;}.nav-btn:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(37,99,235,.4);}
-.burger{display:none;width:42px;height:42px;border:none;border-radius:14px;background:rgba(255,255,255,.7);box-shadow:0 8px 24px rgba(15,23,42,.08);font-size:24px;cursor:pointer;}
+.contact-form-wrap { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 28px; padding: 40px; }
+.cform-title { font-size: 28px; font-weight: 900; letter-spacing: -.8px; color: var(--text-primary); margin-bottom: 8px; }
+.cform-sub { font-size: 15px; color: var(--text-secondary); margin-bottom: 28px; line-height: 1.6; }
+.cform { display: flex; flex-direction: column; gap: 16px; }
+.frow { display: flex; flex-direction: column; }
+.flabel { display: block; font-size: 11px; color: var(--accent-cyan); letter-spacing: 1.5px; text-transform: uppercase; font-weight: 900; margin-bottom: 7px; }
+.finput { width: 100%; background: var(--bg-primary); border: 1.5px solid var(--border); border-radius: 12px; padding: 13px 15px; color: var(--text-primary); font-size: 14px; outline: none; transition: .2s; font-family: 'Manrope', sans-serif; appearance: none; }
+.finput::placeholder { color: #475569; }
+.finput:focus { border-color: var(--accent-blue); background: rgba(59,130,246,.05); box-shadow: 0 0 0 4px rgba(59,130,246,.1); }
+.finput:invalid:not(:placeholder-shown) { border-color: #ef4444; }
+.finput:valid:not(:placeholder-shown) { border-color: #10b981; }
+.ferror { display: block; font-size: 12px; color: #f87171; margin-top: 4px; min-height: 16px; font-weight: 500; }
+textarea.finput { resize: vertical; min-height: 120px; }
+.fgrid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.fcheckbox-wrap { display: flex; align-items: flex-start; gap: 10px; cursor: pointer; padding: 12px 14px; border: 1.5px solid var(--border); border-radius: 12px; background: var(--bg-primary); transition: .2s; }
+.fcheckbox-wrap:hover { border-color: rgba(59,130,246,.3); }
+.fcheckbox-wrap input { margin-top: 2px; accent-color: var(--accent-blue); flex-shrink: 0; width: 16px; height: 16px; cursor: pointer; }
+.fcheckbox-wrap span { font-size: 13px; color: var(--text-secondary); line-height: 1.55; }
+.fsubmit { width: 100%; background: var(--grad); color: #fff; border: none; padding: 17px; border-radius: 16px; font-size: 15px; font-weight: 900; cursor: pointer; transition: .25s; font-family: 'Manrope', sans-serif; margin-top: 4px; }
+.fsubmit:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(30,64,175,.35); }
+.frgpd { font-size: 12px; color: var(--text-secondary); text-align: center; margin-top: 10px; line-height: 1.6; }
+.frgpd a { color: var(--accent-cyan); text-decoration: none; }
+.frgpd a:hover { text-decoration: underline; }
+.cform-ok { background: rgba(16,185,129,.08); border: 1.5px solid rgba(16,185,129,.25); border-radius: 20px; padding: 44px 36px; text-align: center; display: none; }
+.cform-ok-em { font-size: 56px; display: block; margin-bottom: 16px; }
+.cform-ok h3 { font-size: 22px; font-weight: 900; color: #34d399; margin-bottom: 10px; }
+.cform-ok p { font-size: 15px; color: var(--text-secondary); line-height: 1.75; margin-bottom: 24px; }
 
-.hero{background:radial-gradient(circle at 80% 18%,rgba(14,165,233,.20),transparent 34%),radial-gradient(circle at 12% 75%,rgba(37,99,235,.14),transparent 32%),linear-gradient(135deg,#f8fbff 0%,#eef7ff 45%,#ffffff 100%);position:relative;overflow:hidden;display:flex;align-items:center;min-height:50vh;}
-.hero-bg-dot{position:absolute;inset:0;background-image:radial-gradient(rgba(37,99,235,.07) 1px,transparent 1px);background-size:28px 28px;pointer-events:none;}
-.hero-glow-tr{position:absolute;top:-130px;right:-120px;width:620px;height:620px;background:radial-gradient(circle,rgba(6,182,212,.18),transparent 70%);filter:blur(6px);}
-.hero-glow-bl{position:absolute;bottom:-120px;left:-90px;width:460px;height:460px;background:radial-gradient(circle,rgba(37,99,235,.10),transparent 70%);}
-.hero-inner-center{max-width:860px;margin:0 auto;padding:70px 48px 60px;width:100%;text-align:center;position:relative;z-index:1;}
-.h-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.72);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.7);color:#0284c7;font-size:13px;font-weight:900;padding:9px 18px;border-radius:100px;margin-bottom:28px;box-shadow:0 14px 38px rgba(14,165,233,.14);}
-.hero h1{font-size:54px;font-weight:900;line-height:1.08;letter-spacing:-2.5px;color:#0f172a;margin-bottom:22px;text-shadow:0 12px 38px rgba(15,23,42,.08);}
-.grad{background:linear-gradient(135deg,#2563eb,#0ea5e9);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;}
-.hero-p{font-size:18px;color:#64748b;line-height:1.75;max-width:700px;margin:0 auto;text-align:center;}
+.faq-list { max-width: 780px; margin: 52px auto 0; }
+.faq-item { border: 1px solid var(--border); border-radius: 18px; margin-bottom: 12px; overflow: hidden; background: var(--bg-secondary); }
+.faq-question { width: 100%; background: none; border: none; text-align: left; padding: 22px 24px; font-size: 16px; font-weight: 800; color: var(--text-primary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px; font-family: 'Manrope', sans-serif; transition: color .2s; }
+.faq-question:hover { color: var(--accent-cyan); }
+.faq-sym { font-size: 22px; font-weight: 300; color: var(--text-secondary); flex-shrink: 0; transition: transform .3s ease; line-height: 1; }
+.faq-item.open .faq-sym { transform: rotate(45deg); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height .4s ease; }
+.faq-item.open .faq-a { max-height: 300px; }
+.faq-a-inner { padding: 16px 24px 22px; font-size: 15px; color: var(--text-secondary); line-height: 1.75; border-top: 1px solid var(--border); }
 
-.sec{padding:96px 48px;}.sec-in{max-width:1200px;margin:0 auto;}.label{display:inline-block;background:#eff6ff;border:1px solid #bfdbfe;color:#2563eb;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:800;padding:5px 15px;border-radius:100px;margin-bottom:14px;}
-h2{font-size:44px;font-weight:900;letter-spacing:-1.5px;color:#0f172a;margin-bottom:12px;line-height:1.15;}.sub{font-size:17px;color:#64748b;max-width:600px;line-height:1.7;}.tc{text-align:center;}.tc .sub{margin:0 auto;}
-.blue-bg{background:linear-gradient(135deg,#f8fbff,#eef7ff);border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;}
-
-/* Contact grid */
-.contact-grid{display:grid;grid-template-columns:35fr 65fr;gap:36px;margin-top:52px;align-items:start;}
-.contact-info{display:flex;flex-direction:column;gap:16px;}
-.cinfo-card{background:#fff;border:1px solid #e2e8f0;border-radius:20px;padding:24px;box-shadow:0 8px 24px rgba(15,23,42,.05);display:flex;gap:16px;align-items:flex-start;transition:.25s;}
-.cinfo-card:hover{transform:translateY(-3px);box-shadow:0 18px 44px rgba(15,23,42,.09);}
-.cinfo-ic{font-size:28px;flex-shrink:0;line-height:1;}
-.cinfo-title{font-size:11px;font-weight:900;color:#94a3b8;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:5px;}
-.cinfo-main{font-size:18px;font-weight:900;color:#0f172a;text-decoration:none;display:block;margin-bottom:4px;line-height:1.3;}
-.cinfo-main:hover{color:#2563eb;}
-.cinfo-sub{font-size:13px;color:#94a3b8;line-height:1.5;}
-.cinfo-btn{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#25d366,#1ebe5d);color:#fff;padding:10px 18px;border-radius:12px;font-size:13px;font-weight:800;text-decoration:none;margin-top:10px;transition:.2s;}
-.cinfo-btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(37,211,102,.3);}
-
-/* Formulaire */
-.contact-form-wrap{background:#fff;border:1px solid #e2e8f0;border-radius:28px;padding:40px;box-shadow:0 16px 44px rgba(15,23,42,.06);}
-.cform-title{font-size:28px!important;font-weight:900!important;letter-spacing:-.8px!important;color:#0f172a!important;margin-bottom:8px!important;}
-.cform-sub{font-size:15px;color:#64748b;margin-bottom:28px;line-height:1.6;}
-.cform{display:flex;flex-direction:column;gap:16px;}
-.frow{display:flex;flex-direction:column;}
-.flabel{display:block;font-size:11px;color:#2563eb;letter-spacing:1.5px;text-transform:uppercase;font-weight:900;margin-bottom:7px;}
-.finput{width:100%;background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;padding:13px 15px;color:#0f172a;font-size:14px;outline:none;transition:.2s;font-family:'Inter',sans-serif;appearance:none;}
-.finput:focus{border-color:#2563eb;background:#fff;box-shadow:0 0 0 4px rgba(37,99,235,.07);}
-input.finput:invalid:not(:placeholder-shown){border-color:#ef4444;background:#fef2f2;}
-input.finput:valid:not(:placeholder-shown){border-color:#10b981;}
-textarea.finput:invalid:not(:placeholder-shown){border-color:#ef4444;background:#fef2f2;}
-textarea.finput:valid:not(:placeholder-shown){border-color:#10b981;}
-.ferror{display:block;font-size:12px;color:#ef4444;margin-top:4px;min-height:16px;font-weight:500;}
-textarea.finput{resize:vertical;min-height:120px;}
-.fgrid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-.fcheckbox-wrap{display:flex;align-items:flex-start;gap:10px;cursor:pointer;padding:12px 14px;border:1.5px solid #e2e8f0;border-radius:12px;background:#f8fafc;transition:.2s;}
-.fcheckbox-wrap:hover{border-color:#bfdbfe;}
-.fcheckbox-wrap input{margin-top:2px;accent-color:#2563eb;flex-shrink:0;width:16px;height:16px;cursor:pointer;}
-.fcheckbox-wrap span{font-size:13px;color:#475569;line-height:1.55;}
-.fsubmit{width:100%;background:linear-gradient(135deg,#2563eb,#0ea5e9);color:#fff;border:none;padding:17px;border-radius:16px;font-size:15px;font-weight:900;cursor:pointer;transition:.25s;font-family:'Inter',sans-serif;margin-top:4px;}
-.fsubmit:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(37,99,235,.35);}
-.frgpd{font-size:12px;color:#94a3b8;text-align:center;margin-top:10px;line-height:1.6;}
-.frgpd a{color:#2563eb;text-decoration:none;}
-.frgpd a:hover{text-decoration:underline;}
-.cform-ok{background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:20px;padding:44px 36px;text-align:center;display:none;}
-.cform-ok-em{font-size:56px;display:block;margin-bottom:16px;}
-.cform-ok h3{font-size:22px;font-weight:900;color:#065f46;margin-bottom:10px;}
-.cform-ok p{font-size:15px;color:#374151;line-height:1.75;margin-bottom:24px;}
-
-/* FAQ */
-.faq-list{max-width:780px;margin:52px auto 0;}
-.faq-item{border:1px solid #e2e8f0;border-radius:18px;margin-bottom:12px;overflow:hidden;background:#fff;box-shadow:0 8px 24px rgba(15,23,42,.04);}
-.faq-q{width:100%;background:none;border:none;text-align:left;padding:22px 24px;font-size:16px;font-weight:800;color:#0f172a;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;font-family:'Inter',sans-serif;transition:color .2s ease;}
-.faq-q:hover{color:#2563eb;}
-.faq-arrow{font-size:14px;color:#94a3b8;transition:transform .3s ease;flex-shrink:0;}
-.faq-item.open .faq-arrow{transform:rotate(180deg);}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;}
-.faq-item.open .faq-a{max-height:300px;}
-.faq-a-inner{padding:0 24px 22px;font-size:15px;color:#64748b;line-height:1.75;border-top:1px solid #f1f5f9;padding-top:16px;}
-
-/* CTA */
-.cta-sec{background:linear-gradient(135deg,#1d4ed8,#0891b2);position:relative;overflow:hidden;}.cta-sec::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1px);background-size:24px 24px;}.cta-in{max-width:760px;margin:0 auto;text-align:center;padding:82px 48px;position:relative;z-index:1;}.cta-in h2{font-size:48px;font-weight:900;color:#fff;letter-spacing:-1.5px;margin-bottom:14px;}.cta-in p{font-size:18px;color:rgba(255,255,255,.84);margin-bottom:34px;}.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}.btn-w{background:#fff;color:#2563eb;padding:16px 30px;border-radius:16px;font-size:15px;font-weight:900;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.14);transition:.25s;}.btn-w:hover{transform:translateY(-3px);}
-
-footer{background:#0f172a;color:#fff;padding:56px 48px 28px;}.foot-in{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:44px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.07);}.foot-logo{font-size:19px;font-weight:900;color:#fff;margin-bottom:10px;letter-spacing:-.5px;}.foot-logo em{font-style:normal;color:#22d3ee;}.foot-desc{font-size:13px;color:#64748b;line-height:1.7;max-width:250px;}.foot-col h4{font-size:11px;font-weight:900;color:#64748b;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;}.foot-col ul{list-style:none;}.foot-col li{margin-bottom:9px;}.foot-col a,.foot-col button,.foot-col span{color:#64748b;font-size:13px;text-decoration:none;background:none;border:none;cursor:pointer;transition:.2s;padding:0;font-family:'Inter',sans-serif;}.foot-col a:hover,.foot-col button:hover{color:#fff;}.foot-bot{max-width:1200px;margin:26px auto 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}.foot-bot p{font-size:12px;color:#475569;}
-
-.hide-scroll{opacity:0;transform:translateY(26px) scale(.98);filter:blur(4px);transition:opacity .7s ease,transform .7s ease,filter .7s ease;}
-.show-scroll{opacity:1;transform:translateY(0) scale(1);filter:blur(0);}
-
-.wa-float{position:fixed;right:24px;bottom:24px;z-index:999;display:flex;align-items:center;gap:10px;background:linear-gradient(135deg,#25d366,#1ebe5d);color:#fff;text-decoration:none;padding:14px 18px;border-radius:100px;font-weight:800;font-size:14px;box-shadow:0 18px 42px rgba(37,211,102,.35);transition:transform .25s ease,box-shadow .25s ease;}.wa-float:hover{transform:translateY(-4px) scale(1.04);box-shadow:0 24px 52px rgba(37,211,102,.45);}.wa-icon{width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center;font-size:22px;}.wa-text{white-space:nowrap;}.wa-ping{position:absolute;inset:0;border-radius:100px;background:rgba(37,211,102,.35);animation:waPing 2s infinite;z-index:-1;}@keyframes waPing{0%{transform:scale(1);opacity:.7;}70%{transform:scale(1.18);opacity:0;}100%{opacity:0;}}
-
-@media(max-width:1100px){.contact-grid{grid-template-columns:1fr;}.foot-in{grid-template-columns:1fr 1fr;}}
-@media(max-width:768px){
-  nav{padding:0 20px;}.nav-links,.nav-btn{display:none;}.burger{display:block;}
-  .nav-links.open{display:flex;flex-direction:column;position:fixed;top:88px;left:16px;right:16px;background:#ffffff!important;backdrop-filter:blur(30px)!important;-webkit-backdrop-filter:blur(30px)!important;padding:20px!important;z-index:200;gap:10px!important;border:1px solid #e2e8f0!important;border-radius:24px;box-shadow:0 20px 60px rgba(15,23,42,.25)!important;animation:mobileMenu .28s ease;}
-  .nav-links.open a{background:#f8fafc!important;color:#0f172a!important;border:1px solid #e2e8f0!important;border-radius:14px!important;padding:16px 20px!important;font-weight:800!important;font-size:15px!important;transform:translateX(-20px);opacity:0;animation:navItemSlide .35s ease forwards;}
-  .nav-links.open li:nth-child(1) a{animation-delay:.05s;}.nav-links.open li:nth-child(2) a{animation-delay:.10s;}.nav-links.open li:nth-child(3) a{animation-delay:.15s;}.nav-links.open li:nth-child(4) a{animation-delay:.20s;}.nav-links.open li:nth-child(5) a{animation-delay:.25s;}.nav-links.open li:nth-child(6) a{animation-delay:.30s;}
-  @keyframes navItemSlide{to{transform:translateX(0);opacity:1;}}
-  .nav-links.open a:hover,.nav-links.open a:active{background:linear-gradient(135deg,#2563eb,#0ea5e9)!important;color:#fff!important;border-color:transparent!important;transform:translateX(4px)!important;}
-  @keyframes mobileMenu{from{opacity:0;transform:translateY(-12px) scale(.96);}to{opacity:1;transform:translateY(0) scale(1);}}
-  .sec{padding:64px 24px;}.hero-inner-center{padding:48px 24px!important;}.hero h1{font-size:36px;letter-spacing:-1.5px;}.hero-p{font-size:16px;}
-  h2{font-size:32px;}
-  .fgrid2{grid-template-columns:1fr;}
-  .contact-form-wrap{padding:28px 20px;}
-  .cta-in{padding:58px 20px;}.cta-in h2{font-size:34px;}
-  footer{padding:40px 20px 24px;}.foot-in{grid-template-columns:1fr;}.foot-bot{flex-direction:column;text-align:center;}
-  .wa-float{right:16px;bottom:16px;padding:12px 16px;}.wa-text{display:none;}
-  .hide-scroll{filter:none!important;}.show-scroll{filter:none!important;}
-  .faq-q{font-size:15px;padding:18px;}.faq-a-inner{padding:12px 18px 18px;}
-}
+@media (max-width: 1024px) { .contact-grid { grid-template-columns: 1fr; } }
+@media (max-width: 640px) { .fgrid2 { grid-template-columns: 1fr; } .contact-form-wrap { padding: 28px 20px; } }
 </style>
 </head>
 <body>
 
 <div class="abar" id="abar">
-  <div class="abar-track">
-    <span class="abar-text">🔥 Offre lancement — votre site professionnel à partir de 380€</span>
-    <a class="abar-btn" href="devis.html">CRÉER UN DEVIS →</a>
-    <span class="abar-ou">ou</span>
-    <a class="abar-phone" href="tel:0781712324">📞 07 81 71 23 24</a>
-    <span class="abar-text">🔥 Offre lancement — votre site professionnel à partir de 380€</span>
-    <a class="abar-btn" href="devis.html">CRÉER UN DEVIS →</a>
-    <span class="abar-ou">ou</span>
-    <a class="abar-phone" href="tel:0781712324">📞 07 81 71 23 24</a>
-    <span class="abar-text">🔥 Offre lancement — votre site professionnel à partir de 380€</span>
-    <a class="abar-btn" href="devis.html">CRÉER UN DEVIS →</a>
-    <span class="abar-ou">ou</span>
+  <div class="abar-static">
+    <span class="abar-text">✨ Votre site professionnel, livré clé en main · dès 380€</span>
+    <a class="abar-btn" href="devis-ia.html">CRÉER MON DEVIS →</a>
+    <span class="abar-sep">ou</span>
     <a class="abar-phone" href="tel:0781712324">📞 07 81 71 23 24</a>
   </div>
 </div>
 
-<nav id="mainnav">
-  <a class="logo" href="index.html"><img src="images/logo-lyaeco.png" alt="LYAECO Web - Création de sites pour artisans et commerçants" class="logo-img"/><span class="logo-name">Lyaeco<em>Web</em></span></a>
-  <ul class="nav-links" id="nav">
-    <li><a href="services.html" onclick="cm()">Services</a></li>
-    <li><a href="pourquoi-avoir-un-site.html" onclick="cm()">Pourquoi un site ?</a></li>
-    <li><a href="realisations.html" onclick="cm()">Réalisations</a></li>
-    <li><a href="qui-sommes-nous.html" onclick="cm()">Qui sommes-nous</a></li>
-    <li><a href="devis.html" onclick="cm()">Devis</a></li>
-    <li><a href="contact.html" class="nav-active" onclick="cm()">Contact</a></li>
+<nav class="h-nav" id="mainnav">
+  <a class="nav-logo" href="index.html">
+    <img src="images/logo-lyaeco.png" alt="LYAECO Web" class="nav-logo-img"/>
+    <span class="nav-logo-name">Lyaeco<em>Web</em></span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="services.html">Services</a></li>
+    <li><a href="pourquoi-avoir-un-site.html">Pourquoi un site ?</a></li>
+    <li><a href="realisations.html">Réalisations</a></li>
+    <li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li>
+    <li><a href="devis-ia.html" class="nav-cta">Devis IA</a></li>
   </ul>
-  <a href="devis.html" class="nav-btn">Créer mon devis</a>
-  <button class="burger" id="burger" onclick="tm()" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+  <div class="nav-right">
+    <button class="burger" id="burgerBtn" aria-label="Menu">☰</button>
+  </div>
 </nav>
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-header">
+    <a class="nav-logo" href="index.html"><img src="images/logo-lyaeco.png" class="nav-logo-img"/><span class="nav-logo-name">Lyaeco<em>Web</em></span></a>
+    <button class="mobile-close" id="mobileClose">×</button>
+  </div>
+  <a href="services.html">Services</a>
+  <a href="pourquoi-avoir-un-site.html">Pourquoi un site ?</a>
+  <a href="realisations.html">Réalisations</a>
+  <a href="qui-sommes-nous.html">Qui sommes-nous ?</a>
+  <a href="devis-ia.html" class="mobile-cta">Devis IA →</a>
+</div>
 
-<!-- A — HERO -->
-<div class="hero">
-  <div class="hero-bg-dot"></div>
-  <div class="hero-glow-tr"></div>
-  <div class="hero-glow-bl"></div>
-  <div class="hero-inner-center" id="hl" style="opacity:0;transform:translateY(28px);transition:all .8s ease;">
-    <div class="h-badge">📬 Contact</div>
-    <h1>Discutons de votre projet.</h1>
-    <p class="hero-p">Une question, un projet, un devis ? Nous vous répondons rapidement par téléphone, email ou WhatsApp.</p>
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <span class="page-hero-tag">📬 Contact</span>
+    <h1>Discutons de<br/><span class="grad-text">votre projet.</span></h1>
+    <p class="page-hero-sub">Une question, un projet, un devis ? Nous vous répondons rapidement par téléphone, email ou WhatsApp.</p>
   </div>
 </div>
 
-<!-- B — INFOS + FORMULAIRE -->
-<section class="sec">
-  <div class="sec-in">
+<section class="section">
+  <div class="section-inner">
     <div class="contact-grid">
 
-      <!-- Colonne gauche : infos -->
       <div class="contact-info">
-
-        <div class="cinfo-card">
+        <div class="cinfo-card reveal">
           <span class="cinfo-ic">📞</span>
           <div>
             <div class="cinfo-title">Téléphone</div>
@@ -198,8 +124,7 @@ footer{background:#0f172a;color:#fff;padding:56px 48px 28px;}.foot-in{max-width:
             <div class="cinfo-sub">Du lundi au vendredi, 9h–18h</div>
           </div>
         </div>
-
-        <div class="cinfo-card">
+        <div class="cinfo-card reveal">
           <span class="cinfo-ic">✉️</span>
           <div>
             <div class="cinfo-title">Email</div>
@@ -207,30 +132,26 @@ footer{background:#0f172a;color:#fff;padding:56px 48px 28px;}.foot-in{max-width:
             <div class="cinfo-sub">Réponse sous 24h ouvrées</div>
           </div>
         </div>
-
-        <div class="cinfo-card">
+        <div class="cinfo-card reveal">
           <span class="cinfo-ic">💬</span>
           <div>
             <div class="cinfo-title">WhatsApp</div>
-            <span class="cinfo-main" style="color:#0f172a;">Discutez avec nous</span>
-            <a href="https://wa.me/33781712324" target="_blank" class="cinfo-btn">💬 Ouvrir WhatsApp</a>
+            <span class="cinfo-main" style="pointer-events:none">Discutez avec nous</span>
+            <a href="https://wa.me/33781712324" target="_blank" rel="noopener" class="cinfo-btn">💬 Ouvrir WhatsApp</a>
             <div class="cinfo-sub" style="margin-top:8px;">Suivi de projet dédié</div>
           </div>
         </div>
-
-        <div class="cinfo-card">
+        <div class="cinfo-card reveal">
           <span class="cinfo-ic">📍</span>
           <div>
             <div class="cinfo-title">Adresse</div>
-            <span class="cinfo-main" style="color:#0f172a;">19 rue Séjourné</span>
+            <span class="cinfo-main" style="pointer-events:none">19 rue Séjourné</span>
             <div class="cinfo-sub">94000 Créteil, France</div>
           </div>
         </div>
-
       </div>
 
-      <!-- Colonne droite : formulaire -->
-      <div class="contact-form-wrap">
+      <div class="contact-form-wrap reveal">
         <h2 class="cform-title">Envoyez-nous un message</h2>
         <p class="cform-sub">Remplissez le formulaire ci-dessous, nous revenons vers vous sous 24h.</p>
 
@@ -246,7 +167,7 @@ footer{background:#0f172a;color:#fff;padding:56px 48px 28px;}.foot-in{max-width:
             </div>
             <div class="frow">
               <label class="flabel" for="f-email">Email *</label>
-              <input class="finput" id="f-email" name="email" type="email" placeholder="jean@exemple.com" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$" title="Veuillez entrer une adresse email valide (ex: nom@exemple.com)"/>
+              <input class="finput" id="f-email" name="email" type="email" placeholder="jean@exemple.com" required/>
               <span class="ferror" id="err-email"></span>
             </div>
           </div>
@@ -254,7 +175,7 @@ footer{background:#0f172a;color:#fff;padding:56px 48px 28px;}.foot-in{max-width:
           <div class="fgrid2">
             <div class="frow">
               <label class="flabel" for="f-tel">Téléphone</label>
-              <input class="finput" id="f-tel" name="telephone" type="tel" placeholder="06 00 00 00 00" pattern="^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.\-]*\d{2}){4}$" title="Veuillez entrer un numéro de téléphone français valide (ex: 06 12 34 56 78 ou +33 6 12 34 56 78)"/>
+              <input class="finput" id="f-tel" name="telephone" type="tel" placeholder="06 00 00 00 00"/>
               <span class="ferror" id="err-tel"></span>
             </div>
             <div class="frow">
@@ -283,37 +204,34 @@ footer{background:#0f172a;color:#fff;padding:56px 48px 28px;}.foot-in{max-width:
           <span class="ferror" id="err-rgpd"></span>
 
           <button type="submit" class="fsubmit">Envoyer le message →</button>
-
           <p class="frgpd">Vos données sont traitées conformément à notre <a href="politique-confidentialite.html">politique de confidentialité</a>.</p>
-
         </form>
 
         <div class="cform-ok" id="okbox">
           <span class="cform-ok-em">✅</span>
           <h3>Message envoyé !</h3>
           <p>Nous revenons vers vous dans les 24 heures.<br/>En attendant, vous pouvez nous joindre directement par WhatsApp.</p>
-          <a href="https://wa.me/33781712324" target="_blank" class="cinfo-btn" style="display:inline-flex;">💬 Nous écrire sur WhatsApp</a>
+          <a href="https://wa.me/33781712324" target="_blank" rel="noopener" class="cinfo-btn" style="display:inline-flex;">💬 Nous écrire sur WhatsApp</a>
         </div>
-
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- C — GOOGLE MAPS -->
-<section class="sec blue-bg">
-  <div class="sec-in">
+<section class="section section-alt">
+  <div class="section-inner">
     <div class="tc">
-      <span class="label">Notre adresse</span>
-      <h2>Nous trouver</h2>
-      <p class="sub">19 rue Séjourné, 94000 Créteil — France</p>
+      <span class="section-label">Notre adresse</span>
+      <h2 class="section-title">Nous trouver</h2>
+      <p class="section-sub">19 rue Séjourné, 94000 Créteil — France</p>
     </div>
     <div style="margin-top:40px;">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.0!2d2.4585!3d48.7800!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTknIHJ1ZSBTw6lqb3VybsOpLCA5NDAwMCBDcsOpdGVpbA!5e0!3m2!1sfr!2sfr!4v1715000000000"
         width="100%"
-        height="450"
-        style="border:0;border-radius:20px;box-shadow:0 16px 44px rgba(15,23,42,.08);display:block;"
+        height="400"
+        style="border:0;border-radius:20px;box-shadow:0 16px 44px rgba(0,0,0,.3);display:block;"
         allowfullscreen=""
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade">
@@ -322,67 +240,32 @@ footer{background:#0f172a;color:#fff;padding:56px 48px 28px;}.foot-in{max-width:
   </div>
 </section>
 
-<!-- D — FAQ CONTACT -->
-<section class="sec">
-  <div class="sec-in">
+<section class="section">
+  <div class="section-inner">
     <div class="tc">
-      <span class="label">FAQ</span>
-      <h2>Questions fréquentes</h2>
-      <p class="sub">Tout ce que vous voulez savoir avant de nous contacter.</p>
+      <span class="section-label">FAQ</span>
+      <h2 class="section-title">Questions fréquentes</h2>
+      <p class="section-sub">Tout ce que vous voulez savoir avant de nous contacter.</p>
     </div>
     <div class="faq-list">
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          Quel est le meilleur moyen de vous joindre ?
-          <span class="faq-arrow">▼</span>
-        </button>
-        <div class="faq-a">
-          <div class="faq-a-inner">WhatsApp pour la réactivité, téléphone pour échanger en direct, ou email / formulaire pour les questions détaillées.</div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          Sous quel délai répondez-vous ?
-          <span class="faq-arrow">▼</span>
-        </button>
-        <div class="faq-a">
-          <div class="faq-a-inner">Téléphone et WhatsApp : pendant les horaires ouvrés (lun–ven, 9h–18h). Email et formulaire : sous 24h ouvrées.</div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          Vous déplacez-vous chez les clients ?
-          <span class="faq-arrow">▼</span>
-        </button>
-        <div class="faq-a">
-          <div class="faq-a-inner">Non, tout se fait à distance. Suivi WhatsApp, appels et visioconférence. Nous travaillons avec des clients partout en France.</div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          Comment se passe un premier échange ?
-          <span class="faq-arrow">▼</span>
-        </button>
-        <div class="faq-a">
-          <div class="faq-a-inner">Vous remplissez le formulaire ou nous contactez par WhatsApp. Nous fixons un appel de 15 minutes pour comprendre votre projet, puis nous préparons un devis personnalisé.</div>
-        </div>
-      </div>
-
+      <div class="faq-item"><button class="faq-question">Quel est le meilleur moyen de vous joindre ?<span class="faq-sym">+</span></button><div class="faq-a"><div class="faq-a-inner">WhatsApp pour la réactivité, téléphone pour échanger en direct, ou email / formulaire pour les questions détaillées.</div></div></div>
+      <div class="faq-item"><button class="faq-question">Sous quel délai répondez-vous ?<span class="faq-sym">+</span></button><div class="faq-a"><div class="faq-a-inner">Téléphone et WhatsApp : pendant les horaires ouvrés (lun–ven, 9h–18h). Email et formulaire : sous 24h ouvrées.</div></div></div>
+      <div class="faq-item"><button class="faq-question">Vous déplacez-vous chez les clients ?<span class="faq-sym">+</span></button><div class="faq-a"><div class="faq-a-inner">Non, tout se fait à distance. Suivi WhatsApp, appels et visioconférence. Nous travaillons avec des clients partout en France.</div></div></div>
+      <div class="faq-item"><button class="faq-question">Comment se passe un premier échange ?<span class="faq-sym">+</span></button><div class="faq-a"><div class="faq-a-inner">Vous remplissez le formulaire ou nous contactez par WhatsApp. Nous fixons un appel de 15 minutes pour comprendre votre projet, puis nous préparons un devis personnalisé.</div></div></div>
     </div>
   </div>
 </section>
 
-<!-- E — CTA FINAL -->
-<div class="cta-sec">
-  <div class="cta-in">
-    <h2>Prêt à démarrer<br/>votre projet ?</h2>
-    <p>Choisissez votre formule et lancez votre site professionnel dès maintenant.</p>
-    <div class="cta-btns">
-      <a href="devis.html" class="btn-w">Obtenir mon devis →</a>
+<div class="cta-section">
+  <div class="cta-bg"></div>
+  <div class="cta-inner">
+    <div class="cta-glass">
+      <p class="cta-title">Prêt à démarrer<br/>votre projet ?</p>
+      <p class="cta-sub">Choisissez votre formule et lancez votre site professionnel dès maintenant.</p>
+      <div class="cta-btns">
+        <a href="devis-ia.html" class="cta-btn-main">Obtenir mon devis →</a>
+        <a href="tel:0781712324" class="cta-btn-sec">📞 07 81 71 23 24</a>
+      </div>
     </div>
   </div>
 </div>
@@ -390,17 +273,17 @@ footer{background:#0f172a;color:#fff;padding:56px 48px 28px;}.foot-in{max-width:
 <footer>
   <div class="foot-in">
     <div>
-      <div class="foot-logo"><img src="images/logo-lyaeco.png" alt="LYAECO Web - Création de sites pour artisans et commerçants" style="width:40px;height:40px;border-radius:10px;vertical-align:middle;margin-right:10px;">Lyaeco<em>Web</em></div>
-      <p class="foot-desc">Création de sites internet professionnels pour artisans et commerçants. Sites vitrines, réservation et achat intégré.</p>
+      <div class="foot-logo"><img src="images/logo-lyaeco.png" alt="LYAECO Web" class="foot-logo-img">Lyaeco<em>Web</em></div>
+      <p class="foot-desc">Création de sites internet professionnels pour artisans et commerçants. Sites vitrines, réservation et boutique en ligne.</p>
     </div>
     <div class="foot-col">
       <h4>Navigation</h4>
       <ul>
         <li><a href="services.html">Services</a></li>
         <li><a href="pourquoi-avoir-un-site.html">Pourquoi un site ?</a></li>
-        <li><a href="qui-sommes-nous.html">Qui sommes-nous</a></li>
-        <li><a href="devis.html">Devis</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="realisations.html">Réalisations</a></li>
+        <li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li>
+        <li><a href="devis-ia.html">Devis IA</a></li>
       </ul>
     </div>
     <div class="foot-col">
@@ -408,7 +291,8 @@ footer{background:#0f172a;color:#fff;padding:56px 48px 28px;}.foot-in{max-width:
       <ul>
         <li><a href="tel:0781712324">📞 07 81 71 23 24</a></li>
         <li><a href="mailto:contact@lyaeco.com">✉️ contact@lyaeco.com</a></li>
-        <li><span>📍 19 rue Séjourné, Créteil</span></li>
+        <li><span>📍 19 rue Séjourné, 94000 Créteil</span></li>
+        <li><span>SIRET : 952 921 658 00011</span></li>
       </ul>
     </div>
     <div class="foot-col">
@@ -422,26 +306,17 @@ footer{background:#0f172a;color:#fff;padding:56px 48px 28px;}.foot-in{max-width:
   </div>
   <div class="foot-bot">
     <p>© 2026 LYAECO Web — Tous droits réservés</p>
-    <p>Fait avec ❤️ à Paris</p>
+    <p>Fait avec ❤️ à Créteil, France</p>
   </div>
 </footer>
 
+<a href="https://wa.me/33781712324" class="wa-float" target="_blank" rel="noopener" aria-label="Nous contacter sur WhatsApp">
+  <span class="wa-ping"></span>
+  <span class="wa-icon">💬</span>
+  <span class="wa-text">WhatsApp</span>
+</a>
+
 <script>
-function tm(){
-  const nav=document.getElementById('nav');
-  const burger=document.getElementById('burger');
-  nav.classList.toggle('open');
-  if(nav.classList.contains('open')){burger.innerHTML='×';}else{burger.innerHTML='☰';}
-}
-function cm(){document.getElementById('nav').classList.remove('open');}
-
-function toggleFaq(btn){
-  const item=btn.closest('.faq-item');
-  const isOpen=item.classList.contains('open');
-  document.querySelectorAll('.faq-item.open').forEach(function(el){el.classList.remove('open');});
-  if(!isOpen){item.classList.add('open');}
-}
-
 function sendForm(e) {
   e.preventDefault();
   document.querySelectorAll('.ferror').forEach(function(el){el.textContent='';});
@@ -455,17 +330,16 @@ function sendForm(e) {
 
   if (!nom.validity.valid) {
     document.getElementById('err-nom').textContent = nom.value.trim().length < 2
-      ? 'Le nom doit contenir au moins 2 caractères.'
-      : 'Veuillez entrer votre nom et prénom.';
+      ? 'Le nom doit contenir au moins 2 caractères.' : 'Veuillez entrer votre nom et prénom.';
     valid = false;
   }
   if (!email.validity.valid) {
-    document.getElementById('err-email').textContent = 'Veuillez entrer une adresse email valide (ex: nom@exemple.com).';
+    document.getElementById('err-email').textContent = 'Veuillez entrer une adresse email valide.';
     valid = false;
   }
   var telRe = /^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.\-]*\d{2}){4}$/;
   if (tel.value.trim() && !telRe.test(tel.value.trim())) {
-    document.getElementById('err-tel').textContent = 'Numéro invalide. Ex: 06 12 34 56 78 ou +33 6 12 34 56 78';
+    document.getElementById('err-tel').textContent = 'Numéro invalide. Ex: 06 12 34 56 78';
     valid = false;
   }
   if (!sujet.value) {
@@ -474,8 +348,7 @@ function sendForm(e) {
   }
   if (!msg.validity.valid) {
     document.getElementById('err-message').textContent = msg.value.trim().length < 10
-      ? 'Le message doit contenir au moins 10 caractères.'
-      : 'Message trop long (maximum 2000 caractères).';
+      ? 'Le message doit contenir au moins 10 caractères.' : 'Message trop long (max 2000 caractères).';
     valid = false;
   }
   if (!rgpd.checked) {
@@ -484,44 +357,43 @@ function sendForm(e) {
   }
   if (!valid) {
     var firstErr = document.querySelector('.ferror:not(:empty)');
-    if (firstErr) { firstErr.scrollIntoView({behavior:'smooth', block:'center'}); }
+    if (firstErr) firstErr.scrollIntoView({behavior:'smooth', block:'center'});
     return;
   }
 
-  const form = document.getElementById('cform');
-  const formData = new FormData(form);
-  const submitBtn = form.querySelector('button[type="submit"]');
-  const originalText = submitBtn.innerHTML;
+  var form = document.getElementById('cform');
+  var formData = new FormData(form);
+  var submitBtn = form.querySelector('button[type="submit"]');
+  var originalText = submitBtn.innerHTML;
   submitBtn.disabled = true;
   submitBtn.innerHTML = '⏳ Envoi en cours...';
 
-  const nomVal    = formData.get('nom') || '';
-  const emailVal  = formData.get('email') || '';
-  const telVal    = formData.get('telephone') || '';
-  const sujetVal  = formData.get('sujet') || '';
-  const msgVal    = formData.get('message') || '';
+  var nomVal   = formData.get('nom') || '';
+  var emailVal = formData.get('email') || '';
+  var telVal   = formData.get('telephone') || '';
+  var sujetVal = formData.get('sujet') || '';
+  var msgVal   = formData.get('message') || '';
 
-  const waMessage = encodeURIComponent(
+  var waMessage = encodeURIComponent(
     'Bonjour LYAECO,\n\nNouveau message depuis lyaeco.com :\n\n' +
     '*Nom :* ' + nomVal + '\n*Email :* ' + emailVal + '\n' +
     (telVal ? '*Téléphone :* ' + telVal + '\n' : '') +
     (sujetVal ? '*Sujet :* ' + sujetVal + '\n' : '') +
     '\n*Message :*\n' + msgVal
   );
-  const whatsappUrl = 'https://wa.me/33781712324?text=' + waMessage;
 
   fetch('send-mail.php', { method: 'POST', body: formData })
     .then(function(r){ return r.json(); })
     .then(function(data) {
       if (data.success) {
         form.style.display = 'none';
-        const okbox = document.getElementById('okbox');
+        var okbox = document.getElementById('okbox');
         okbox.style.display = 'block';
         okbox.innerHTML =
           '<span class="cform-ok-em">✅</span>' +
           '<h3>Message envoyé !</h3>' +
-          '<p>Nous revenons vers vous dans les 24 heures.<br/>En attendant, vous pouvez nous joindre directement par WhatsApp.</p>' +
-          '<a href="' + whatsappUrl + '" target="_blank" class="cinfo-btn" style="display:inline-flex;">💬 Nous écrire sur WhatsApp</a>';
+          '<p>Nous revenons vers vous dans les 24 heures.<br/>En attendant, contactez-nous sur WhatsApp.</p>' +
+          '<a href="https://wa.me/33781712324?text=' + waMessage + '" target="_blank" rel="noopener" class="cinfo-btn" style="display:inline-flex;">💬 Nous écrire sur WhatsApp</a>';
       } else {
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalText;
@@ -534,36 +406,8 @@ function sendForm(e) {
       alert('Erreur de connexion. Veuillez réessayer.');
     });
 }
-
-window.addEventListener('load', function(){
-  setTimeout(function(){
-    var l = document.getElementById('hl');
-    if(l){l.style.opacity='1';l.style.transform='translateY(0)';}
-  }, 120);
-});
-
-window.addEventListener('scroll', function(){
-  const nav = document.getElementById('mainnav');
-  if(window.scrollY > 40){nav.classList.add('shrink');}else{nav.classList.remove('shrink');}
-});
-
-var obs = new IntersectionObserver(function(entries){
-  entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('show-scroll');}});
-},{threshold:0.12});
-document.querySelectorAll('.cinfo-card,.faq-item').forEach(function(el,i){
-  el.classList.add('hide-scroll');
-  el.style.transitionDelay=(i*0.06)+'s';
-  obs.observe(el);
-});
 </script>
-
-<a href="https://wa.me/33781712324" class="wa-float" target="_blank" aria-label="Nous contacter sur WhatsApp">
-  <span class="wa-ping"></span>
-  <span class="wa-icon">💬</span>
-  <span class="wa-text">WhatsApp</span>
-</a>
-
-
+<script src="js/home.js" defer></script>
 <link rel="stylesheet" href="css/chatbot-lyaeco.css">
 <script src="js/chatbot-lyaeco.js" defer></script>
 </body>
