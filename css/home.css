@@ -457,10 +457,12 @@ body {
 .bento-big .bento-title { font-size: 20px; margin-bottom: 10px; }
 .bento-big .bento-desc { font-size: 14px; }
 .bento-avatar {
-  position: absolute; bottom: 16px; right: 16px;
-  width: 64px; height: auto;
-  opacity: .9;
+  position: absolute; bottom: 12px; right: 12px;
+  width: 56px; height: auto;
+  opacity: .85;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,.3));
 }
+.bento-agent .bento-desc { padding-right: 70px; }
 .bento-mockups {
   display: grid; grid-template-columns: 1fr 1fr;
   gap: 6px; margin-top: 12px;
