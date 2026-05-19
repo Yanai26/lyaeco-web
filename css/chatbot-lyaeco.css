@@ -725,8 +725,9 @@
     bottom: 16px !important;
     right: 16px !important;
   }
-  .lyaeco-btn { width: 60px; height: 60px; }
-  .lyaeco-btn img { width: 60px; height: 60px; }
+  .lyaeco-bubble { display: none !important; }
+  .lyaeco-btn { width: 66px; height: 66px; }
+  .lyaeco-btn img { width: 66px; height: 66px; }
   .lyaeco-win {
     position: fixed;
     bottom: 0; left: 0; right: 0;
