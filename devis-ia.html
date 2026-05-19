@@ -1,147 +1,82 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="dark">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Devis IA — Assistant intelligent LYAECO Web</title>
 <meta name="description" content="Obtenez votre devis personnalisé en 2 minutes grâce à notre assistant IA. Gratuit, sans engagement."/>
 <link rel="icon" type="image/png" sizes="32x32" href="images/logo-lyaeco.png">
-<link rel="icon" type="image/png" sizes="16x16" href="images/logo-lyaeco.png">
-<link rel="apple-touch-icon" sizes="180x180" href="images/logo-lyaeco.png">
 <link rel="shortcut icon" href="images/logo-lyaeco.png">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/global.css">
 <link rel="stylesheet" href="css/chatbot-lyaeco.css">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{font-family:'Inter',sans-serif;background:#f8fbff;color:#0f172a;overflow-x:hidden;}
-
-.abar{background:linear-gradient(90deg,#079bb8,#0b6ee8);color:#fff;height:52px;position:relative;overflow:hidden;display:flex;align-items:center;box-shadow:0 8px 28px rgba(2,132,199,.18);}
-.abar-track{display:flex;align-items:center;gap:18px;white-space:nowrap;animation:abarScroll 15s linear infinite;}
-@keyframes abarScroll{from{transform:translateX(0);}to{transform:translateX(-20%);}}
-.abar-text{font-size:14px;font-weight:900;padding-left:60px;}
-.abar-btn{color:#0b6ee8;text-decoration:none;background:#fff;padding:8px 18px;border-radius:100px;font-size:12px;font-weight:900;box-shadow:0 8px 20px rgba(255,255,255,.18);}
-.abar-phone{color:#fff;text-decoration:none;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);padding:8px 18px;border-radius:100px;font-size:13px;font-weight:900;}
-.abar-ou{font-size:13px;font-weight:800;color:rgba(255,255,255,.75);}
-
-nav{position:sticky;top:0;z-index:100;background:linear-gradient(to bottom,rgba(255,255,255,.72),rgba(255,255,255,.55));backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border-bottom:1px solid rgba(255,255,255,.35);box-shadow:0 8px 32px rgba(15,23,42,.06);height:88px;padding:0 48px;display:flex;align-items:center;justify-content:space-between;transition:all .35s ease;}
-nav.shrink{height:72px;padding:0 38px;background:linear-gradient(to bottom,rgba(255,255,255,.58),rgba(255,255,255,.42));backdrop-filter:blur(26px);-webkit-backdrop-filter:blur(26px);border-bottom:1px solid rgba(255,255,255,.45);box-shadow:0 12px 38px rgba(15,23,42,.10);}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
-.logo-img{width:46px;height:46px;object-fit:contain;border-radius:12px;}
-@media(max-width:768px){.logo-img{width:38px;height:38px;}}
-.logo-name{font-size:22px;font-weight:900;color:#0f172a;letter-spacing:-.7px;}.logo-name em{font-style:normal;color:#0ea5e9;}
-.nav-links{display:flex;align-items:center;gap:12px;list-style:none;}
-.nav-links a{position:relative;display:flex;align-items:center;justify-content:center;padding:14px 22px;border-radius:14px;text-decoration:none;font-size:16px;font-weight:800;color:#334155;background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.7);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 6px 18px rgba(15,23,42,.04);transition:transform .22s ease,background .22s ease,color .22s ease,box-shadow .22s ease,border-color .22s ease;}
-.nav-links a:hover{color:#0f172a;background:linear-gradient(135deg,rgba(37,99,235,.12),rgba(14,165,233,.10));border-color:rgba(37,99,235,.18);transform:translateY(-2px);box-shadow:0 14px 30px rgba(37,99,235,.12);}
-.nav-links a::after{content:'';position:absolute;left:14px;right:14px;bottom:8px;height:2px;border-radius:10px;background:linear-gradient(90deg,#2563eb,#0ea5e9);transform:scaleX(0);transform-origin:center;transition:transform .25s ease;}
-.nav-links a:hover::after{transform:scaleX(1);}
-.nav-links a.nav-active{background:linear-gradient(135deg,rgba(37,99,235,.14),rgba(14,165,233,.10));border-color:rgba(37,99,235,.22);color:#1d4ed8;}.nav-links a.nav-active::after{transform:scaleX(1);}
-.nav-btn{background:linear-gradient(135deg,#2563eb,#0ea5e9);color:#fff;padding:13px 26px;border-radius:12px;font-size:15px;font-weight:800;border:none;cursor:pointer;text-decoration:none;box-shadow:0 8px 20px rgba(37,99,235,.3);transition:.25s;}.nav-btn:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(37,99,235,.4);}
-.burger{display:none;width:42px;height:42px;border:none;border-radius:14px;background:rgba(255,255,255,.7);box-shadow:0 8px 24px rgba(15,23,42,.08);font-size:24px;cursor:pointer;}
-
-/* ─── Hero IA ───────────────────────────────────────────── */
-.ia-hero{
-  background:
-    radial-gradient(circle at 70% 10%, rgba(14,165,233,.22), transparent 40%),
-    radial-gradient(circle at 10% 80%, rgba(37,99,235,.14), transparent 35%),
-    linear-gradient(135deg,#f8fbff 0%,#eef7ff 50%,#ffffff 100%);
-  position:relative;
-  overflow:hidden;
-  padding:72px 48px 56px;
-  text-align:center;
-}
-.ia-hero-dot{position:absolute;inset:0;background-image:radial-gradient(rgba(37,99,235,.06) 1px,transparent 1px);background-size:26px 26px;pointer-events:none;}
-.ia-hero-glow{position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:500px;height:300px;background:radial-gradient(circle,rgba(6,182,212,.18),transparent 65%);filter:blur(8px);}
-
-.ia-hero-inner{position:relative;z-index:1;max-width:680px;margin:0 auto;}
-
-.ia-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.78);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.7);color:#0284c7;font-size:13px;font-weight:900;padding:8px 18px;border-radius:100px;margin-bottom:24px;box-shadow:0 10px 30px rgba(14,165,233,.12);}
-
-.ia-robot{
-  width:100px;height:100px;border-radius:50%;object-fit:cover;
-  display:block;margin:0 auto 24px;
-  box-shadow:0 14px 40px rgba(30,64,175,.22);
-  background:linear-gradient(135deg,#1e40af,#06b6d4);
-  animation:iaFloat 3.2s ease-in-out infinite;
-}
-@keyframes iaFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-9px);}}
-
-.ia-hero h1{font-size:52px;font-weight:900;letter-spacing:-2.5px;color:#0f172a;margin-bottom:14px;line-height:1.06;}
-.ia-hero h1 span{background:linear-gradient(135deg,#2563eb,#0ea5e9);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
-.ia-hero p{font-size:17px;color:#64748b;line-height:1.7;margin-bottom:28px;}
-.ia-tags{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;}
-.ia-tag{background:#eff6ff;border:1px solid #bfdbfe;color:#2563eb;font-size:12px;font-weight:700;padding:6px 13px;border-radius:100px;}
-
-/* ─── Section chat ──────────────────────────────────────── */
-.ia-chat-section{
-  padding:48px 24px 80px;
-  background:linear-gradient(135deg,#f8fbff,#eef7ff);
-  border-top:1px solid #e2e8f0;
-}
-
-/* ─── Footer ────────────────────────────────────────────── */
-.cta-sec{background:linear-gradient(135deg,#1d4ed8,#0891b2);position:relative;overflow:hidden;}.cta-sec::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1px);background-size:24px 24px;}.cta-in{max-width:760px;margin:0 auto;text-align:center;padding:82px 48px;position:relative;z-index:1;}.cta-in h2{font-size:48px;font-weight:900;color:#fff;letter-spacing:-1.5px;margin-bottom:14px;}.cta-in p{font-size:18px;color:rgba(255,255,255,.84);margin-bottom:34px;}.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}.btn-w{background:#fff;color:#2563eb;padding:16px 30px;border-radius:16px;font-size:15px;font-weight:900;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.14);transition:.25s;}.btn-w:hover{transform:translateY(-3px);}.btn-wo{background:transparent;color:#fff;padding:15px 26px;border-radius:16px;font-size:15px;font-weight:800;border:2px solid rgba(255,255,255,.42);text-decoration:none;}
-footer{background:#0f172a;color:#fff;padding:56px 48px 28px;}.foot-in{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:44px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.07);}.foot-logo{font-size:19px;font-weight:900;color:#fff;margin-bottom:10px;letter-spacing:-.5px;}.foot-logo em{font-style:normal;color:#22d3ee;}.foot-desc{font-size:13px;color:#64748b;line-height:1.7;max-width:250px;}.foot-col h4{font-size:11px;font-weight:900;color:#64748b;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;}.foot-col ul{list-style:none;}.foot-col li{margin-bottom:9px;}.foot-col a,.foot-col span{color:#64748b;font-size:13px;text-decoration:none;transition:.2s;}.foot-col a:hover{color:#fff;}.foot-bot{max-width:1200px;margin:26px auto 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}.foot-bot p{font-size:12px;color:#475569;}
-.wa-float{position:fixed;right:24px;bottom:24px;z-index:999;display:flex;align-items:center;gap:10px;background:linear-gradient(135deg,#25d366,#1ebe5d);color:#fff;text-decoration:none;padding:14px 18px;border-radius:100px;font-weight:800;font-size:14px;box-shadow:0 18px 42px rgba(37,211,102,.35);transition:transform .25s ease,box-shadow .25s ease;}.wa-float:hover{transform:translateY(-4px) scale(1.04);box-shadow:0 24px 52px rgba(37,211,102,.45);}.wa-icon{width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center;font-size:22px;}.wa-text{white-space:nowrap;}.wa-ping{position:absolute;inset:0;border-radius:100px;background:rgba(37,211,102,.35);animation:waPing 2s infinite;z-index:-1;}@keyframes waPing{0%{transform:scale(1);opacity:.7;}70%{transform:scale(1.18);opacity:0;}100%{opacity:0;}}
-
-@media(max-width:1100px){.foot-in{grid-template-columns:1fr 1fr;}}
-@media(max-width:768px){
-  nav{padding:0 20px;}.nav-links,.nav-btn{display:none;}.burger{display:block;}
-  .nav-links.open{display:flex;flex-direction:column;position:fixed;top:88px;left:16px;right:16px;background:#ffffff!important;backdrop-filter:blur(30px)!important;-webkit-backdrop-filter:blur(30px)!important;padding:20px!important;z-index:200;gap:10px!important;border:1px solid #e2e8f0!important;border-radius:24px;box-shadow:0 20px 60px rgba(15,23,42,.25)!important;animation:mobileMenu .28s ease;}
-  .nav-links.open a{background:#f8fafc!important;color:#0f172a!important;border:1px solid #e2e8f0!important;border-radius:14px!important;padding:16px 20px!important;font-weight:800!important;font-size:15px!important;transition:all .25s ease!important;transform:translateX(-20px);opacity:0;animation:navItemSlide .35s ease forwards;}
-  .nav-links.open li:nth-child(1) a{animation-delay:.05s;}.nav-links.open li:nth-child(2) a{animation-delay:.10s;}.nav-links.open li:nth-child(3) a{animation-delay:.15s;}.nav-links.open li:nth-child(4) a{animation-delay:.20s;}.nav-links.open li:nth-child(5) a{animation-delay:.25s;}.nav-links.open li:nth-child(6) a{animation-delay:.30s;}
-  @keyframes navItemSlide{to{transform:translateX(0);opacity:1;}}@keyframes mobileMenu{from{opacity:0;transform:translateY(-12px) scale(.96);}to{opacity:1;transform:translateY(0) scale(1);}}
-  .ia-hero{padding:48px 24px 36px;}.ia-hero h1{font-size:34px;}.ia-robot{width:76px;height:76px;}
-  footer{padding:40px 20px 24px;}.foot-in{grid-template-columns:1fr;}.foot-bot{flex-direction:column;text-align:center;}
-  .wa-float{right:16px;bottom:16px;padding:12px 16px;}.wa-text{display:none;}
-}
-@media(max-width:480px){.ia-hero h1{font-size:28px;}.ia-chat-section{padding:32px 16px 60px;}}
+.ia-hero { background: var(--bg-primary); position: relative; overflow: hidden; padding: 72px 48px 56px; text-align: center; border-bottom: 1px solid var(--border); }
+.ia-hero-dot { position: absolute; inset: 0; background-image: radial-gradient(rgba(34,211,238,.06) 1px, transparent 1px); background-size: 26px 26px; pointer-events: none; }
+.ia-hero-glow { position: absolute; top: -80px; left: 50%; transform: translateX(-50%); width: 500px; height: 300px; background: radial-gradient(circle, rgba(6,182,212,.18), transparent 65%); filter: blur(8px); }
+.ia-hero-inner { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; }
+.ia-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(34,211,238,.08); border: 1px solid rgba(34,211,238,.2); color: var(--accent-cyan); font-size: 13px; font-weight: 900; padding: 8px 18px; border-radius: 100px; margin-bottom: 24px; }
+.ia-robot { width: 100px; height: 100px; border-radius: 50%; display: block; margin: 0 auto 24px; box-shadow: 0 14px 40px rgba(30,64,175,.35); background: var(--grad); animation: iaFloat 3.2s ease-in-out infinite; }
+@keyframes iaFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+.ia-hero h1 { font-size: 52px; font-weight: 900; letter-spacing: -2.5px; color: var(--text-primary); margin-bottom: 14px; line-height: 1.06; }
+.ia-hero h1 span { background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.ia-hero p { font-size: 17px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 28px; }
+.ia-tags { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+.ia-tag { background: var(--bg-secondary); border: 1px solid var(--border); color: var(--text-secondary); font-size: 12px; font-weight: 700; padding: 6px 13px; border-radius: 100px; }
+.ia-chat-section { padding: 48px 24px 80px; background: var(--bg-secondary); border-top: 1px solid var(--border); }
+@media (max-width: 768px) { .ia-hero { padding: 48px 24px 36px; } .ia-hero h1 { font-size: 34px; } .ia-robot { width: 76px; height: 76px; } }
+@media (max-width: 480px) { .ia-hero h1 { font-size: 28px; } .ia-chat-section { padding: 32px 16px 60px; } }
 </style>
 </head>
 <body>
 
-<div class="abar">
-  <div class="abar-track">
-    <span class="abar-text">🤖 Nouveau — Obtenez votre devis personnalisé en 2 min grâce à notre assistant IA</span>
-    <a class="abar-btn" href="devis.html">VOIR LES TARIFS →</a>
-    <span class="abar-ou">ou</span>
-    <a class="abar-phone" href="tel:0781712324">📞 07 81 71 23 24</a>
-    <span class="abar-text">🤖 Nouveau — Obtenez votre devis personnalisé en 2 min grâce à notre assistant IA</span>
-    <a class="abar-btn" href="devis.html">VOIR LES TARIFS →</a>
-    <span class="abar-ou">ou</span>
-    <a class="abar-phone" href="tel:0781712324">📞 07 81 71 23 24</a>
-    <span class="abar-text">🤖 Nouveau — Obtenez votre devis personnalisé en 2 min grâce à notre assistant IA</span>
-    <a class="abar-btn" href="devis.html">VOIR LES TARIFS →</a>
-    <span class="abar-ou">ou</span>
+<div class="abar" id="abar">
+  <div class="abar-static">
+    <span class="abar-text">✨ Votre site professionnel, livré clé en main · dès 380€</span>
+    <a class="abar-btn" href="devis-ia.html">CRÉER MON DEVIS →</a>
+    <span class="abar-sep">ou</span>
     <a class="abar-phone" href="tel:0781712324">📞 07 81 71 23 24</a>
   </div>
 </div>
 
-<nav id="mainnav">
-  <a class="logo" href="index.html"><img src="images/logo-lyaeco.png" alt="LYAECO Web - Création de sites pour artisans et commerçants" class="logo-img"/><span class="logo-name">Lyaeco<em>Web</em></span></a>
-  <ul class="nav-links" id="nav">
-    <li><a href="services.html" onclick="cm()">Services</a></li>
-    <li><a href="pourquoi-avoir-un-site.html" onclick="cm()">Pourquoi un site ?</a></li>
-    <li><a href="realisations.html" onclick="cm()">Réalisations</a></li>
-    <li><a href="qui-sommes-nous.html" onclick="cm()">Qui sommes-nous</a></li>
-    <li><a href="devis.html" onclick="cm()" class="nav-active">Devis</a></li>
-    <li><a href="contact.html" onclick="cm()">Contact</a></li>
+<nav class="h-nav" id="mainnav">
+  <a class="nav-logo" href="index.html">
+    <img src="images/logo-lyaeco.png" alt="LYAECO Web" class="nav-logo-img"/>
+    <span class="nav-logo-name">Lyaeco<em>Web</em></span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="services.html">Services</a></li>
+    <li><a href="pourquoi-avoir-un-site.html">Pourquoi un site ?</a></li>
+    <li><a href="realisations.html">Réalisations</a></li>
+    <li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li>
+    <li><a href="devis-ia.html" class="nav-cta nav-active">Devis IA</a></li>
   </ul>
-  <a href="devis.html" class="nav-btn">Créer mon devis</a>
-  <button class="burger" id="burger" onclick="tm()" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+  <div class="nav-right">
+    <button class="burger" id="burgerBtn" aria-label="Menu">☰</button>
+  </div>
 </nav>
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-header">
+    <a class="nav-logo" href="index.html"><img src="images/logo-lyaeco.png" class="nav-logo-img"/><span class="nav-logo-name">Lyaeco<em>Web</em></span></a>
+    <button class="mobile-close" id="mobileClose">×</button>
+  </div>
+  <a href="services.html">Services</a>
+  <a href="pourquoi-avoir-un-site.html">Pourquoi un site ?</a>
+  <a href="realisations.html">Réalisations</a>
+  <a href="qui-sommes-nous.html">Qui sommes-nous ?</a>
+  <a href="devis-ia.html" class="mobile-cta">Devis IA →</a>
+</div>
 
 <!-- HERO IA -->
 <section class="ia-hero">
   <div class="ia-hero-dot"></div>
   <div class="ia-hero-glow"></div>
-  <div class="ia-hero-inner" id="hl" style="opacity:0;transform:translateY(24px);transition:all .8s ease .1s;">
+  <div class="ia-hero-inner">
     <div class="ia-badge">🤖 Assistant IA</div>
     <img src="images/assistant-ia.png.png" alt="Assistant IA LYAECO" class="ia-robot" />
     <h1>Votre devis en<br/><span>2 minutes chrono.</span></h1>
     <p>Notre assistant intelligent vous pose les bonnes questions<br/>et calcule un devis 100 % personnalisé, gratuitement.</p>
     <div class="ia-tags">
-      <span class="ia-tag">✅ Gratuit & sans engagement</span>
+      <span class="ia-tag">✅ Gratuit &amp; sans engagement</span>
       <span class="ia-tag">⚡ Résultat immédiat</span>
       <span class="ia-tag">📩 Reçu par email</span>
     </div>
@@ -156,13 +91,16 @@ footer{background:#0f172a;color:#fff;padding:56px 48px 28px;}.foot-in{max-width:
 </section>
 
 <!-- CTA FINAL -->
-<div class="cta-sec">
-  <div class="cta-in">
-    <h2>Pas envie d'attendre ?</h2>
-    <p>Appelez-nous directement ou écrivez sur WhatsApp. On répond en moins d'une heure.</p>
-    <div class="cta-btns">
-      <a href="tel:0781712324" class="btn-w">📞 07 81 71 23 24</a>
-      <a href="https://wa.me/33781712324" class="btn-wo" target="_blank" rel="noopener">💬 WhatsApp</a>
+<div class="cta-section">
+  <div class="cta-bg"></div>
+  <div class="cta-inner">
+    <div class="cta-glass">
+      <p class="cta-title">Pas envie d'attendre ?</p>
+      <p class="cta-sub">Appelez-nous directement ou écrivez sur WhatsApp. On répond en moins d'une heure.</p>
+      <div class="cta-btns">
+        <a href="tel:0781712324" class="cta-btn-main">📞 07 81 71 23 24</a>
+        <a href="https://wa.me/33781712324" class="cta-btn-sec" target="_blank" rel="noopener">💬 WhatsApp</a>
+      </div>
     </div>
   </div>
 </div>
@@ -170,18 +108,17 @@ footer{background:#0f172a;color:#fff;padding:56px 48px 28px;}.foot-in{max-width:
 <footer>
   <div class="foot-in">
     <div>
-      <div class="foot-logo"><img src="images/logo-lyaeco.png" alt="LYAECO Web - Création de sites pour artisans et commerçants" style="width:40px;height:40px;border-radius:10px;vertical-align:middle;margin-right:10px;">Lyaeco<em>Web</em></div>
-      <p class="foot-desc">Création de sites internet professionnels pour artisans et commerçants. Sites vitrines, réservation et achat intégré.</p>
+      <div class="foot-logo"><img src="images/logo-lyaeco.png" alt="LYAECO Web" class="foot-logo-img">Lyaeco<em>Web</em></div>
+      <p class="foot-desc">Création de sites internet professionnels pour artisans et commerçants. Sites vitrines, réservation et boutique en ligne.</p>
     </div>
     <div class="foot-col">
       <h4>Navigation</h4>
       <ul>
         <li><a href="services.html">Services</a></li>
         <li><a href="pourquoi-avoir-un-site.html">Pourquoi un site ?</a></li>
-        <li><a href="qui-sommes-nous.html">Qui sommes-nous</a></li>
-        <li><a href="devis.html#tarifs">Tarifs</a></li>
-        <li><a href="devis.html">Devis</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="realisations.html">Réalisations</a></li>
+        <li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li>
+        <li><a href="devis-ia.html">Devis IA</a></li>
       </ul>
     </div>
     <div class="foot-col">
@@ -189,7 +126,8 @@ footer{background:#0f172a;color:#fff;padding:56px 48px 28px;}.foot-in{max-width:
       <ul>
         <li><a href="tel:0781712324">📞 07 81 71 23 24</a></li>
         <li><a href="mailto:contact@lyaeco.com">✉️ contact@lyaeco.com</a></li>
-        <li><span>📍 19 rue Séjourné, Créteil</span></li>
+        <li><span>📍 19 rue Séjourné, 94000 Créteil</span></li>
+        <li><span>SIRET : 952 921 658 00011</span></li>
       </ul>
     </div>
     <div class="foot-col">
@@ -203,39 +141,17 @@ footer{background:#0f172a;color:#fff;padding:56px 48px 28px;}.foot-in{max-width:
   </div>
   <div class="foot-bot">
     <p>© 2026 LYAECO Web — Tous droits réservés</p>
-    <p>Fait avec ❤️ à Paris</p>
+    <p>Fait avec ❤️ à Créteil, France</p>
   </div>
 </footer>
 
-<script>
-function tm(){
-  var nav=document.getElementById('nav');
-  var burger=document.getElementById('burger');
-  nav.classList.toggle('open');
-  burger.innerHTML=nav.classList.contains('open')?'×':'☰';
-  burger.setAttribute('aria-expanded', nav.classList.contains('open')?'true':'false');
-}
-function cm(){document.getElementById('nav').classList.remove('open');}
-
-window.addEventListener('load',function(){
-  setTimeout(function(){
-    var l=document.getElementById('hl');
-    if(l){l.style.opacity='1';l.style.transform='translateY(0)';}
-  },100);
-});
-
-window.addEventListener('scroll',function(){
-  var nav=document.getElementById('mainnav');
-  if(window.scrollY>40){nav.classList.add('shrink');}else{nav.classList.remove('shrink');}
-});
-</script>
-
-<a href="https://wa.me/33781712324" class="wa-float" target="_blank" aria-label="Nous contacter sur WhatsApp">
+<a href="https://wa.me/33781712324" class="wa-float" target="_blank" rel="noopener" aria-label="Nous contacter sur WhatsApp">
   <span class="wa-ping"></span>
   <span class="wa-icon">💬</span>
   <span class="wa-text">WhatsApp</span>
 </a>
 
+<script src="js/home.js" defer></script>
 <script src="js/chatbot-lyaeco.js" defer></script>
 </body>
 </html>
