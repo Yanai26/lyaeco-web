@@ -1075,8 +1075,27 @@ footer {
     min-width: 280px;
   }
   .pack-card.featured { transform: none; }
-  .metiers-grid { grid-template-columns: repeat(2, 1fr); }
-  .metiers-bottom { grid-template-columns: repeat(2, 1fr); }
+  .metiers-grid,
+  .metiers-bottom {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 10px 16px 20px;
+    margin: 30px -16px 0;
+    max-width: 100%;
+  }
+  .metiers-grid::-webkit-scrollbar,
+  .metiers-bottom::-webkit-scrollbar { display: none; }
+  .metier-card {
+    flex: 0 0 75%;
+    scroll-snap-align: center;
+    min-width: 260px;
+    min-height: 240px;
+  }
   .avis-split, .ia-split { grid-template-columns: 1fr; gap: 40px; }
   .foot-in { grid-template-columns: 1fr 1fr; }
 }
@@ -1090,8 +1109,8 @@ footer {
   .nav-links, .nav-right > a { display: none; }
   .burger { display: flex; align-items: center; justify-content: center; }
   .bento-grid { grid-template-columns: 1fr; }
-  .metiers-grid { grid-template-columns: 1fr; }
-  .metiers-bottom { grid-template-columns: 1fr; }
+  .metiers-grid,
+  .metiers-bottom { overflow-x: auto; }
   .hero-visual { flex-direction: column; align-items: center; }
   .hero-avatar-wrap { margin-left: 0; margin-top: -30px; }
   .hero-phone-mockup { width: 130px; height: 260px; }
