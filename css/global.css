@@ -38,11 +38,30 @@ body {
   background: var(--grad);
   color: #fff;
   height: 48px;
-  display: flex; align-items: center; justify-content: center;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
 }
-.abar-static {
-  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
-  justify-content: center; padding: 0 24px;
+.abar-track {
+  display: flex;
+  white-space: nowrap;
+  animation: abarScroll 25s linear infinite;
+  will-change: transform;
+}
+.abar-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 40px;
+  flex-shrink: 0;
+}
+@keyframes abarScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-25%); }
+}
+.abar:hover .abar-track {
+  animation-play-state: paused;
 }
 .abar-text  { font-size: 13px; font-weight: 800; }
 .abar-sep   { font-size: 13px; font-weight: 800; color: rgba(255,255,255,.6); }
