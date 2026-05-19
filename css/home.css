@@ -444,11 +444,12 @@ body {
   display: inline-block;
   background: #eff6ff;
   color: var(--accent-blue);
-  font-size: 10px; font-weight: 900;
-  padding: 3px 10px;
+  font-size: 14px;
+  font-weight: 900;
+  padding: 6px 16px;
   border-radius: 100px;
-  margin-bottom: 8px;
-  letter-spacing: .5px;
+  margin-bottom: 10px;
+  letter-spacing: .3px;
 }
 .bento-tag { background: rgba(59,130,246,.15); }
 .bento-tag.new { background: linear-gradient(135deg,#1e40af,#06b6d4); color: #fff; }
