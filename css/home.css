@@ -30,6 +30,15 @@ body {
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
 
+/* ===== ICONS 3D ===== */
+.ico-3d {
+  display: inline-block;
+  vertical-align: middle;
+  margin: -2px 4px 0 0;
+  user-select: none;
+  pointer-events: none;
+}
+
 /* ===== ANNOUNCEMENT BAR ===== */
 .abar {
   background: var(--grad);
