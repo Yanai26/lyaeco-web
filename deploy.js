@@ -15,19 +15,9 @@ if (!FTP_REMOTE_DIR) {
   process.exit(1);
 }
 
-const HTML_FILES = [
-  'index.html',
-  'services.html',
-  'realisations.html',
-  'pourquoi-avoir-un-site.html',
-  'mentions-legales.html',
-  'politique-confidentialite.html',
-  'cgv.html',
-  'contact.html',
-  '404.html',
-  'qui-sommes-nous.html',
-  'devis-ia.html',
-];
+const HTML_FILES = fs.readdirSync(__dirname).filter(f =>
+  f.endsWith('.html') && f !== 'index-old.html'
+);
 
 async function deploy() {
   const client = new ftp.Client();
