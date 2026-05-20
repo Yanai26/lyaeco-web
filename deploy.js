@@ -56,6 +56,11 @@ async function deploy() {
     await client.uploadFrom(path.join(__dirname, '.htaccess'), '.htaccess');
     extraCount++;
 
+    // --- Upload favicon.ico ---
+    console.log(`\n🖼️  Upload favicon.ico → ${FTP_REMOTE_DIR}/favicon.ico...`);
+    await client.uploadFrom(path.join(__dirname, 'favicon.ico'), 'favicon.ico');
+    extraCount++;
+
     // --- Upload send-mail.php ---
     console.log(`\n📧 Upload send-mail.php → ${FTP_REMOTE_DIR}/send-mail.php...`);
     await client.uploadFrom(path.join(__dirname, 'send-mail.php'), 'send-mail.php');
