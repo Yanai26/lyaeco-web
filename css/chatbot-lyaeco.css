@@ -728,7 +728,6 @@
     bottom: 16px !important;
     right: 16px !important;
   }
-  .lyaeco-bubble { display: none !important; }
   .lyaeco-btn { width: 66px; height: 66px; }
   .lyaeco-btn img { width: 66px; height: 66px; }
   .lyaeco-win {
@@ -765,6 +764,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .lyaeco-bubble { display: none !important; }
   #lyaeco-chatbot .lyaeco-bubble { display: none !important; }
 }

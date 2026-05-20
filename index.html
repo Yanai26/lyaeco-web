@@ -39,6 +39,11 @@
 
 /* Avis step layout */
 .avis-step-1 { flex-direction: row; align-items: center; gap: 20px; flex-wrap: wrap; justify-content: center; }
+@media (max-width: 768px) {
+  .pack-list.pack-collapsed li:nth-child(n+5) { display: none; }
+  .home-pack-toggle-btn { display: block; width: 100%; margin-top: 12px; padding: 12px 0; background: transparent; border: 1px solid #e2e8f0; border-radius: 12px; color: #22d3ee; font-size: 14px; font-weight: 700; cursor: pointer; text-align: center; font-family: inherit; }
+}
+@media (min-width: 769px) { .home-pack-toggle-btn { display: none; } }
 </style>
 </head>
 <body>
@@ -205,7 +210,7 @@
       </div>
 
       <div class="bento-tile bento-agent reveal" data-delay="160" onclick="openChatModal()" role="button" tabindex="0" style="cursor:pointer;">
-        <span class="bento-icon"><img src="images/icons/bot.png" alt="" class="ico-3d" width="28" height="28"/></span>
+        <span class="bento-icon"><img src="images/assistant-ia-v3.png" alt="" width="36" height="36" style="border-radius:50%;object-fit:cover;"/></span>
         <span class="bento-tag new">NOUVEAU</span>
         <div class="bento-title">Agent IA Devis</div>
         <div class="bento-desc">Votre devis personnalisé en 2 min. Notre IA analyse vos besoins et propose le bon pack selon votre activité.</div>
@@ -715,5 +720,22 @@
 
 <!-- ===== JS ===== -->
 <script src="js/home.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (window.innerWidth > 768) return;
+  document.querySelectorAll('.pack-list').forEach(function(container) {
+    if (container.querySelectorAll('li').length <= 4) return;
+    container.classList.add('pack-collapsed');
+    var btn = document.createElement('button');
+    btn.className = 'home-pack-toggle-btn';
+    btn.textContent = 'Voir tout le détail ↓';
+    btn.addEventListener('click', function() {
+      var isCollapsed = container.classList.toggle('pack-collapsed');
+      btn.textContent = isCollapsed ? 'Voir tout le détail ↓' : 'Masquer ↑';
+    });
+    container.parentNode.insertBefore(btn, container.nextSibling);
+  });
+});
+</script>
 </body>
 </html>
