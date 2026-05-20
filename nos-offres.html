@@ -978,6 +978,11 @@ footer{background:#0f172a;color:#fff;padding:56px 48px 28px;}.foot-in{max-width:
 [data-theme="dark"] .pdesc{color:#94a3b8;}
 [data-theme="dark"] footer{font-family:'Manrope',sans-serif;}
 [data-theme="dark"] .foot-col a,[data-theme="dark"] .foot-col button,[data-theme="dark"] .foot-col span{font-family:'Manrope',sans-serif;}
+@media (max-width: 768px) {
+  .plist.pack-collapsed li:nth-child(n+5) { display: none; }
+  .no-pack-toggle-btn { display: block; width: 100%; margin-top: 12px; padding: 12px 0; background: transparent; border: 1px solid var(--border,#e2e8f0); border-radius: 12px; color: #2563eb; font-size: 14px; font-weight: 700; cursor: pointer; text-align: center; font-family: inherit; }
+}
+@media (min-width: 769px) { .no-pack-toggle-btn { display: none; } }
 </style>
 </head>
 <body>
@@ -1593,5 +1598,22 @@ window.addEventListener('scroll',function(){
 <script src="js/home.js" defer></script>
 <link rel="stylesheet" href="css/chatbot-lyaeco.css">
 <script src="js/chatbot-lyaeco.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (window.innerWidth > 768) return;
+  document.querySelectorAll('.plist').forEach(function(container) {
+    if (container.querySelectorAll('li').length <= 4) return;
+    container.classList.add('pack-collapsed');
+    var btn = document.createElement('button');
+    btn.className = 'no-pack-toggle-btn';
+    btn.textContent = 'Voir tout le détail ↓';
+    btn.addEventListener('click', function() {
+      var isCollapsed = container.classList.toggle('pack-collapsed');
+      btn.textContent = isCollapsed ? 'Voir tout le détail ↓' : 'Masquer ↑';
+    });
+    container.parentNode.insertBefore(btn, container.nextSibling);
+  });
+});
+</script>
 </body>
 </html>
