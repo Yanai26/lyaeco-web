@@ -186,3 +186,20 @@ document.addEventListener('DOMContentLoaded', function() {
   initNavShrink();
   initModalClose();
 });
+
+/* ===== PACK FEATURES COLLAPSE (mobile only) ===== */
+document.addEventListener('DOMContentLoaded', function() {
+  if (window.innerWidth > 768) return;
+  document.querySelectorAll('.pp-features').forEach(function(container) {
+    if (container.querySelectorAll('.pp-feature').length <= 4) return;
+    container.classList.add('pack-collapsed');
+    var btn = document.createElement('button');
+    btn.className = 'pack-toggle-btn';
+    btn.textContent = 'Voir tout le détail ↓';
+    btn.addEventListener('click', function() {
+      var isCollapsed = container.classList.toggle('pack-collapsed');
+      btn.textContent = isCollapsed ? 'Voir tout le détail ↓' : 'Masquer ↑';
+    });
+    container.parentNode.insertBefore(btn, container.nextSibling);
+  });
+});
