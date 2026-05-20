@@ -66,9 +66,6 @@ body {
   from { transform: translateX(0); }
   to { transform: translateX(-25%); }
 }
-.abar:hover .abar-track {
-  animation-play-state: paused;
-}
 .abar-text { font-size: 13px; font-weight: 800; }
 .abar-sep { font-size: 13px; font-weight: 800; color: rgba(255,255,255,.6); }
 .abar-btn {

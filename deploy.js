@@ -18,7 +18,6 @@ if (!FTP_REMOTE_DIR) {
 const HTML_FILES = [
   'index.html',
   'services.html',
-  'devis.html',
   'realisations.html',
   'pourquoi-avoir-un-site.html',
   'mentions-legales.html',
@@ -137,24 +136,30 @@ async function deploy() {
     }
     await client.cd(FTP_REMOTE_DIR);
 
-    // --- Upload des images ---
-    console.log(`\n🖼️  Préparation du dossier ${FTP_REMOTE_DIR}/images/...`);
-    await client.ensureDir(`${FTP_REMOTE_DIR}/images`);
-    console.log(`   📂 cd ${FTP_REMOTE_DIR}/images...`);
-    await client.cd(`${FTP_REMOTE_DIR}/images`);
-
+    // --- Upload des images (récursif) ---
+    console.log(`\n🖼️  Upload récursif de images/ → ${FTP_REMOTE_DIR}/images/...`);
+    await client.cd(FTP_REMOTE_DIR);
     const imagesDir = path.join(__dirname, 'images');
-    const imageFiles = fs.readdirSync(imagesDir).filter(f =>
-      fs.statSync(path.join(imagesDir, f)).isFile()
-    );
 
-    console.log('   Upload des images...');
-    for (const file of imageFiles) {
-      const localPath = path.join(imagesDir, file);
-      console.log(`   ⬆️  ${file} → ${FTP_REMOTE_DIR}/images/${file}`);
-      await client.uploadFrom(localPath, file);
-      imgCount++;
+    async function uploadImagesRecursive(localDir, remoteDir) {
+      await client.ensureDir(remoteDir);
+      await client.cd(remoteDir);
+      const entries = fs.readdirSync(localDir);
+      for (const entry of entries) {
+        const localPath = path.join(localDir, entry);
+        if (fs.statSync(localPath).isDirectory()) {
+          await uploadImagesRecursive(localPath, `${remoteDir}/${entry}`);
+          await client.cd(remoteDir);
+        } else {
+          const rel = localPath.replace(__dirname + path.sep, '').replace(/\\/g, '/');
+          console.log(`   ⬆️  ${rel} → ${remoteDir}/${entry}`);
+          await client.uploadFrom(localPath, entry);
+          imgCount++;
+        }
+      }
     }
+
+    await uploadImagesRecursive(imagesDir, `${FTP_REMOTE_DIR}/images`);
 
     // --- Récap ---
     console.log('');
