@@ -1,3 +1,8 @@
+# ─── Redirection www → sans www (301 permanent) ──────────────────────────────
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.lyaeco\.com [NC]
+RewriteRule ^(.*)$ https://lyaeco.com/$1 [L,R=301]
+
 ErrorDocument 404 /404.html
 
 # ─── Blocage des fichiers sensibles ──────────────────────────────────────────
