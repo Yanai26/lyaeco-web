@@ -497,6 +497,10 @@
     document.getElementById('lyaeco-win').classList.remove('lyaeco-open');
     document.getElementById('lyaeco-win').setAttribute('aria-hidden','true');
     document.getElementById('lyaeco-btn').classList.remove('lyaeco-btn-active');
+    var overlay = document.getElementById('chatOverlay');
+    if (overlay) overlay.classList.remove('open');
+    var win = document.getElementById('lyaeco-win');
+    if (win) win.classList.remove('lyaeco-centered');
   }
 
   function buildWidget() {
