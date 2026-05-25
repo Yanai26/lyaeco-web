@@ -278,7 +278,8 @@ body {
 .btn-secondary:hover { background: var(--accent-blue); color: #fff; transform: translateY(-2px); }
 
 /* ===== HOMEPAGE NAV ===== */
-body.homepage .h-nav { display: none !important; }
+body.homepage .h-nav  { display: none !important; }
+body.homepage .abar   { display: none !important; }
 
 /* ===== PILL NAV (index.html uniquement) ===== */
 .hnav-pill {
@@ -297,14 +298,14 @@ body.homepage .h-nav { display: none !important; }
   background: #fff;
   border-radius: 100px;
   box-shadow: 0 4px 24px rgba(15,23,42,.12), 0 1px 4px rgba(15,23,42,.06);
-  padding: 6px 6px 6px 20px;
+  padding: 8px 8px 8px 24px;
   width: min(960px, 100%);
   gap: 4px;
 }
 .hnav-logo {
   display: flex; align-items: center; gap: 8px;
   text-decoration: none; color: #0f172a;
-  font-weight: 900; font-size: 15px;
+  font-weight: 900; font-size: 16px;
   white-space: nowrap; flex-shrink: 0; margin-right: 4px;
 }
 .hnav-logo img { border-radius: 8px; }
@@ -317,23 +318,23 @@ body.homepage .h-nav { display: none !important; }
 }
 .hnav-links a {
   display: block; text-decoration: none;
-  color: #374151; font-size: 13px; font-weight: 700;
-  padding: 7px 12px; border-radius: 100px;
+  color: #374151; font-size: 14px; font-weight: 700;
+  padding: 9px 14px; border-radius: 100px;
   white-space: nowrap; transition: background .18s, color .18s;
 }
 .hnav-links a:hover { background: #f1f5f9; color: #0f172a; }
 .hnav-cta {
   display: inline-flex; align-items: center;
   background: #0f172a; color: #fff; text-decoration: none;
-  font-size: 13px; font-weight: 800;
-  padding: 10px 22px; border-radius: 100px;
+  font-size: 14px; font-weight: 800;
+  padding: 13px 28px; border-radius: 100px;
   white-space: nowrap; flex-shrink: 0; transition: background .2s;
 }
 .hnav-cta:hover { background: #1e293b; }
 .hnav-burger {
   display: none;
   background: none; border: none; cursor: pointer;
-  padding: 8px 12px; border-radius: 100px; flex-shrink: 0;
+  padding: 10px 14px; border-radius: 100px; flex-shrink: 0;
   transition: background .18s;
 }
 .hnav-burger:hover { background: #f1f5f9; }
@@ -341,34 +342,28 @@ body.homepage .h-nav { display: none !important; }
 /* ===== SECTION 1 — HERO ===== */
 .hero2 {
   min-height: 100svh;
-  background: #f8fafc;
+  background: #0f172a;
   display: flex; flex-direction: column; align-items: center;
-  padding: 60px 24px 0;
+  padding: 80px 24px 0;
   text-align: center;
   overflow: visible;
 }
-.hero2-badge {
-  display: inline-flex; align-items: center; gap: 6px;
-  background: #dbeafe; color: #1d4ed8;
-  font-size: 12px; font-weight: 800;
-  padding: 6px 16px; border-radius: 100px;
-  margin-bottom: 32px; letter-spacing: .4px;
-}
 .hero2-h1 {
   font-family: 'Bricolage Grotesque', 'Manrope', sans-serif;
-  font-size: clamp(40px, 7vw, 88px);
+  font-size: clamp(52px, 7.5vw, 100px);
   font-weight: 800; line-height: 1.06;
   letter-spacing: clamp(-2px, -.5vw, -3px);
-  color: #0f172a; max-width: 920px;
+  color: #ffffff; max-width: 960px;
   margin: 0 auto 28px;
 }
+.hero2-accent { color: #FC692F; }
 .hero2-sub {
-  font-size: clamp(15px, 2vw, 20px);
-  color: #4b5563; line-height: 1.6;
-  margin-bottom: 56px; max-width: 560px;
+  font-size: clamp(17px, 2.2vw, 24px);
+  color: rgba(255,255,255,.75); line-height: 1.6;
+  margin-bottom: 56px; max-width: 580px;
 }
 .hero2-rotating {
-  display: inline-block; color: #2563eb; font-weight: 800;
+  display: inline-block; color: #FC692F; font-weight: 800;
   transition: opacity .3s ease;
 }
 .hero2-rotating.fade { opacity: 0; }
