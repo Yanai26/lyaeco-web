@@ -48,7 +48,7 @@
 @media (min-width: 769px) { .home-pack-toggle-btn { display: none; } }
 </style>
 </head>
-<body>
+<body class="homepage">
 
 <!-- ===== ANNOUNCEMENT BAR ===== -->
 <div class="abar" id="abar">
@@ -117,76 +117,91 @@
   <a href="devis-ia.html" class="mobile-cta">Obtenir un devis gratuit →</a>
 </div>
 
-<!-- ===== SECTION 1 — HERO ===== -->
-<section class="hnew" id="hero">
-  <div class="hnew-aurora"></div>
-  <div class="hnew-dots"></div>
-  <div class="hnew-inner">
-
-    <!-- Gauche : texte -->
-    <div class="hnew-left reveal">
-      <div class="hnew-pill">
-        <img src="images/icons/rocket.png" alt="" class="ico-3d" width="18" height="18"/>
-        Création de sites · 2026
-      </div>
-      <h1 class="hnew-h1">
-        Arrêtez de perdre des opportunités,<br/>
-        commencez à briller en ligne.
-      </h1>
-      <p class="hnew-sub">
-        Améliorez la visibilité de votre <span class="hnew-rotating" id="hnewRotating">Boulangerie</span> pour un prix fixe.
-      </p>
-      <div class="hnew-btns">
-        <a href="devis-ia.html" class="btn-primary" style="font-size:16px;padding:17px 32px;">Obtenir un devis gratuit →</a>
-        <a href="tel:0781712324" class="btn-secondary">Audit gratuit <img src="images/icons/landline.png" alt="" class="ico-3d" width="18" height="18"/></a>
-      </div>
-      <div class="hnew-trust">
-        <div class="hnew-trust-item"><img src="images/icons/check.png" alt="" class="ico-3d" width="16" height="16"/> Sans abonnement</div>
-        <div class="hnew-trust-item"><img src="images/icons/check.png" alt="" class="ico-3d" width="16" height="16"/> Livraison 7-10 jours</div>
-        <div class="hnew-trust-item"><img src="images/icons/check.png" alt="" class="ico-3d" width="16" height="16"/> Made in France <img src="images/icons/marker.png" alt="" class="ico-3d" width="16" height="16"/></div>
-      </div>
-    </div>
-
-    <!-- Droite : phone + carousel -->
-    <div class="hnew-right reveal" data-delay="200">
-      <div class="hnew-phone-scene">
-
-        <!-- Carousel de vrais screenshots (derrière le cadre) -->
-        <div class="hnew-carousel" aria-hidden="true">
-          <img src="images/designs-mockups/design-boulanger-mobile.png"   alt="" class="hnew-slide active"/>
-          <img src="images/designs-mockups/design-coiffeur-mobile.png"    alt="" class="hnew-slide"/>
-          <img src="images/designs-mockups/design-restaurant-mobile.png"  alt="" class="hnew-slide"/>
-          <img src="images/designs-mockups/design-fleuriste-mobile.png"   alt="" class="hnew-slide"/>
-          <img src="images/designs-mockups/design-serrurier-mobile.png"   alt="" class="hnew-slide"/>
-        </div>
-
-        <!-- Cadre téléphone PNG (par-dessus le carousel) -->
-        <img src="images/hero/main-phone.png" alt="Aperçu site mobile" class="hnew-phone" loading="eager"/>
-
-        <!-- Notification iOS (haut d'écran) -->
-        <div class="hnew-notif" aria-hidden="true">
-          <div class="hnew-notif-app">Nouveau message</div>
-          <div class="hnew-notif-msg">Bonjour, je voudrais réserver pour demain ✅</div>
-        </div>
-
-        <!-- 3 popups (contour orange, fond blanc) -->
-        <div class="hnew-popup hnew-popup-1" aria-hidden="true">
-          <span class="hnew-popup-dot"></span>
-          Nouvelle commande
-        </div>
-        <div class="hnew-popup hnew-popup-2" aria-hidden="true">
-          <span class="hnew-popup-dot"></span>
-          Réservation pour 4 personnes
-        </div>
-        <div class="hnew-popup hnew-popup-3" aria-hidden="true">
-          <span class="hnew-popup-dot"></span>
-          RDV plomberie à 14h30 à Paris
-        </div>
-
-      </div>
-    </div>
-
+<!-- PILL NAV (homepage seulement — .h-nav masquée via CSS) -->
+<nav class="hnav-pill" id="hnavPill" aria-label="Navigation principale">
+  <div class="hnav-inner">
+    <a class="hnav-logo" href="index.html">
+      <img src="images/logo-lyaeco.png" alt="LYAECO" width="32" height="32"/>
+      <span>Lyaeco<em>Web</em></span>
+    </a>
+    <ul class="hnav-links" role="list">
+      <li><a href="services.html">Services</a></li>
+      <li><a href="pourquoi-avoir-un-site.html">Pourquoi un site ?</a></li>
+      <li><a href="realisations.html">Réalisations</a></li>
+      <li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li>
+      <li><a href="nos-offres.html">Nos offres</a></li>
+    </ul>
+    <a class="hnav-cta" href="devis-ia.html">Devis IA →</a>
+    <button class="hnav-burger" id="hnavBurger" aria-label="Ouvrir le menu">
+      <img src="images/icons/menu.png" alt="" class="ico-3d" width="20" height="20"/>
+    </button>
   </div>
+</nav>
+
+<!-- ===== SECTION 1 — HERO ===== -->
+<section class="hero2" id="hero">
+
+  <!-- Badge pilule -->
+  <div class="hero2-badge" aria-hidden="true">
+    <img src="images/icons/rocket.png" alt="" class="ico-3d" width="14" height="14"/>
+    Création de sites · 2026
+  </div>
+
+  <!-- H1 géant centré -->
+  <h1 class="hero2-h1">
+    Arrêtez de perdre des opportunités,<br>
+    commencez à briller en ligne.
+  </h1>
+
+  <!-- Sous-titre avec métier rotatif -->
+  <p class="hero2-sub">
+    Améliorez la visibilité de votre
+    <strong class="hero2-rotating" id="hero2Rotating">Boulangerie</strong>
+    pour un prix fixe.
+  </p>
+
+  <!-- Scène téléphone centrée -->
+  <div class="hero2-scene">
+
+    <!-- Carousel CSS-only — z-index 3 (écran blanc) → 1 quand écran transparent -->
+    <div class="hero2-carousel" aria-hidden="true">
+      <img class="hero2-slide" src="images/designs-mockups/design-boulanger-mobile.png"
+           alt="" width="240" height="480" loading="eager"/>
+      <img class="hero2-slide" src="images/designs-mockups/design-restaurant-mobile.png"
+           alt="" width="240" height="480" loading="lazy"/>
+      <img class="hero2-slide" src="images/designs-mockups/design-coiffeur-mobile.png"
+           alt="" width="240" height="480" loading="lazy"/>
+      <img class="hero2-slide" src="images/designs-mockups/design-fleuriste-mobile.png"
+           alt="" width="240" height="480" loading="lazy"/>
+      <img class="hero2-slide" src="images/designs-mockups/design-serrurier-mobile.png"
+           alt="" width="240" height="480" loading="lazy"/>
+    </div>
+
+    <!-- Phone PNG z-index 2 (devant carousel si écran transparent) -->
+    <img class="hero2-phone" src="images/hero/main-phone.png"
+         alt="Aperçu site mobile" width="320" height="640" loading="eager"/>
+
+    <!-- Notification iOS -->
+    <div class="hero2-notif" aria-hidden="true">
+      Bonjour, je voudrais réserver pour demain ✅
+    </div>
+
+    <!-- 3 popups orange pleins -->
+    <div class="hero2-pop hero2-pop-a" aria-hidden="true">
+      <strong>Nouvelle commande</strong>
+      <span>Une baguette tradition réservée</span>
+    </div>
+    <div class="hero2-pop hero2-pop-b" aria-hidden="true">
+      <strong>Réservation</strong>
+      <span>Table pour 4 personnes à 20h</span>
+    </div>
+    <div class="hero2-pop hero2-pop-c" aria-hidden="true">
+      <strong>RDV plomberie</strong>
+      <span>Aujourd'hui 14h30 · Paris</span>
+    </div>
+
+  </div><!-- /.hero2-scene -->
+
 </section>
 
 <!-- ===== SECTION 2 — BENTO GRID ===== -->
@@ -755,10 +770,21 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 <script>
+/* Burger pill nav → ouvre le mobileMenu existant */
+(function() {
+  var btn = document.getElementById('hnavBurger');
+  var menu = document.getElementById('mobileMenu');
+  if (!btn || !menu) return;
+  btn.addEventListener('click', function() {
+    menu.classList.add('open');
+    document.body.classList.add('menu-open');
+  });
+})();
+
 /* Subtitle rotatif */
 (function() {
   var words = ['Boulangerie','Restaurant','Boucherie','Salon','Serrurerie'];
-  var el = document.getElementById('hnewRotating');
+  var el = document.getElementById('hero2Rotating');
   if (!el) return;
   var i = 0;
   setInterval(function() {
@@ -769,18 +795,6 @@ document.addEventListener('DOMContentLoaded', function() {
       el.classList.remove('fade');
     }, 300);
   }, 2600);
-})();
-
-/* Carousel hero */
-(function() {
-  var slides = document.querySelectorAll('.hnew-slide');
-  if (!slides.length) return;
-  var current = 0;
-  setInterval(function() {
-    slides[current].classList.remove('active');
-    current = (current + 1) % slides.length;
-    slides[current].classList.add('active');
-  }, 3200);
 })();
 </script>
 </body>
