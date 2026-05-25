@@ -88,7 +88,7 @@ body {
 .h-nav.shrink { height: 64px; }
 .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
 .nav-logo-img { width: 42px; height: 42px; object-fit: contain; border-radius: 10px; }
-.nav-logo-name { font-size: 20px; font-weight: 900; color: var(--text-primary); letter-spacing: -.5px; }
+.nav-logo-name { font-size: 20px; font-weight: 900; color: var(--text-primary); letter-spacing: -.5px; line-height: 1; }
 .nav-logo-name em { font-style: normal; color: var(--accent-cyan); }
 .nav-links { display: flex; align-items: center; gap: 4px; list-style: none; }
 .nav-links a {
@@ -128,7 +128,7 @@ body {
 .mobile-menu.open { display: flex; }
 @keyframes menuSlide { from { opacity: 0; transform: translateY(-12px); } to { opacity: 1; transform: translateY(0); } }
 .mobile-menu-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
-.mobile-menu-header .nav-logo { display: flex; align-items: center; }
+.mobile-menu-header .nav-logo { display: flex; align-items: center; gap: 10px; }
 .mobile-close { font-size: 28px; background: none; border: none; cursor: pointer; color: var(--text-primary); }
 .mobile-menu a {
   display: block; padding: 16px 20px;
