@@ -43,7 +43,7 @@
 .avis-step-1 { flex-direction: row; align-items: center; gap: 20px; flex-wrap: wrap; justify-content: center; }
 @media (max-width: 768px) {
   .pack-list.pack-collapsed li:nth-child(n+5) { display: none; }
-  .home-pack-toggle-btn { display: block; width: 100%; margin-top: 12px; padding: 12px 0; background: transparent; border: 1px solid #e2e8f0; border-radius: 12px; color: #22d3ee; font-size: 14px; font-weight: 700; cursor: pointer; text-align: center; font-family: inherit; }
+  .home-pack-toggle-btn { display: block; width: 100%; margin-top: 12px; padding: 12px 0; background: transparent; border: 1px solid #e2e8f0; border-radius: 12px; color: #4A90D9; font-size: 14px; font-weight: 700; cursor: pointer; text-align: center; font-family: inherit; }
 }
 @media (min-width: 769px) { .home-pack-toggle-btn { display: none; } }
 </style>
@@ -139,6 +139,7 @@
 </nav>
 
 <!-- ===== SECTION 1 — HERO ===== -->
+<div class="hero-sticky-wrap">
 <section class="hero2" id="hero">
 
   <!-- H1 géant centré -->
@@ -157,46 +158,66 @@
   <!-- Scène téléphone centrée -->
   <div class="hero2-scene">
 
-    <!-- Carousel CSS-only — z-index 3 (écran blanc) → 1 quand écran transparent -->
-    <div class="hero2-carousel" aria-hidden="true">
-      <img class="hero2-slide" src="images/designs-mockups/design-boulanger-mobile.png"
-           alt="" width="240" height="480" loading="eager"/>
-      <img class="hero2-slide" src="images/designs-mockups/design-restaurant-mobile.png"
-           alt="" width="240" height="480" loading="lazy"/>
-      <img class="hero2-slide" src="images/designs-mockups/design-coiffeur-mobile.png"
-           alt="" width="240" height="480" loading="lazy"/>
-      <img class="hero2-slide" src="images/designs-mockups/design-fleuriste-mobile.png"
-           alt="" width="240" height="480" loading="lazy"/>
-      <img class="hero2-slide" src="images/designs-mockups/design-serrurier-mobile.png"
-           alt="" width="240" height="480" loading="lazy"/>
-    </div>
+    <!-- Phone wrap : taille dictée par l'image, carousel + notif absolus dedans -->
+    <div class="hero2-phone-wrap">
 
-    <!-- Phone PNG z-index 2 (devant carousel si écran transparent) -->
-    <img class="hero2-phone" src="images/hero/main-phone.png"
-         alt="Aperçu site mobile" width="320" height="640" loading="eager"/>
+      <!-- Carousel CSS-only — z-index 1 (DERRIÈRE le téléphone, visible dans le trou de l'écran) -->
+      <div class="hero2-carousel" aria-hidden="true">
+        <img class="hero2-slide" src="images/designs-mockups/design-boulanger-mobile.png"
+             alt="" width="240" height="480" loading="eager"/>
+        <img class="hero2-slide" src="images/designs-mockups/design-restaurant-mobile.png"
+             alt="" width="240" height="480" loading="lazy"/>
+        <img class="hero2-slide" src="images/designs-mockups/design-coiffeur-mobile.png"
+             alt="" width="240" height="480" loading="lazy"/>
+        <img class="hero2-slide" src="images/designs-mockups/design-fleuriste-mobile.png"
+             alt="" width="240" height="480" loading="lazy"/>
+        <img class="hero2-slide" src="images/designs-mockups/design-serrurier-mobile.png"
+             alt="" width="240" height="480" loading="lazy"/>
+      </div>
 
-    <!-- Notification iOS -->
-    <div class="hero2-notif" aria-hidden="true">
-      Bonjour, je voudrais réserver pour demain ✅
-    </div>
+      <!-- Phone PNG z-index 2 (devant carousel) — position:relative → définit la taille du wrap -->
+      <img class="hero2-phone-img" src="images/hero/main-phone.png"
+           alt="Aperçu site mobile" width="941" height="1237" loading="eager"/>
 
-    <!-- 3 popups orange pleins -->
-    <div class="hero2-pop hero2-pop-a" aria-hidden="true">
-      <strong>Nouvelle commande</strong>
-      <span>Une baguette tradition réservée</span>
+      <!-- Notification iOS — dans la zone écran -->
+      <div class="hero2-notif" aria-hidden="true">
+        Bonjour, je voudrais réserver pour demain ✅
+      </div>
+
+    </div><!-- /.hero2-phone-wrap -->
+
+    <!-- 4 pop-ups flottantes — absolus par rapport à .hero2-scene, jamais sur le téléphone -->
+    <div class="hero2-pop hero2-pop-populaire" aria-hidden="true">
+      <img class="hero2-pop-thumb" src="images/designs-mockups/design-boulanger-mobile.png" alt="" loading="lazy"/>
+      <div class="hero2-pop-body">
+        <strong class="hero2-pop-title">★ POPULAIRE</strong>
+        <span class="hero2-pop-text">Pack Réservation choisi 12 fois ce mois-ci</span>
+      </div>
     </div>
-    <div class="hero2-pop hero2-pop-b" aria-hidden="true">
-      <strong>Réservation</strong>
-      <span>Table pour 4 personnes à 20h</span>
+    <div class="hero2-pop hero2-pop-checklist" aria-hidden="true">
+      <ul class="hero2-pop-check">
+        <li>Réservation en ligne</li>
+        <li>Paiement sécurisé</li>
+        <li>Référencement Google</li>
+      </ul>
+      <span class="hero2-pop-pill">Tout inclus</span>
     </div>
-    <div class="hero2-pop hero2-pop-c" aria-hidden="true">
-      <strong>RDV plomberie</strong>
-      <span>Aujourd'hui 14h30 · Paris</span>
+    <div class="hero2-pop hero2-pop-offre" aria-hidden="true">
+      <strong class="hero2-pop-title">⏳ Offre du moment</strong>
+      <span class="hero2-pop-accent">Livré en 7 jours</span>
+    </div>
+    <div class="hero2-pop hero2-pop-avis" aria-hidden="true">
+      <div class="hero2-pop-avatar"><span class="hero2-pop-dot"></span></div>
+      <div class="hero2-pop-body">
+        <span class="hero2-pop-quote">« Mon site est en ligne, déjà 5 nouveaux clients ! »</span>
+        <span class="hero2-pop-author">— Marie D.</span>
+      </div>
     </div>
 
   </div><!-- /.hero2-scene -->
 
 </section>
+</div><!-- /.hero-sticky-wrap -->
 
 <!-- ===== SECTION 2 — BENTO GRID ===== -->
 <section class="section bento-section" id="services">
