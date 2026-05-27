@@ -80,44 +80,7 @@
   </div>
 </div>
 
-<!-- ===== NAV ===== -->
-<nav class="h-nav" id="mainNav">
-  <a class="nav-logo" href="index.html">
-    <img src="images/logo-lyaeco.png" alt="LYAECO Web" class="nav-logo-img" width="42" height="42"/>
-    <span class="nav-logo-name">Lyaeco<em>Web</em></span>
-  </a>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="services.html">Services</a></li>
-    <li><a href="pourquoi-avoir-un-site.html">Pourquoi un site ?</a></li>
-    <li><a href="realisations.html">Réalisations</a></li>
-    <li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li>
-    <li><a href="nos-offres.html">Nos offres</a></li>
-    <li><a href="devis-ia.html" class="nav-cta">Devis IA</a></li>
-  </ul>
-  <div class="nav-right">
-    <a href="devis-ia.html" class="btn-primary" style="padding:10px 20px;font-size:14px;">Obtenir un devis gratuit →</a>
-    <button class="burger" id="burgerBtn" aria-label="Ouvrir le menu" aria-expanded="false"><img src="images/icons/menu.png" alt="" class="ico-3d" width="20" height="20"/></button>
-  </div>
-</nav>
-
-<!-- Mobile menu -->
-<div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Menu navigation">
-  <div class="mobile-menu-header">
-    <a class="nav-logo" href="index.html">
-      <img src="images/logo-lyaeco.png" alt="LYAECO" class="nav-logo-img" width="38" height="38"/>
-      <span class="nav-logo-name">Lyaeco<em>Web</em></span>
-    </a>
-    <button class="mobile-close" id="mobileClose" aria-label="Fermer le menu">×</button>
-  </div>
-  <a href="services.html">Services</a>
-  <a href="pourquoi-avoir-un-site.html">Pourquoi un site ?</a>
-  <a href="realisations.html">Réalisations</a>
-  <a href="qui-sommes-nous.html">Qui sommes-nous ?</a>
-  <a href="nos-offres.html">Nos offres</a>
-  <a href="devis-ia.html" class="mobile-cta">Obtenir un devis gratuit →</a>
-</div>
-
-<!-- PILL NAV (homepage seulement — .h-nav masquée via CSS) -->
+<!-- ===== PILL NAV (identique sur toutes les pages) ===== -->
 <nav class="hnav-pill" id="hnavPill" aria-label="Navigation principale">
   <div class="hnav-inner">
     <a class="hnav-logo" href="index.html">
@@ -141,6 +104,9 @@
 <!-- ===== SECTION 1 — HERO ===== -->
 <div class="hero-sticky-wrap">
 <section class="hero2" id="hero">
+
+  <!-- Mobile-only : nom de marque entre la pilule nav et le titre -->
+  <div class="hero2-mobile-brand"><span>Lyaeco</span><em>Web</em></div>
 
   <!-- H1 géant centré -->
   <h1 class="hero2-h1">

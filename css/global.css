@@ -249,6 +249,114 @@ footer { background: #0f172a; color: #fff; padding: 56px 48px 28px; }
 .wa-ping { position: absolute; inset: 0; border-radius: 100px; background: rgba(37,211,102,.35); animation: waPing 2s infinite; z-index: -1; }
 @keyframes waPing { 0% { transform: scale(1); opacity: .7; } 70% { transform: scale(1.18); opacity: 0; } 100% { opacity: 0; } }
 
+/* ── Pill Nav (utilisée sur toutes les pages) ── */
+.hnav-pill {
+  position: sticky;
+  top: 0;
+  z-index: 998;
+  display: flex;
+  justify-content: center;
+  padding: 12px 20px;
+  pointer-events: none;
+  background: #1A4FC4;
+}
+.hnav-inner {
+  pointer-events: all;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 100px;
+  box-shadow: 0 4px 24px rgba(15,23,42,.12), 0 1px 4px rgba(15,23,42,.06);
+  padding: 8px 8px 8px 24px;
+  width: min(960px, 100%);
+  gap: 4px;
+}
+.hnav-logo {
+  display: flex; align-items: center; gap: 8px;
+  text-decoration: none; color: #0f172a;
+  font-weight: 900; font-size: 16px;
+  white-space: nowrap; flex-shrink: 0; margin-right: 4px;
+}
+.hnav-logo img { border-radius: 8px; }
+.hnav-logo em { color: #FC692F; font-style: normal; }
+.hnav-links {
+  list-style: none;
+  display: flex; gap: 0;
+  flex: 1; justify-content: center;
+  padding: 0 8px;
+}
+.hnav-links a {
+  display: block; text-decoration: none;
+  color: #374151; font-size: 14px; font-weight: 700;
+  padding: 9px 14px; border-radius: 100px;
+  white-space: nowrap; transition: background .18s, color .18s;
+}
+.hnav-links a:hover { background: #f1f5f9; color: #0f172a; }
+.hnav-links a[aria-current="page"] { background: #f1f5f9; color: #0f172a; }
+.hnav-cta {
+  display: inline-flex; align-items: center;
+  background: #FC692F; color: #fff; text-decoration: none;
+  font-size: 14px; font-weight: 800;
+  padding: 13px 28px; border-radius: 100px;
+  white-space: nowrap; flex-shrink: 0; transition: background .2s;
+}
+.hnav-cta:hover { background: #e85a24; }
+.hnav-burger {
+  display: none;
+  background: none; border: none; cursor: pointer;
+  padding: 10px 14px; border-radius: 100px; flex-shrink: 0;
+  transition: background .18s;
+}
+.hnav-burger:hover { background: #f1f5f9; }
+
+/* Pill nav tablette (641-1024) : liens toujours visibles avec scroll horizontal si trop serrés, plus de burger (mobile-menu supprimé) */
+@media (max-width: 1024px) {
+  .hnav-burger { display: none !important; }
+  .hnav-links {
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .hnav-links::-webkit-scrollbar { display: none; }
+  .hnav-links a { padding: 8px 11px; font-size: 13px; }
+  .hnav-cta { font-size: 13px; padding: 11px 20px; }
+}
+
+/* Pill nav mobile (≤640) : liens visibles, plus de burger, plus de texte logo, défilement horizontal si trop serré */
+@media (max-width: 640px) {
+  .hnav-pill { padding: 8px 10px; }
+  .hnav-inner {
+    padding: 6px 6px 6px 10px;
+    width: 100%;
+    gap: 2px;
+  }
+  .hnav-logo span { display: none; }
+  .hnav-logo { margin-right: 2px; gap: 0; }
+  .hnav-logo img { width: 28px; height: 28px; }
+  .hnav-burger { display: none !important; }
+  .hnav-links {
+    display: flex !important;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 4px;
+    flex: 1;
+    justify-content: flex-start;
+  }
+  .hnav-links::-webkit-scrollbar { display: none; }
+  .hnav-links a {
+    font-size: 11px;
+    padding: 6px 9px;
+    font-weight: 700;
+  }
+  .hnav-cta {
+    display: inline-flex !important;
+    font-size: 11px;
+    padding: 8px 14px;
+    font-weight: 800;
+  }
+}
+
 /* ── Responsive ── */
 @media (max-width: 1024px) { .foot-in { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 768px)  { .h-nav { padding: 0 20px; } }

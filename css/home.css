@@ -283,63 +283,7 @@ body.homepage .h-nav  { display: none !important; }
 body.homepage .abar   { display: none !important; }
 
 /* ===== PILL NAV (index.html uniquement) ===== */
-.hnav-pill {
-  position: sticky;
-  top: 0;
-  z-index: 998;
-  display: flex;
-  justify-content: center;
-  padding: 12px 20px;
-  pointer-events: none;
-  background: #1A4FC4;
-}
-.hnav-inner {
-  pointer-events: all;
-  display: flex;
-  align-items: center;
-  background: #fff;
-  border-radius: 100px;
-  box-shadow: 0 4px 24px rgba(15,23,42,.12), 0 1px 4px rgba(15,23,42,.06);
-  padding: 8px 8px 8px 24px;
-  width: min(960px, 100%);
-  gap: 4px;
-}
-.hnav-logo {
-  display: flex; align-items: center; gap: 8px;
-  text-decoration: none; color: #0f172a;
-  font-weight: 900; font-size: 16px;
-  white-space: nowrap; flex-shrink: 0; margin-right: 4px;
-}
-.hnav-logo img { border-radius: 8px; }
-.hnav-logo em { color: #FC692F; font-style: normal; }
-.hnav-links {
-  list-style: none;
-  display: flex; gap: 0;
-  flex: 1; justify-content: center;
-  padding: 0 8px;
-}
-.hnav-links a {
-  display: block; text-decoration: none;
-  color: #374151; font-size: 14px; font-weight: 700;
-  padding: 9px 14px; border-radius: 100px;
-  white-space: nowrap; transition: background .18s, color .18s;
-}
-.hnav-links a:hover { background: #f1f5f9; color: #0f172a; }
-.hnav-cta {
-  display: inline-flex; align-items: center;
-  background: #FC692F; color: #fff; text-decoration: none;
-  font-size: 14px; font-weight: 800;
-  padding: 13px 28px; border-radius: 100px;
-  white-space: nowrap; flex-shrink: 0; transition: background .2s;
-}
-.hnav-cta:hover { background: #e85a24; }
-.hnav-burger {
-  display: none;
-  background: none; border: none; cursor: pointer;
-  padding: 10px 14px; border-radius: 100px; flex-shrink: 0;
-  transition: background .18s;
-}
-.hnav-burger:hover { background: #f1f5f9; }
+/* (Pill nav styles déplacés dans css/global.css — utilisables sur toutes les pages) */
 
 /* ===== SECTION 1 — HERO ===== */
 .hero-sticky-wrap {
@@ -358,6 +302,22 @@ body.homepage .abar   { display: none !important; }
   overflow: visible;
   border-bottom-left-radius: 72px;
   border-bottom-right-radius: 72px;
+}
+.hero2-mobile-brand {
+  display: none;
+}
+@media (max-width: 640px) {
+  .hero2-mobile-brand {
+    display: block;
+    text-align: center;
+    font-family: 'Bricolage Grotesque', 'Manrope', sans-serif;
+    font-size: 26px; font-weight: 900;
+    color: #ffffff; letter-spacing: -.5px;
+    margin-bottom: 14px;
+  }
+  .hero2-mobile-brand em { color: #FC692F; font-style: normal; }
+  .hero2-sub { font-size: 18px; line-height: 1.45; max-width: 460px; }
+  .hero-sticky-wrap { height: 130svh; }
 }
 .hero2-h1 {
   font-family: 'Bricolage Grotesque', 'Manrope', sans-serif;
@@ -1259,9 +1219,7 @@ footer {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
-  .hnav-links { display: none; }
-  .hnav-cta { display: none; }
-  .hnav-burger { display: flex; align-items: center; }
+  /* (Pill nav tablette → déplacé dans css/global.css) */
   /* Tablette 769-1024 : popups encore plus compactes, offsets calibrés pour fitter 769px sans dépasser le viewport */
   .hero2-pop-populaire {
     width: 180px; left: -198px; padding: 9px 12px 9px 9px; gap: 8px;
