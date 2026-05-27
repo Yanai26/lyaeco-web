@@ -311,7 +311,7 @@ body.homepage .abar   { display: none !important; }
   white-space: nowrap; flex-shrink: 0; margin-right: 4px;
 }
 .hnav-logo img { border-radius: 8px; }
-.hnav-logo em { color: #0B3A8F; font-style: normal; }
+.hnav-logo em { color: #FC692F; font-style: normal; }
 .hnav-links {
   list-style: none;
   display: flex; gap: 0;
