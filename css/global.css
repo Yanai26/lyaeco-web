@@ -179,12 +179,12 @@ body {
 .btn-primary:hover::before { left: 140%; }
 .btn-secondary {
   display: inline-flex; align-items: center; gap: 8px;
-  background: transparent; color: var(--accent-blue);
+  background: transparent; color: #4A90D9;
   padding: 14px 26px; border-radius: 14px; font-size: 15px; font-weight: 800;
-  text-decoration: none; border: 2px solid var(--accent-blue);
+  text-decoration: none; border: 2px solid #4A90D9;
   transition: all .25s ease; font-family: inherit;
 }
-.btn-secondary:hover { background: var(--accent-blue); color: #fff; transform: translateY(-2px); }
+.btn-secondary:hover { background: #4A90D9; color: #fff; transform: translateY(-2px); box-shadow: 0 10px 24px rgba(74,144,217,.35); }
 
 /* ── Page hero (pages secondaires) ── */
 .page-hero {
